@@ -99,8 +99,8 @@ const PopularCategories: React.FC = () => {
   return (
     <>
       <div className={style.container}>
-        <h2>Popular Categories</h2>
-        <p>Stunning Range For Your Decoration</p>
+        {/* <h2>Popular Categories</h2>
+        <p>Stunning Range For Your Decoration</p> */}
         <div className={style.controller}>
           <button
             onClick={leftCategory}

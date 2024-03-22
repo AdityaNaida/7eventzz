@@ -7,8 +7,8 @@ const HomePage = () => {
   return (
     <>
       <Hero />
-      <PopularCategories />
       <HeroMobile />
+      <PopularCategories />
     </>
   );
 };

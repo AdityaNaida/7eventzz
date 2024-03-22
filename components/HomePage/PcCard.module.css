@@ -18,8 +18,16 @@
 .link {
   position: relative;
   transition: all ease 1s;
+  animation: popUp 0.5s ease 0s 1 forwards;
 }
-
+@keyframes popUp {
+  from {
+    opacity: 0.2;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .link:hover {
   transform: translate(0px, -10px);
   opacity: 0.8;
