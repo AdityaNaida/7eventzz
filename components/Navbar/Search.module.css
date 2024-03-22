@@ -1,0 +1,77 @@
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.container > input {
+  position: relative;
+  display: block;
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 4px 8px;
+  padding: 12px 30px;
+  border-radius: 100px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font-family: inherit;
+  font-size: 1.5em;
+  color: #212121;
+  background: url(/icons/grey-search.svg) center left 7px no-repeat, transparent;
+  z-index: 1;
+  background-size: 20px;
+}
+.animatedText {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  position: absolute;
+  top: 12px;
+  left: 40px;
+  font-size: 1.5em;
+  color: #a1adb5;
+}
+.animation {
+  height: 20px;
+  overflow: hidden;
+}
+.animation > div > div {
+  height: 20px;
+  font-weight: 500;
+}
+.first {
+  animation: text-animation 8s infinite;
+}
+
+@keyframes text-animation {
+  0% {
+    margin-top: 0em;
+  }
+  10% {
+    margin-top: 0em;
+  }
+  20% {
+    margin-top: -20px;
+  }
+  30% {
+    margin-top: -20px;
+  }
+  40% {
+    margin-top: -40px;
+  }
+  60% {
+    margin-top: -40px;
+  }
+  70% {
+    margin-top: -20px;
+  }
+  80% {
+    margin-top: -20px;
+  }
+  90% {
+    margin-top: 0px;
+  }
+  100% {
+    margin-top: 0px;
+  }
+}
+.flex1 {
+  flex: 1;
+}

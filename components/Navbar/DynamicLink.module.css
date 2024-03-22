@@ -1,0 +1,9 @@
+.link {
+  font-size: 1.5em;
+  padding: 8px 15px;
+  border-bottom: 2px solid #fff;
+  transition: all ease 0.5s;
+}
+.link:hover {
+  border-color: var(--website);
+}

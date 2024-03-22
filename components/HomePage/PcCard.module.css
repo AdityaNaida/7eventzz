@@ -1,0 +1,35 @@
+.imageHolder {
+  height: 160px;
+  width: 160px;
+  border-radius: 10px;
+  margin-bottom: 0.5em;
+}
+.imageHolder > img {
+  height: auto;
+  width: 100%;
+  border-radius: 10px;
+}
+.imageHolder + span {
+  text-align: center;
+  font-size: 1.6em;
+  font-weight: 500;
+  color: #212121;
+}
+.link {
+  position: relative;
+  transition: all ease 1s;
+}
+
+.link:hover {
+  transform: translate(0px, -10px);
+  opacity: 0.8;
+}
+@media only screen and (max-width: 768px) {
+  .imageHolder {
+    height: auto;
+    width: 100%;
+  }
+  .imageHolder + span {
+    font-size: 1.8em;
+  }
+}

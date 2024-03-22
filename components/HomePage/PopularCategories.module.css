@@ -1,0 +1,86 @@
+.container {
+  padding: 20px 10px;
+  height: auto;
+  width: 100%;
+  text-align: center;
+}
+
+.container > h2 {
+  font-size: 3em;
+  font-weight: 500;
+  color: #000;
+}
+.container > p {
+  font-size: 1.5em;
+  font-weight: 400;
+  color: #212121;
+  margin-top: 0.5em;
+}
+.slider {
+  width: 100%;
+  padding: 20px 0px;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13%, 2fr));
+  gap: 30px;
+}
+
+.controller {
+  display: none;
+  justify-content: center;
+  padding: 10px 0px 0px;
+  gap: 10px;
+}
+.controller > button {
+  font-size: 1.8em;
+  font-weight: 400;
+  font-family: inherit;
+  padding: 5px 10px;
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  cursor: pointer;
+}
+.active {
+  background-color: #212121 !important;
+  color: #fff !important;
+}
+@media only screen and (max-width: 1250px) {
+  .slider {
+    grid-template-columns: repeat(auto-fit, minmax(15%, 2fr));
+  }
+}
+@media only screen and (max-width: 1140px) {
+}
+
+@media only screen and (max-width: 992px) {
+  .slider {
+    grid-template-columns: repeat(auto-fit, minmax(20%, 2fr));
+    gap: 20px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  /* .container {
+    padding: 10px;
+    background-color: #7d27ff17;
+    text-align: left;
+    margin-top: 1em;
+    border-radius: 20px 20px 0px 0px;
+  }
+  .container > h2,
+  .container > p {
+    color: #7f27ff;
+  } */
+  .slider {
+    grid-template-columns: repeat(auto-fit, minmax(23%, 2fr));
+    gap: 30px;
+    padding: 20px 20px 0px;
+  }
+  /* .slider {
+    padding: 20px 0px 0px;
+  } */
+  .controller {
+    display: flex;
+  }
+}
