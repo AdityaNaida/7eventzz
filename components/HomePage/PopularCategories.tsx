@@ -8,6 +8,7 @@ import style from "@/components/HomePage/PopularCategories.module.css";
 
 //components
 import PcCard from "./PcCard";
+import { tree } from "next/dist/build/templates/app-page";
 
 const PopularCategories: React.FC = () => {
   const [category1, setCategory1] = useState<boolean>(true);
@@ -99,8 +100,8 @@ const PopularCategories: React.FC = () => {
   return (
     <>
       <div className={style.container}>
-        {/* <h2>Popular Categories</h2>
-        <p>Stunning Range For Your Decoration</p> */}
+        <h2>Popular Categories</h2>
+        <p>Stunning Range For Your Decoration</p>
         <div className={style.controller}>
           <button
             onClick={leftCategory}

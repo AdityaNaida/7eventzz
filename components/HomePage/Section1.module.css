@@ -1,0 +1,44 @@
+.container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: nowrap;
+  height: auto;
+  width: 100%;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  transition: all ease 0.5s;
+  padding: 10px;
+}
+.container > a {
+  min-width: 30%;
+}
+.containerWrapper {
+  text-align: center;
+}
+.containerWrapper > h2 {
+  font-size: 3em;
+  font-weight: 800;
+  color: var(--website);
+}
+.containerWrapper > p {
+  font-size: 1.6em;
+  font-weight: 500;
+  color: #212121;
+  margin-top: 0.5em;
+}
+
+@media only screen and (max-width: 768px) {
+  .container > a {
+    min-width: 40%;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .container {
+    gap: 10px;
+  }
+  .container > a {
+    min-width: 60%;
+  }
+}

@@ -8,7 +8,6 @@ import Image from "next/image";
 import style from "@/components/Navbar/Navbar.module.css";
 
 //components
-import Search from "./Search";
 import NavbarLink from "./NavbarLink";
 import DynamicLink from "./DynamicLink";
 import Modal from "./Modal";
@@ -20,46 +19,32 @@ const Navbar: React.FC = () => {
   };
   return (
     <>
-      <nav className={style.navbar}>
-        <div className={style.navbarHolder}>
-          <div className={style.menuBtn} onClick={navbarHandler}>
-            <span></span>
-            <span></span>
+      <header>
+        <nav className={style.navbar}>
+          <div className={style.logo}>7eventzz</div>
+          <div className={style.dynamicLinks}>
+            <DynamicLink path="/" text="Kids" />
+            <DynamicLink path="/" text="Coupels" />
+            <DynamicLink path="/" text="Occasion" />
+            <DynamicLink path="/" text="Welcome" />
+            <DynamicLink path="/" text="Birthday" />
           </div>
-
-          <div className={style.logo}>
-            <span>7</span>eventzz
-          </div>
-          <div className={style.locationDetect}>
-            <button>
-              Select location{" "}
+          <div className={style.navbarLinks}>
+            <NavbarLink path="/" text="Cart" img="/icons/cart.svg" />
+            <NavbarLink path="/" text="Sign In" img="/icons/user.svg" />
+            <button onClick={navbarHandler}>
+              {/* Menu */}
               <Image
-                src="/icons/Arrowdown.svg"
-                alt="Arrow down Image"
-                width={20}
-                height={20}
+                src="/icons/menu.svg"
+                alt="menu icon"
+                height={25}
+                width={25}
               />
             </button>
           </div>
-          <div className={style.search}>
-            <Search />
-          </div>
-          <div className={style.flex1}></div>
-          <div className={style.navbarLinks}>
-            <NavbarLink path="/" text="" img="/icons/search-icon.svg" />
-            <NavbarLink path="/" text="Hello, Sign in" img="/icons/user.svg" />
-            <NavbarLink path="/" text="Cart" img="/icons/cart.svg" />
-            <NavbarLink path="/" text="Support" img="/icons/contact.svg" />
-          </div>
-        </div>
-      </nav>
-      <div className={style.dynamicLinks}>
-        <DynamicLink path="/" text="Kids" />
-        <DynamicLink path="/" text="Coupels" />
-        <DynamicLink path="/" text="Occasion" />
-        <DynamicLink path="/" text="Welcome" />
-        <DynamicLink path="/" text="Birthday" />
-      </div>
+        </nav>
+      </header>
+
       {navbar && (
         <Modal offModal={navbarHandler}>
           <div className={style.mobileDynamicLinks}>

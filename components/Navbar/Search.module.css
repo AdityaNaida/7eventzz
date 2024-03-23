@@ -1,77 +1,145 @@
-.container {
-  position: relative;
-  width: 100%;
+.containerWrapper {
+  text-align: center;
+  margin-top: 1em;
 }
-
-.container > input {
-  position: relative;
-  display: block;
-  width: 100%;
-  box-shadow: rgba(0, 0, 0, 0.06) 0px 4px 8px;
-  padding: 12px 30px;
-  border-radius: 100px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  font-family: inherit;
-  font-size: 1.5em;
+.containerWrapper > h2 {
+  font-size: 3em;
   color: #212121;
-  background: url(/icons/grey-search.svg) center left 7px no-repeat, transparent;
-  z-index: 1;
-  background-size: 20px;
+  font-weight: 800;
+  opacity: 0.8;
 }
-.animatedText {
+.container {
   display: flex;
   align-items: center;
-  gap: 5px;
-  position: absolute;
-  top: 12px;
-  left: 40px;
-  font-size: 1.5em;
-  color: #a1adb5;
+  flex-wrap: nowrap;
+  width: 100%;
+  height: auto;
+  border-radius: 100px;
+  box-shadow: 0 2px 8px rgba(28, 28, 28, 0.08);
+  border: 1px solid #e8e8e8;
+  margin: 1em 0em;
 }
-.animation {
-  height: 20px;
-  overflow: hidden;
+.container div {
+  width: 30%;
 }
-.animation > div > div {
-  height: 20px;
-  font-weight: 500;
+.relationBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  height: 60px;
+  width: 40% !important;
+  background-color: #fff;
+  padding: 16px 10px 16px 30px;
+  border-radius: 100px;
+  transition: all ease 0.5s;
+  cursor: pointer;
 }
-.first {
-  animation: text-animation 8s infinite;
+.relationBox:hover {
+  background-color: #ebebeb;
 }
 
-@keyframes text-animation {
-  0% {
-    margin-top: 0em;
-  }
-  10% {
-    margin-top: 0em;
-  }
-  20% {
-    margin-top: -20px;
-  }
-  30% {
-    margin-top: -20px;
-  }
-  40% {
-    margin-top: -40px;
-  }
-  60% {
-    margin-top: -40px;
-  }
-  70% {
-    margin-top: -20px;
-  }
-  80% {
-    margin-top: -20px;
-  }
-  90% {
-    margin-top: 0px;
-  }
-  100% {
-    margin-top: 0px;
-  }
+.relationBox p {
+  font-size: 1.5em;
+  font-weight: 500;
+  color: #212121;
 }
-.flex1 {
-  flex: 1;
+.relationBox div {
+  width: 70%;
+  text-align: left;
+}
+.relationBox span {
+  font-size: 1.6em;
+  font-weight: 400;
+  margin-top: 0.1em;
+  color: #828282;
+}
+.vLine {
+  display: block;
+  height: 30px;
+  width: 1px;
+  background-color: #82828275;
+}
+.relationBox > button {
+  background-color: var(--website);
+  border: none;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+}
+.relationBox > button > img {
+  height: 100%;
+  width: 100%;
+}
+.searchContainer {
+  width: 100%;
+  height: auto;
+}
+.searchContainer > input {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(28, 28, 28, 0.08);
+  border: 1px solid #e8e8e8;
+  border-radius: 100px;
+  font-family: inherit;
+  font-size: 1.5em;
+  font-weight: 400;
+  background: url(/icons/grey-search.svg) center right 15px no-repeat,
+    transparent;
+  background-size: 30px;
+}
+
+.cityList {
+  height: 30vh;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  transition: all ease 0.5s;
+}
+.cityList::-webkit-scrollbar {
+  width: 5px;
+}
+.cityList::-webkit-scrollbar-thumb {
+  background-color: #2121212f;
+  border-radius: 10px;
+}
+.cityList > p {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 1.6em;
+  text-transform: capitalize;
+  font-weight: 400;
+  color: #212121;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 10px;
+}
+.cityList > p > span {
+  height: 40px;
+  width: 40px;
+  border-radius: 10px;
+  padding: 10px;
+}
+.cityList > p > span > img {
+  height: 100%;
+  width: 100%;
+  opacity: 0.7;
+}
+
+@media only screen and (max-width: 768px) {
+  .relationBox > button {
+    height: 30px;
+    width: 30px;
+    padding: 5px;
+  }
+  .container div {
+    width: 33%;
+  }
 }

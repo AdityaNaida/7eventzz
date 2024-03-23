@@ -42,7 +42,7 @@ const Hero: React.FC = () => {
         <Slider {...settings}>
           {bannerImages.map((elem) => (
             <>
-              <Link href={elem.path}>
+              <Link href={elem.path} key={Math.random()}>
                 <Image
                   src={elem.imageURL}
                   alt={elem.imageURL}
@@ -50,8 +50,6 @@ const Hero: React.FC = () => {
                   width={50}
                   priority
                   unoptimized
-                  //   placeholder="blur"
-                  //   blurDataURL=""
                 />
               </Link>
             </>

@@ -1,0 +1,28 @@
+.container {
+  padding: 16px 30px;
+  background-color: #fff;
+  border-radius: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all ease 0.5s;
+  cursor: pointer;
+  text-align: left;
+}
+.container:hover {
+  background-color: #ebebeb;
+}
+.container p {
+  font-size: 1.5em;
+  font-weight: 500;
+  color: #212121;
+}
+.container > span {
+  white-space: nowrap;
+  font-size: 1.6em;
+  font-weight: 400;
+  margin-top: 0.1em;
+  color: #828282;
+  display: flex;
+  gap: 5px;
+}

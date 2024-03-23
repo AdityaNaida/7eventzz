@@ -10,7 +10,6 @@
 .slick-dots li.slick-active button:before {
   opacity: 0;
 }
-
 .slick-dots li.slick-active button {
   background-color: var(--website);
   height: 2px;

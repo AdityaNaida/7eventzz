@@ -41,7 +41,7 @@ const HeroMobile: React.FC = () => {
         <Slider {...settings}>
           {bannerImages.map((elem) => (
             <>
-              <Link href={elem.path}>
+              <Link href={elem.path} key={Math.random()}>
                 <Image
                   src={elem.imageURL}
                   alt={elem.imageURL}
