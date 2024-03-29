@@ -3,14 +3,14 @@
 import { useState } from "react";
 import Link from "next/link";
 //styles
-import style from "@/components/HomePage/Section4.module.css";
+import style from "@/components/HomePage/Section5.module.css";
 
 //components
 import ContainerWrapper from "./ContainerWrapper";
 import CategoryHeading from "./CategoryHeading";
 import ProductCarousel from "./ProductCarousel";
 
-const Section4: React.FC = () => {
+const Section5: React.FC = () => {
   const [activeDecorations, setActiveDecorations] = useState<boolean>(true);
   const API = [
     {
@@ -106,7 +106,7 @@ const Section4: React.FC = () => {
         <div className={style.leftHeading}>
           <CategoryHeading
             isBorder={false}
-            heading="Best Seller Cakes"
+            heading="Best Seller Flowers"
             text=""
           />
         </div>
@@ -116,13 +116,13 @@ const Section4: React.FC = () => {
               className={activeDecorations ? style.active : style.nothing}
               onClick={activate}
             >
-              Cakes
+              Flowers
             </button>
             <button
               className={activeDecorations ? style.nothing : style.active}
               onClick={deactivate}
             >
-              Flowers
+              Cakes
             </button>
           </div>
           {activeDecorations ? (
@@ -134,7 +134,7 @@ const Section4: React.FC = () => {
         <div className={style.container}>
           {activeDecorations ? (
             <>
-              {API.slice(0, 4).map((elem) => (
+              {API.slice(4, 8).map((elem) => (
                 <ProductCarousel
                   name={elem.name}
                   image={elem.img}
@@ -150,7 +150,7 @@ const Section4: React.FC = () => {
             </>
           ) : (
             <>
-              {API.slice(4, 8).map((elem) => (
+              {API.slice(0, 4).map((elem) => (
                 <ProductCarousel
                   name={elem.name}
                   image={elem.img}
@@ -171,4 +171,4 @@ const Section4: React.FC = () => {
   );
 };
 
-export default Section4;
+export default Section5;

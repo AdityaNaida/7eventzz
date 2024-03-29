@@ -3,18 +3,18 @@
 import { useState } from "react";
 import Link from "next/link";
 //styles
-import style from "@/components/HomePage/Section4.module.css";
+import style from "@/components/HomePage/Section6.module.css";
 
 //components
 import ContainerWrapper from "./ContainerWrapper";
-import CategoryHeading from "./CategoryHeading";
+import HeadingWithLink from "./HeadingWithLink";
 import ProductCarousel from "./ProductCarousel";
 
-const Section4: React.FC = () => {
+const Section6: React.FC = () => {
   const [activeDecorations, setActiveDecorations] = useState<boolean>(true);
   const API = [
     {
-      img: "/p1.webp",
+      img: "/g1.webp",
       name: "Sumptuous Chocolate Truffle Cake",
       price: "600",
       beforeprice: "800",
@@ -24,7 +24,7 @@ const Section4: React.FC = () => {
       path: "/",
     },
     {
-      img: "/p2.webp",
+      img: "/g2.webp",
       name: "Love You Chocolate Truffle Cake",
       price: "600",
       beforeprice: "800",
@@ -34,7 +34,7 @@ const Section4: React.FC = () => {
       path: "/",
     },
     {
-      img: "/p3.webp",
+      img: "/g3.webp",
       name: "Choco Truffle Heart Cake ",
       price: "800",
       beforeprice: "1000",
@@ -44,7 +44,7 @@ const Section4: React.FC = () => {
       path: "/",
     },
     {
-      img: "/p4.webp",
+      img: "/g4.webp",
       name: "Dense Chocolate Delight Cake",
       price: "750",
       beforeprice: "1000",
@@ -104,19 +104,15 @@ const Section4: React.FC = () => {
     <>
       <ContainerWrapper>
         <div className={style.leftHeading}>
-          <CategoryHeading
-            isBorder={false}
-            heading="Best Seller Cakes"
-            text=""
-          />
+          <HeadingWithLink heading="Best Seller Gifts" viewAllPath="/" />
         </div>
-        <div className={style.controller}>
+        {/* <div className={style.controller}>
           <div>
             <button
               className={activeDecorations ? style.active : style.nothing}
               onClick={activate}
             >
-              Cakes
+              Gifts
             </button>
             <button
               className={activeDecorations ? style.nothing : style.active}
@@ -130,7 +126,7 @@ const Section4: React.FC = () => {
           ) : (
             <Link href="/">View All</Link>
           )}
-        </div>
+        </div> */}
         <div className={style.container}>
           {activeDecorations ? (
             <>
@@ -171,4 +167,4 @@ const Section4: React.FC = () => {
   );
 };
 
-export default Section4;
+export default Section6;

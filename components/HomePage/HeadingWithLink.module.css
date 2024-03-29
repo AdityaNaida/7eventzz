@@ -1,0 +1,33 @@
+.container {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container > h2 {
+  position: relative;
+  font-size: 3em;
+  font-weight: 600;
+  color: #000;
+}
+.container > a {
+  position: relative;
+  font-size: 1.6em;
+  font-weight: 600;
+  color: var(--website);
+  padding: 10px;
+  border-radius: 10px;
+}
+.container > a::before {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 0%;
+  background-color: var(--website);
+  bottom: 0px;
+  left: 0px;
+  transition: all ease 0.5s;
+}
+.container > a:hover::before {
+  width: 100%;
+}

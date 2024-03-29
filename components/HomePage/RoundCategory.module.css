@@ -10,11 +10,11 @@
 .link > img {
   height: auto;
   width: 100%;
-  border-radius: 10px;
+  border-radius: 50%;
 }
 
 .link > p {
   font-size: 1.5em;
-  font-weight: 500;
+  font-weight: 400;
   color: #212121;
 }

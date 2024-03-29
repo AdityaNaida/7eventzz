@@ -8,6 +8,8 @@ import style from "@/components/Navbar/Search.module.css";
 import ModalContainer from "./ModalContainer";
 import InputOption from "./InputOption";
 import SearchOption from "./SearchOption";
+import ContainerWrapper from "../HomePage/ContainerWrapper";
+import CategoryHeading from "../HomePage/CategoryHeading";
 //city array
 const cities: string[] = [
   "Agra",
@@ -80,8 +82,8 @@ const Search: React.FC = () => {
   };
   return (
     <>
-      <div className={style.containerWrapper}>
-        <h2>Find Decor</h2>
+      <ContainerWrapper>
+        <CategoryHeading heading="Find Decor" text="" isBorder={false} />
         <div className={style.container}>
           <SearchOption
             heading="Your"
@@ -118,7 +120,7 @@ const Search: React.FC = () => {
             </button>
           </div>
         </div>
-      </div>
+      </ContainerWrapper>
       {/* For Occasion Modal */}
       {occasion && (
         <ModalContainer

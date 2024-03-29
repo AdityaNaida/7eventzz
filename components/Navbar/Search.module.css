@@ -1,13 +1,3 @@
-.containerWrapper {
-  text-align: center;
-  margin-top: 1em;
-}
-.containerWrapper > h2 {
-  font-size: 3em;
-  color: #212121;
-  font-weight: 800;
-  opacity: 0.8;
-}
 .container {
   display: flex;
   align-items: center;
