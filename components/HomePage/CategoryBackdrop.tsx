@@ -7,13 +7,11 @@ import style from "@/components/HomePage/CategoryBackdrop.module.css";
 interface Props {
   image: string;
   path: string;
-  text: string;
 }
-const CategoryBackdrop: React.FC<Props> = ({ image, path, text }) => {
+const CategoryBackdrop: React.FC<Props> = ({ image, path }) => {
   return (
     <>
       <Link href={path} className={style.link}>
-        <div className={style.backdrop}></div>
         <Image
           src={image}
           alt={`${image} Image`}
@@ -22,7 +20,6 @@ const CategoryBackdrop: React.FC<Props> = ({ image, path, text }) => {
           unoptimized
           priority
         />
-        <p>{text}</p>
       </Link>
     </>
   );
