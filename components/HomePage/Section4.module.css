@@ -1,0 +1,93 @@
+.controller {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 10px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  transition: all ease 0.5s;
+}
+.controller > button {
+  background-color: #fff;
+  padding: 0 16px;
+  margin-right: 12px;
+  font-style: normal;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 1.4em;
+  line-height: 20px;
+  height: 40px;
+  box-sizing: border-box;
+  white-space: nowrap;
+  cursor: pointer;
+  color: #212121;
+  border: 1px solid rgba(0, 0, 0, 0.11);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.active {
+  background-color: #000 !important;
+  padding: 0 16px;
+  margin-right: 12px;
+  font-style: normal;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 1.6em;
+  line-height: 20px;
+  height: 40px;
+  box-sizing: border-box;
+  white-space: nowrap;
+  cursor: pointer;
+  color: #fff !important;
+  border: 1px solid rgba(0, 0, 0, 0.11);
+  border-radius: 10px;
+  display: flex;
+  transform: scale(1.1);
+  align-items: center;
+  animation: big 0.3s ease 0s 1 forwards;
+}
+@keyframes big {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.05);
+  }
+}
+.container {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  height: auto;
+  width: 100%;
+  padding: 10px;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  transition: all ease 0.5s;
+}
+.container::-webkit-scrollbar {
+  display: none;
+}
+.container > a {
+  min-width: 23%;
+}
+
+@media only screen and (max-width: 992px) {
+  .container {
+    gap: 10px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .container {
+    gap: 20px;
+  }
+  .container > a {
+    min-width: 45%;
+  }
+}

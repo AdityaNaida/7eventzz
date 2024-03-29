@@ -8,7 +8,6 @@ import style from "@/components/Navbar/Search.module.css";
 import ModalContainer from "./ModalContainer";
 import InputOption from "./InputOption";
 import SearchOption from "./SearchOption";
-
 //city array
 const cities: string[] = [
   "Agra",

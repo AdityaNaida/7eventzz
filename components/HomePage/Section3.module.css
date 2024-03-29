@@ -1,0 +1,48 @@
+.container {
+  height: auto;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 20px;
+}
+.container > div {
+  position: relative;
+  overflow: hidden;
+}
+
+.container > div:first-child {
+  width: 70%;
+  border-radius: 10px;
+}
+.container > div:last-child {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+.container > div:last-child a {
+  border-radius: 20px;
+}
+
+@media only screen and (max-width: 992px) {
+  .container > div:last-child a {
+    border-radius: 10px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .container {
+    flex-wrap: wrap;
+  }
+  .container > div:first-child,
+  .container > div:last-child {
+    width: 100%;
+  }
+  .container > div:last-child {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+}

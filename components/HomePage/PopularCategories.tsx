@@ -8,8 +8,6 @@ import style from "@/components/HomePage/PopularCategories.module.css";
 
 //components
 import PcCard from "./PcCard";
-import { tree } from "next/dist/build/templates/app-page";
-
 const PopularCategories: React.FC = () => {
   const [category1, setCategory1] = useState<boolean>(true);
   const [category2, setCategory2] = useState<boolean>(true);
@@ -75,7 +73,6 @@ const PopularCategories: React.FC = () => {
       text: "Car",
     },
   ];
-
   useEffect(() => {
     const isMobile = () => {
       return window.innerWidth <= 768;
