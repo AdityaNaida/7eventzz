@@ -1,0 +1,17 @@
+.faqContainer {
+  height: auto;
+  width: 100%;
+  background-color: var(--white);
+  padding: 10px;
+}
+.faqContainer > h4 {
+  font-size: 2.5em;
+  font-weight: 600;
+  color: var(--black);
+  margin-bottom: 0.5em;
+}
+.faqContainer > h4 > img {
+  height: 20px;
+  width: 20px;
+  vertical-align: middle;
+}
