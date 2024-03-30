@@ -100,6 +100,9 @@
   .container {
     gap: 10px;
   }
+  .container > a {
+    min-width: 30%;
+  }
 }
 
 @media only screen and (max-width: 576px) {

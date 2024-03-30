@@ -1,0 +1,32 @@
+.link {
+  position: relative;
+  transition: all ease 0.5s;
+  padding: 5px 7px;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(28, 28, 28, 0.08);
+  border: 1px solid #e8e8e8;
+}
+.link:hover {
+  transform: translateY(-50%);
+}
+.link::before {
+  content: "";
+  display: none;
+  position: absolute;
+  bottom: 0px;
+  height: 10px;
+  width: 20px;
+  left: 0px;
+  background-color: transparent;
+  -webkit-box-shadow: 0px 21px 29px 0px rgba(128, 112, 128, 1);
+  -moz-box-shadow: 0px 21px 29px 0px rgba(128, 112, 128, 1);
+  box-shadow: 0px 21px 29px 0px rgba(128, 112, 128, 1);
+}
+.link:hover::before {
+  display: block;
+}
+.link > img {
+  height: 20px;
+  width: 20px;
+  vertical-align: middle;
+}

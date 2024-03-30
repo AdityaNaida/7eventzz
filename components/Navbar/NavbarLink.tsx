@@ -8,16 +8,14 @@ import style from "@/components/Navbar/NavbarLink.module.css";
 //props
 interface Props {
   path: string;
-  text: string;
   img: string;
 }
 
-const NavbarLink: React.FC<Props> = ({ path, text, img }) => {
+const NavbarLink: React.FC<Props> = ({ path, img }) => {
   return (
     <>
       <Link href={path} className={style.link}>
         <Image src={img} alt={img + "Icon"} height={25} width={25} />
-        <span>{text}</span>
       </Link>
     </>
   );

@@ -1,0 +1,22 @@
+.link {
+  display: inline-block;
+  position: relative;
+  font-size: 1.3em;
+  font-weight: 400;
+  color: #212121;
+  padding: 5px 8px;
+  margin: 0.1em 0em;
+}
+.link::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  height: 1px;
+  width: 0%;
+  background-color: #212121;
+  transition: all ease 0.5s;
+}
+.link:hover::before {
+  width: 100%;
+}

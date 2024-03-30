@@ -11,6 +11,7 @@ import style from "@/components/Navbar/Navbar.module.css";
 import NavbarLink from "./NavbarLink";
 import DynamicLink from "./DynamicLink";
 import Modal from "./Modal";
+import FooterMenu from "./FooterMenu";
 
 const Navbar: React.FC = () => {
   const [navbar, setNavbar] = useState<boolean>(false);
@@ -30,9 +31,18 @@ const Navbar: React.FC = () => {
             <DynamicLink path="/" text="Birthday" />
           </div>
           <div className={style.navbarLinks}>
-            <NavbarLink path="/" text="Cart" img="/icons/cart.svg" />
-            <NavbarLink path="/" text="Sign In" img="/icons/user.svg" />
-            <button onClick={navbarHandler}>
+            <button className={style.locationBtn}>
+              Select Location
+              <Image
+                src="/icons/navigation.svg"
+                alt="navigation icon"
+                height={25}
+                width={25}
+              />
+            </button>
+            <NavbarLink path="/" img="/icons/cart.svg" />
+            <NavbarLink path="/" img="/icons/user.svg" />
+            <button onClick={navbarHandler} className={style.menuBtn}>
               {/* Menu */}
               <Image
                 src="/icons/menu.svg"
@@ -44,7 +54,7 @@ const Navbar: React.FC = () => {
           </div>
         </nav>
       </header>
-
+      <FooterMenu />
       {navbar && (
         <Modal offModal={navbarHandler}>
           <div className={style.mobileDynamicLinks}>

@@ -25,7 +25,7 @@
   width: 70%;
   margin: 0 auto;
 }
-.navbarLinks > button {
+.menuBtn {
   display: none;
   background-color: transparent;
   font-family: inherit;
@@ -38,12 +38,23 @@
   border-radius: 100px;
   cursor: pointer;
 }
-.navbarLinks > button > img {
+.menuBtn > img {
   height: 20px;
   width: 20px;
   vertical-align: middle;
 }
-
+.locationBtn {
+  font-family: inherit;
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+}
+.locationBtn > img {
+  height: 18px;
+  left: 18px;
+  vertical-align: middle;
+  margin-left: 0.3em;
+}
 .mobileDynamicLinks {
   position: fixed;
   z-index: 999;
@@ -166,7 +177,7 @@
   .dynamicLinks {
     display: none;
   }
-  .navbarLinks > button {
+  .menuBtn {
     display: block;
   }
 }
