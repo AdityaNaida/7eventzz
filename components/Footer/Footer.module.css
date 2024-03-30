@@ -74,7 +74,7 @@
     flex-wrap: wrap;
   }
   .gridContainer > div {
-    width: 40%;
+    width: 30%;
   }
   .subFooter > div {
     width: 40%;
@@ -84,10 +84,6 @@
 @media only screen and (max-width: 768px) {
   .container {
     max-width: 540px;
-  }
-  .gridContainer {
-    grid-template-columns: repeat(auto-fit, minmax(45%, 2fr));
-    gap: 20px;
   }
 
   .subFooter > div {
@@ -102,7 +98,13 @@
   }
   .gridContainer div:last-child {
     min-width: 100%;
+  }
+  .gridContainer div:last-child > h3,
+  .gridContainer div:last-child > span {
+    display: block;
     text-align: center;
+  }
+  .gridContainer div:last-child > div {
     justify-content: center;
   }
 }

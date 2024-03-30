@@ -97,7 +97,7 @@ const Footer: React.FC = () => {
               <FooterLinks path="/" value="Terms of Use" />
               <FooterLinks path="/" value="Disclaimer" />
             </FooterCard>
-            <FooterCard heading="For Partners" isLogo={false}>
+            <FooterCard heading="Partners" isLogo={false}>
               <FooterLinks path="/" value="Register as a Vendor" />
               <FooterLinks path="/" value="Franchise" />
             </FooterCard>
