@@ -1,14 +1,17 @@
 .link > img {
-  height: 22px;
-  width: 22px;
+  height: 30px;
+  width: 30px;
   opacity: 0.7;
   vertical-align: middle;
 }
 .link {
   padding: 10px;
-  box-shadow: 0 2px 8px rgba(28, 28, 28, 0.08);
-  border: 1px solid #e8e8e8;
-  border-radius: 100px;
+  font-size: 1.4em;
+  font-weight: 400;
+  color: #000;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 @media only screen and (max-width: 992px) {

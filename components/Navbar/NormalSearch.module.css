@@ -1,0 +1,12 @@
+.search {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-family: inherit;
+  font-size: 1.4em;
+  color: #212121;
+  box-shadow: 0 2px 8px rgba(28, 28, 28, 0.08);
+  border: 1px solid #e8e8e8;
+  background: url(/icons/search.svg) center right 7px no-repeat, transparent;
+  border-radius: 10px;
+}

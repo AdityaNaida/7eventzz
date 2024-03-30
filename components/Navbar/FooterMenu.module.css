@@ -3,17 +3,43 @@
   align-items: center;
   justify-content: space-between;
   position: fixed;
-  bottom: 0px;
-  left: 0px;
+  border-radius: 100px;
   z-index: 1;
   height: auto;
-  width: 100%;
-  padding: 10px;
+  width: 95%;
+  padding: 5px 10px;
+  top: 92%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background-color: #fff;
   box-shadow: 0px -7px 58px 0px rgba(0, 0, 0, 0.404);
   -webkit-box-shadow: 0px -7px 58px 0px rgba(0, 0, 0, 0.404);
   -moz-box-shadow: 0px -7px 58px 0px rgba(0, 0, 0, 0.404);
 }
+.ai {
+  border: none;
+  padding: 8px 10px;
+  border-radius: 50%;
+  background-color: var(--website);
+  /* background: linear-gradient(-45deg, #4158d0, #c850c0, #ffcc70, #23d5ab); */
+  /* background-size: 400% 400%;
+  animation: gradient 8s ease infinite; */
+}
+.ai > img {
+  height: 25px;
+  width: 25px;
+}
+/* @keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+} */
 
 @media only screen and (max-width: 768px) {
   .container {

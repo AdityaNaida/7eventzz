@@ -12,6 +12,7 @@ import NavbarLink from "./NavbarLink";
 import DynamicLink from "./DynamicLink";
 import Modal from "./Modal";
 import FooterMenu from "./FooterMenu";
+import NormalSearch from "./NormalSearch";
 
 const Navbar: React.FC = () => {
   const [navbar, setNavbar] = useState<boolean>(false);
@@ -20,28 +21,9 @@ const Navbar: React.FC = () => {
   };
   return (
     <>
-      <header>
+      <header className={style.header}>
         <nav className={style.navbar}>
-          <div className={style.logo}>7eventzz</div>
-          <div className={style.dynamicLinks}>
-            <DynamicLink path="/" text="Kids" />
-            <DynamicLink path="/" text="Coupels" />
-            <DynamicLink path="/" text="Occasion" />
-            <DynamicLink path="/" text="Welcome" />
-            <DynamicLink path="/" text="Birthday" />
-          </div>
-          <div className={style.navbarLinks}>
-            <button className={style.locationBtn}>
-              Select Location
-              <Image
-                src="/icons/navigation.svg"
-                alt="navigation icon"
-                height={25}
-                width={25}
-              />
-            </button>
-            <NavbarLink path="/" img="/icons/cart.svg" />
-            <NavbarLink path="/" img="/icons/user.svg" />
+          <div className={style.logo}>
             <button onClick={navbarHandler} className={style.menuBtn}>
               {/* Menu */}
               <Image
@@ -51,9 +33,34 @@ const Navbar: React.FC = () => {
                 width={25}
               />
             </button>
+            7eventzz
+          </div>
+          <button className={style.locationBtn}>
+            <Image
+              src="/icons/navigation.svg"
+              alt=" navigation icon"
+              height={25}
+              width={25}
+            />
+            Select Location
+          </button>
+          <div className={style.searchHolder}>
+            <NormalSearch />
+          </div>
+          <div className={style.flex1}></div>
+          <div className={style.navbarLinks}>
+            <NavbarLink path="/" img="/icons/user.svg" text="Hello, Log in" />
+            <NavbarLink path="/" img="/icons/cart.svg" text="Cart" />
           </div>
         </nav>
       </header>
+      <div className={style.dynamicLinks}>
+        <DynamicLink path="/" text="Kids" />
+        <DynamicLink path="/" text="Coupels" />
+        <DynamicLink path="/" text="Occasion" />
+        <DynamicLink path="/" text="Welcome" />
+        <DynamicLink path="/" text="Birthday" />
+      </div>
       <FooterMenu />
       {navbar && (
         <Modal offModal={navbarHandler}>
