@@ -7,9 +7,8 @@ import style from "@/components/Navbar/FooterMenuLink.module.css";
 interface Props {
   img: string;
   path: string;
-  text: string;
 }
-const FooterMenuLink: React.FC<Props> = ({ img, path, text }) => {
+const FooterMenuLink: React.FC<Props> = ({ img, path }) => {
   return (
     <>
       <Link href={path} className={style.link}>
@@ -20,7 +19,6 @@ const FooterMenuLink: React.FC<Props> = ({ img, path, text }) => {
           width={25}
           unoptimized
         />
-        <p>{text}</p>
       </Link>
     </>
   );
