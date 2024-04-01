@@ -15,7 +15,7 @@ const CategoryPage: React.FC = () => {
           text="Adding love & beauty to every occasion"
           isBorder={true}
         />
-        {/* <CategoryList /> */}
+        <CategoryList />
         <Sort />
         <QuickLinks />
         <CategoryProducts />
