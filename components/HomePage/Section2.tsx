@@ -8,37 +8,37 @@ const Section2: React.FC = () => {
   const categoryAPI = [
     {
       image: "/cats1.webp",
-      path: "/",
+      path: "/category",
       text: "Birthday",
       id: Math.random(),
     },
     {
       image: "/cats2.webp",
-      path: "/",
+      path: "/category",
       text: "Anniversary",
       id: Math.random(),
     },
     {
       image: "/cats3.webp",
-      path: "/",
+      path: "/category",
       text: "Welcome",
       id: Math.random(),
     },
     {
       image: "/cats4.webp",
-      path: "/",
+      path: "/category",
       text: "Festival",
       id: Math.random(),
     },
     {
       image: "/cats5.webp",
-      path: "/",
+      path: "/category",
       text: "Car",
       id: Math.random(),
     },
     {
       image: "/cats6.webp",
-      path: "/",
+      path: "/category",
       text: "Cabana",
       id: Math.random(),
     },

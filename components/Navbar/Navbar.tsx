@@ -42,7 +42,7 @@ const Navbar: React.FC = () => {
                 width={25}
               />
             </button>
-            7eventzz
+            <Link href="/">7eventzz</Link>
           </div>
           <button className={style.locationBtn} onClick={locationHandler}>
             <Image

@@ -14,17 +14,17 @@ const Hero: React.FC = () => {
   const bannerImages = [
     {
       imageURL: "/banner1.webp",
-      path: "/",
+      path: "/category",
       id: Math.random(),
     },
     {
       imageURL: "/banner2.webp",
-      path: "/",
+      path: "/category",
       id: Math.random(),
     },
     {
       imageURL: "/banner3.webp",
-      path: "/",
+      path: "/category",
       id: Math.random(),
     },
   ];

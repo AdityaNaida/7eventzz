@@ -1,0 +1,26 @@
+.container {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0px;
+}
+.container > span {
+  font-size: 1.5em;
+  font-weight: 600;
+  color: #212121;
+  white-space: nowrap;
+}
+.slider {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  padding: 0px 5px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  transition: all ease 0.5s;
+}
+.slider::-webkit-scrollbar {
+  display: none;
+}

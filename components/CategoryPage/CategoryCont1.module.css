@@ -1,0 +1,18 @@
+.container {
+  position: relative;
+  height: auto;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+.container > img {
+  height: auto;
+  width: 100%;
+  border-radius: 8px 8px 0px 0px;
+}
+.container > p {
+  font-size: 1.6em;
+  font-weight: 600;
+  color: #212121;
+  padding: 10px 15px;
+}

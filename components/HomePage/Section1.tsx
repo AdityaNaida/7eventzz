@@ -15,9 +15,9 @@ const Section1: React.FC = () => {
           isBorder={false}
         />
         <div className={style.container}>
-          <CategoryImage path="/" image="/c1.webp" />
-          <CategoryImage path="/" image="/c2.webp" />
-          <CategoryImage path="/" image="/c3.webp" />
+          <CategoryImage path="/category" image="/c1.webp" />
+          <CategoryImage path="/category" image="/c2.webp" />
+          <CategoryImage path="/category" image="/c3.webp" />
         </div>
       </div>
     </>

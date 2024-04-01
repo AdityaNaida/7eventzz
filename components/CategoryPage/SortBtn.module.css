@@ -1,0 +1,24 @@
+.btn {
+  font-size: 1.5em;
+  font-weight: 500;
+  color: #212121;
+  padding: 7px 15px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  border-bottom: 2px solid #fff;
+  font-family: inherit;
+  white-space: nowrap;
+}
+.active {
+  font-size: 1.5em;
+  font-weight: 600;
+  color: var(--website);
+  padding: 7px 15px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  border-bottom: 2px solid var(--website);
+  font-family: inherit;
+  white-space: nowrap;
+}

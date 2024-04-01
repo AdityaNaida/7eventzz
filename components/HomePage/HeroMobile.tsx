@@ -14,17 +14,17 @@ const HeroMobile: React.FC = () => {
   const bannerImages = [
     {
       imageURL: "/bannerM1.webp",
-      path: "/",
+      path: "/category",
       id: Math.random(),
     },
     {
       imageURL: "/bannerM2.webp",
-      path: "/",
+      path: "/category",
       id: Math.random(),
     },
     {
       imageURL: "/bannerM3.webp",
-      path: "/",
+      path: "/category",
       id: Math.random(),
     },
   ];

@@ -1,0 +1,71 @@
+.containerWrapper {
+  position: relative;
+  height: auto;
+  width: 100%;
+}
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  height: auto;
+  width: 100%;
+  padding: 10px;
+  background-color: #fff;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  transition: all ease 0.5s;
+}
+.container::-webkit-scrollbar {
+  display: none;
+}
+.container > a {
+  min-width: 25%;
+}
+
+.arrowRight,
+.arrowLeft {
+  top: 50%; /* Adjust as needed */
+  transform: translateY(-50%);
+  border: none;
+  background-color: #f3f7f8;
+  padding: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 2;
+}
+.arrowRight {
+  position: absolute;
+  right: 0;
+}
+.arrowLeft {
+  position: absolute;
+  left: 0;
+}
+.arrowRight > img,
+.arrowLeft > img {
+  height: 25px;
+  width: 25px;
+  vertical-align: middle;
+}
+
+@media only screen and (max-width: 992px) {
+  .container > a {
+    min-width: 30%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .container > a {
+    min-width: 40%;
+  }
+  .arrowRight,
+  .arrowLeft {
+    display: none;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .container > a {
+    min-width: 55%;
+  }
+}
