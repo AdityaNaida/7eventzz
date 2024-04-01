@@ -19,7 +19,7 @@ import Location from "./Location";
 const Navbar: React.FC = () => {
   const [navbar, setNavbar] = useState<boolean>(false);
   const [searchBox, setSearchBox] = useState<boolean>(false);
-  const [locationBox, setlocationBox] = useState<boolean>(true);
+  const [locationBox, setlocationBox] = useState<boolean>(false);
   const navbarHandler = () => {
     setNavbar(!navbar);
   };
