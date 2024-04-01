@@ -13,11 +13,16 @@ import DynamicLink from "./DynamicLink";
 import Modal from "./Modal";
 import FooterMenu from "./FooterMenu";
 import NormalSearch from "./NormalSearch";
+import SearchPopup from "./SearchPopup";
 
 const Navbar: React.FC = () => {
   const [navbar, setNavbar] = useState<boolean>(false);
+  const [searchBox, setSearchBox] = useState<boolean>(false);
   const navbarHandler = () => {
     setNavbar(!navbar);
+  };
+  const searchBoxHandler = () => {
+    setSearchBox(!searchBox);
   };
   return (
     <>
@@ -44,7 +49,7 @@ const Navbar: React.FC = () => {
             />
             Select Location
           </button>
-          <div className={style.searchHolder}>
+          <div className={style.searchHolder} onClick={searchBoxHandler}>
             <NormalSearch />
           </div>
           <div className={style.flex1}></div>
@@ -54,6 +59,12 @@ const Navbar: React.FC = () => {
           </div>
         </nav>
       </header>
+      {searchBox && (
+        <Modal offModal={searchBoxHandler}>
+          <SearchPopup closeSearch={searchBoxHandler} />
+        </Modal>
+      )}
+
       <div className={style.dynamicLinks}>
         <DynamicLink path="/" text="Kids" />
         <DynamicLink path="/" text="Coupels" />
@@ -61,7 +72,7 @@ const Navbar: React.FC = () => {
         <DynamicLink path="/" text="Welcome" />
         <DynamicLink path="/" text="Birthday" />
       </div>
-      <FooterMenu />
+      <FooterMenu searchFnc={searchBoxHandler} />
       {navbar && (
         <Modal offModal={navbarHandler}>
           <div className={style.mobileDynamicLinks}>

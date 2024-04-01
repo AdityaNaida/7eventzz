@@ -2,7 +2,7 @@
   position: absolute;
   z-index: 999;
   background-color: transparent;
-  width: 30%;
+  width: 60%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -32,7 +32,7 @@
 }
 .occasionContent {
   width: 100%;
-  padding: 20px 20px 50px;
+  padding: 20px 20px 70px;
   background-color: #fff;
   height: auto;
   border-radius: 20px;
@@ -61,23 +61,23 @@
 }
 @media only screen and (max-width: 1140px) {
   .occasionmodal {
-    width: 40%;
+    width: 100%;
   }
 }
-
-@media only screen and (max-width: 992px) {
-  .occasionmodal {
-    width: 45%;
-  }
-}
-
 @media only screen and (max-width: 768px) {
   .occasionHead {
     padding-right: 10px;
   }
   .occasionmodal {
     transform: none;
-    width: 100%;
     left: 0%;
+  }
+  @keyframes fadeIn {
+    from {
+      top: 150%;
+    }
+    to {
+      top: 15%;
+    }
   }
 }
