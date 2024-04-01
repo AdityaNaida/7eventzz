@@ -14,15 +14,20 @@ import Modal from "./Modal";
 import FooterMenu from "./FooterMenu";
 import NormalSearch from "./NormalSearch";
 import SearchPopup from "./SearchPopup";
+import Location from "./Location";
 
 const Navbar: React.FC = () => {
   const [navbar, setNavbar] = useState<boolean>(false);
   const [searchBox, setSearchBox] = useState<boolean>(false);
+  const [locationBox, setlocationBox] = useState<boolean>(true);
   const navbarHandler = () => {
     setNavbar(!navbar);
   };
   const searchBoxHandler = () => {
     setSearchBox(!searchBox);
+  };
+  const locationHandler = () => {
+    setlocationBox(!locationBox);
   };
   return (
     <>
@@ -30,7 +35,6 @@ const Navbar: React.FC = () => {
         <nav className={style.navbar}>
           <div className={style.logo}>
             <button onClick={navbarHandler} className={style.menuBtn}>
-              {/* Menu */}
               <Image
                 src="/icons/menu.svg"
                 alt="menu icon"
@@ -40,7 +44,7 @@ const Navbar: React.FC = () => {
             </button>
             7eventzz
           </div>
-          <button className={style.locationBtn}>
+          <button className={style.locationBtn} onClick={locationHandler}>
             <Image
               src="/icons/navigation.svg"
               alt=" navigation icon"
@@ -64,7 +68,6 @@ const Navbar: React.FC = () => {
           <SearchPopup closeSearch={searchBoxHandler} />
         </Modal>
       )}
-
       <div className={style.dynamicLinks}>
         <DynamicLink path="/" text="Kids" />
         <DynamicLink path="/" text="Coupels" />
@@ -72,7 +75,6 @@ const Navbar: React.FC = () => {
         <DynamicLink path="/" text="Welcome" />
         <DynamicLink path="/" text="Birthday" />
       </div>
-      <FooterMenu searchFnc={searchBoxHandler} />
       {navbar && (
         <Modal offModal={navbarHandler}>
           <div className={style.mobileDynamicLinks}>
@@ -103,6 +105,13 @@ const Navbar: React.FC = () => {
           </div>
         </Modal>
       )}
+      {locationBox && (
+        <Modal offModal={locationHandler}>
+          <Location closeBtn={locationHandler} />
+        </Modal>
+      )}
+
+      <FooterMenu searchFnc={searchBoxHandler} />
     </>
   );
 };

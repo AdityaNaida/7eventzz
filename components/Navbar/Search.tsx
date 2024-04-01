@@ -145,13 +145,13 @@ const Search: React.FC<Props> = ({ heading }) => {
             subText={occasionValue}
             option1=""
             option2=""
-            modalClick={occasionHandler}
+            modalClick={citySearchHandler}
             isTypingEffect={false}
             baseTextType=""
           />
           <span className={style.vLine}></span>
           <div className={style.relationBox}>
-            <div onClick={relationHandler}>
+            <div onClick={citySearchHandler}>
               <p>Relation</p>
               <span>{relationValue}</span>
             </div>
