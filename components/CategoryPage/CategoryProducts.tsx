@@ -12,7 +12,7 @@ const CategoryProducts: React.FC = () => {
       discount: "(25% off)",
       reviews: 11,
       rating: "4.8",
-      path: "/",
+      path: "/productdetails",
     },
     {
       img: "/p2.webp",
@@ -22,7 +22,7 @@ const CategoryProducts: React.FC = () => {
       discount: "(25% off)",
       reviews: 111,
       rating: "4.6",
-      path: "/",
+      path: "/productdetails",
     },
     {
       img: "/p3.webp",
@@ -32,7 +32,7 @@ const CategoryProducts: React.FC = () => {
       discount: "(20% off)",
       reviews: 51,
       rating: "4.9",
-      path: "/",
+      path: "/productdetails",
     },
     {
       img: "/p4.webp",
@@ -42,7 +42,7 @@ const CategoryProducts: React.FC = () => {
       discount: "(25% off)",
       reviews: 32,
       rating: "4.7",
-      path: "/",
+      path: "/productdetails",
     },
     {
       img: "/f1.webp",
@@ -52,7 +52,7 @@ const CategoryProducts: React.FC = () => {
       discount: "(25% off)",
       reviews: 11,
       rating: "4.8",
-      path: "/",
+      path: "/productdetails",
     },
     {
       img: "/f2.webp",
@@ -62,7 +62,7 @@ const CategoryProducts: React.FC = () => {
       discount: "(25% off)",
       reviews: 111,
       rating: "4.6",
-      path: "/",
+      path: "/productdetails",
     },
     {
       img: "/f3.webp",
@@ -72,7 +72,7 @@ const CategoryProducts: React.FC = () => {
       discount: "(20% off)",
       reviews: 51,
       rating: "4.9",
-      path: "/",
+      path: "/productdetails",
     },
     {
       img: "/f4.webp",
@@ -82,7 +82,7 @@ const CategoryProducts: React.FC = () => {
       discount: "(25% off)",
       reviews: 32,
       rating: "4.7",
-      path: "/",
+      path: "/productdetails",
     },
     {
       img: "/g1.webp",
@@ -92,7 +92,7 @@ const CategoryProducts: React.FC = () => {
       discount: "(25% off)",
       reviews: 11,
       rating: "4.8",
-      path: "/",
+      path: "/productdetails",
     },
     {
       img: "/g2.webp",
@@ -102,7 +102,7 @@ const CategoryProducts: React.FC = () => {
       discount: "(25% off)",
       reviews: 111,
       rating: "4.6",
-      path: "/",
+      path: "/productdetails",
     },
     {
       img: "/g3.webp",
@@ -112,7 +112,7 @@ const CategoryProducts: React.FC = () => {
       discount: "(20% off)",
       reviews: 51,
       rating: "4.9",
-      path: "/",
+      path: "/productdetails",
     },
     {
       img: "/g4.webp",
@@ -122,7 +122,7 @@ const CategoryProducts: React.FC = () => {
       discount: "(25% off)",
       reviews: 32,
       rating: "4.7",
-      path: "/",
+      path: "/productdetails",
     },
     {
       img: "/f1.webp",
@@ -132,7 +132,7 @@ const CategoryProducts: React.FC = () => {
       discount: "(25% off)",
       reviews: 11,
       rating: "4.8",
-      path: "/",
+      path: "/productdetails",
     },
     {
       img: "/f2.webp",
@@ -142,7 +142,7 @@ const CategoryProducts: React.FC = () => {
       discount: "(25% off)",
       reviews: 111,
       rating: "4.6",
-      path: "/",
+      path: "/productdetails",
     },
     {
       img: "/f3.webp",
@@ -152,7 +152,7 @@ const CategoryProducts: React.FC = () => {
       discount: "(20% off)",
       reviews: 51,
       rating: "4.9",
-      path: "/",
+      path: "/productdetails",
     },
     {
       img: "/f4.webp",
@@ -162,7 +162,7 @@ const CategoryProducts: React.FC = () => {
       discount: "(25% off)",
       reviews: 32,
       rating: "4.7",
-      path: "/",
+      path: "/productdetails",
     },
   ];
   return (
@@ -173,7 +173,7 @@ const CategoryProducts: React.FC = () => {
             name={elem.name}
             price={elem.price}
             beforePrice={elem.beforeprice}
-            discount={elem.beforeprice}
+            discount={elem.discount}
             reviews={elem.reviews}
             rating={elem.rating}
             path={elem.path}

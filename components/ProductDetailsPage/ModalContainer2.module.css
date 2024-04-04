@@ -1,0 +1,83 @@
+.occasionmodal {
+  position: absolute;
+  z-index: 999;
+  background-color: transparent;
+  width: 40%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: fadeIn 0.5s ease 0s 1 forwards;
+}
+@keyframes fadeIn {
+  from {
+    top: 150%;
+  }
+  to {
+    top: 40%;
+  }
+}
+.occasionHead {
+  display: flex;
+  justify-content: flex-end;
+}
+.occasionHead > button {
+  font-size: 2em;
+  height: 35px;
+  font-weight: 300;
+  width: 35px;
+  border-radius: 50%;
+  border: none;
+  margin-bottom: 0.5em;
+  cursor: pointer;
+}
+.occasionContent {
+  width: 100%;
+  padding: 20px 20px 70px;
+  background-color: #fff;
+  height: auto;
+  border-radius: 20px;
+}
+.occasionHeading > p {
+  font-size: 2.5em;
+  font-weight: 600;
+  color: #212121;
+}
+.occasionHeading > p > img {
+  height: 25px;
+  width: 25px;
+  vertical-align: top;
+  margin-left: 0.3em;
+}
+.occasionHeading > span {
+  font-size: 1.5em;
+  font-weight: 400;
+  color: #828282;
+}
+.occasionType {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px 0px;
+}
+@media only screen and (max-width: 1140px) {
+  .occasionmodal {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .occasionHead {
+    padding-right: 10px;
+  }
+  .occasionmodal {
+    transform: none;
+    left: 0%;
+  }
+  @keyframes fadeIn {
+    from {
+      top: 150%;
+    }
+    to {
+      top: 15%;
+    }
+  }
+}

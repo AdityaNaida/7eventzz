@@ -1,0 +1,33 @@
+.slick-dots li button:before {
+  font-size: 10px;
+}
+.slick-dots li button:before {
+  font-size: 10px;
+}
+.slick-dots li button:before {
+  opacity: 0.12;
+}
+.slick-dots li.slick-active button:before {
+  opacity: 0;
+}
+.slick-dots li.slick-active button {
+  background-color: var(--website);
+  height: 2px;
+  width: 24px;
+  padding: 5px;
+  border-radius: 10px;
+  animation: buttonWidth 0.5s ease 0s 1 forwards;
+}
+
+@keyframes buttonWidth {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 24px;
+  }
+}
+ul.slick-dots {
+  position: absolute;
+  bottom: 10px;
+}

@@ -1,0 +1,33 @@
+.container {
+  padding: 10px 0px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.container > p {
+  font-size: 3.5em;
+  font-weight: 600;
+  color: #212121;
+  opacity: 0.8;
+}
+.prevPrice {
+  color: #a6a3a5;
+  font-size: 1.4em;
+  line-height: 160%;
+  text-decoration: line-through;
+  white-space: nowrap;
+  margin-left: 4px;
+}
+.discount {
+  color: #f11a00;
+  font-size: 1.4em;
+  line-height: 160%;
+  white-space: nowrap;
+  margin-left: 8px;
+  text-transform: capitalize;
+}
+.discount + p {
+  font-size: 1.3em;
+  font-weight: 400;
+  color: #212121;
+}

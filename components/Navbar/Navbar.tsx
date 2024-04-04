@@ -69,11 +69,11 @@ const Navbar: React.FC = () => {
         </Modal>
       )}
       <div className={style.dynamicLinks}>
-        <DynamicLink path="/" text="Kids" />
-        <DynamicLink path="/" text="Coupels" />
-        <DynamicLink path="/" text="Occasion" />
-        <DynamicLink path="/" text="Welcome" />
-        <DynamicLink path="/" text="Birthday" />
+        <DynamicLink path="/dynamic" text="Kids" />
+        <DynamicLink path="/dynamic" text="Coupels" />
+        <DynamicLink path="/dynamic" text="Occasion" />
+        <DynamicLink path="/dynamic" text="Welcome" />
+        <DynamicLink path="/dynamic" text="Birthday" />
       </div>
       {navbar && (
         <Modal offModal={navbarHandler}>
@@ -96,11 +96,11 @@ const Navbar: React.FC = () => {
               </div>
             </div>
             <div className={style.content}>
-              <DynamicLink path="/" text="Kids" />
-              <DynamicLink path="/" text="Coupels" />
-              <DynamicLink path="/" text="Occasion" />
-              <DynamicLink path="/" text="Welcome" />
-              <DynamicLink path="/" text="Birthday" />
+              <DynamicLink path="/dynamic" text="Kids" />
+              <DynamicLink path="/dynamic" text="Coupels" />
+              <DynamicLink path="/dynamic" text="Occasion" />
+              <DynamicLink path="/dynamic" text="Welcome" />
+              <DynamicLink path="/dynamic" text="Birthday" />
             </div>
           </div>
         </Modal>

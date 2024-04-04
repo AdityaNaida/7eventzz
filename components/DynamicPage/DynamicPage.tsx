@@ -1,28 +1,23 @@
 //style
-import style from "@/components/CategoryPage/CategoryPage.module.css";
+import style from "@/components/DynamicPage/DynamicPage.module.css";
 //components
+import BreadCrumbs from "./BreadCrumbs";
 import CategoryHeading from "../HomePage/CategoryHeading";
-import CategoryList from "./CategoryList";
-import Sort from "./Sort";
-import QuickLinks from "./QuickLinks";
-import CategoryProducts from "./CategoryProducts";
-import BreadCrumbs from "../DynamicPage/BreadCrumbs";
+import QuickLinks from "../CategoryPage/QuickLinks";
+import CategoryProducts from "../CategoryPage/CategoryProducts";
 import SeoContent from "../HomePage/SeoContent";
 import FaqWrapper from "../FAQ/FaqWrapper";
 import Faq from "../FAQ/Faq";
-
-const CategoryPage: React.FC = () => {
+const DynamicPage: React.FC = () => {
   return (
     <>
       <div className={style.container}>
-        <BreadCrumbs main="Category" subText="" />
+        <BreadCrumbs main="Dynamic" subText="" />
         <CategoryHeading
-          heading="Everyday Occasions"
-          text="Adding love & beauty to every occasion"
+          heading="Trending Gifts"
+          text="Handpicked for your gifting needs"
           isBorder={true}
         />
-        <CategoryList />
-        <Sort />
         <QuickLinks />
         <CategoryProducts />
         <SeoContent />
@@ -59,4 +54,4 @@ const CategoryPage: React.FC = () => {
   );
 };
 
-export default CategoryPage;
+export default DynamicPage;

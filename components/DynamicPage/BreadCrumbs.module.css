@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 5px;
+  padding: 10px;
+  font-size: 1.3em;
+  font-weight: 500;
+  color: #212121;
+}
+
+.container > a {
+  color: var(--website);
+}
+
+.container > p::before {
+  content: ">";
+  color: #212121;
+  margin-right: 0.5em;
+}

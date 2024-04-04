@@ -1,0 +1,26 @@
+.text {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.rating {
+  border-radius: 6px;
+  background: #4caf50;
+  padding: 6px;
+  display: inline-flex;
+  align-items: center;
+  grid-gap: 4px;
+  gap: 4px;
+  flex-direction: row;
+  height: 25px;
+  color: #fff;
+  font-size: 1.4em;
+  font-weight: 600;
+}
+.reviews {
+  font-size: 1.4em;
+  font-weight: 500;
+  color: #212121;
+  cursor: pointer;
+  white-space: nowrap;
+}
