@@ -16,7 +16,7 @@ import StepController from "../Navbar/StepController";
 const ProductController: React.FC = () => {
   const [city, setCity] = useState<boolean>(false);
   const [calendar, setCalendar] = useState<boolean>(false);
-  const [textDate, setTextDate] = useState<string>("Select Date");
+  const [textDate, setTextDate] = useState<string>("Select Date & Time");
   const [date, setDate] = useState<string>("");
   const cityHandler = () => {
     setCity(!city);
@@ -49,7 +49,7 @@ const ProductController: React.FC = () => {
         </Modal>
       )}
       <SelectOptions
-        heading="Delivery Date & Time"
+        heading="Select Date & Time"
         value={textDate}
         Bfnc={calendarHandler}
         img="/icons/red_calendar.svg"

@@ -21,12 +21,8 @@ const Details: React.FC = () => {
   return (
     <>
       <div className={style.container}>
-        <ProductHeading
-          heading="Chocolate Truffle Cake"
-          rating="4.8"
-          reviews={535}
-        />
-        <ProductPrice price="₹770" previousPrice="₹1000" discount="(33% OFF)" />
+        <ProductHeading heading="Chocolate Truffle Cake" />
+        <ProductPrice price="₹770" previousPrice="₹1000" discount="33% OFF" />
       </div>
     </>
   );

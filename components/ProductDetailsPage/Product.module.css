@@ -10,10 +10,75 @@
 .details {
   padding: 0px 10px;
 }
+.actionsContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: #fff;
+  border: 1px solid rgba(36, 39, 44, 0.1);
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.0509803922);
+  border-radius: 1.6rem;
+  padding: 2.8rem 2.1rem 0 2.3rem;
+}
+.buyNowBtn,
+.chatBtn {
+  display: block;
+
+  padding: 1.3rem;
+  margin-bottom: 2rem;
+
+  font-family: inherit;
+  font-size: 1.7rem;
+  font-weight: 700;
+
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.buyNowBtn > img,
+.chatBtn > img {
+  height: 2.5rem;
+  width: 2.5rem;
+  vertical-align: bottom;
+  margin-right: 0.8rem;
+}
+
+.buyNowBtn {
+  width: 64%;
+  background-color: var(--website);
+  border: 2px solid var(--website);
+  color: #fff;
+}
+
+.chatBtn {
+  width: 34%;
+
+  border: 2px solid #4caf50;
+  background-color: #fff;
+  color: #4caf50;
+}
 @media only screen and (max-width: 768px) {
   .container {
     padding: 0px;
     grid-template-columns: repeat(auto-fit, minmax(100%, 2fr));
     gap: 5px;
+  }
+
+  .buyNowBtn {
+    width: 58%;
+  }
+  .chatBtn {
+    width: 40%;
+  }
+
+  .actionsContainer {
+    position: fixed;
+    width: 100vw;
+    bottom: 0rem;
+    left: 0rem;
+    z-index: 9999;
+    padding: 2.8rem 1rem 0 2.3rem;
   }
 }
