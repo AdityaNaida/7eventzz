@@ -1,0 +1,20 @@
+.nestedContainer {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+
+  padding: 1.5rem 0rem 1rem;
+
+  gap: 1rem;
+}
+
+.text {
+  color: #212121;
+
+  font-size: 1.4rem;
+  font-weight: 800;
+
+  padding: 2rem 0rem 0.7rem;
+
+  border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1);
+}

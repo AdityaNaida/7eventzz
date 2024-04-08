@@ -21,13 +21,15 @@ const SelectOptions: React.FC<Props> = ({
   return (
     <>
       <div className={style.container}>
-        <p className={style.heading}>{heading}</p>
+        <p className={style.heading}>
+          {heading}
+          {isAnimate && <span className={style.animate}>{isAnimate}</span>}
+        </p>
         <div>
           <button onClick={Bfnc} className={style.btn}>
             <Image src={img} alt={`${img} Image`} height={15} width={15} />
             {value}
           </button>
-          {isAnimate && <span className={style.animate}>{isAnimate}</span>}
         </div>
       </div>
     </>

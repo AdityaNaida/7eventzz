@@ -1,0 +1,82 @@
+.container {
+  height: auto;
+  width: 100%;
+}
+
+.nestedContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.nestedContainer div:first-child {
+  width: 60%;
+}
+.heading {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #008526;
+
+  margin-bottom: 0.5rem;
+
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+.heading > img {
+  height: 1.8rem;
+  width: 1.8rem;
+}
+
+.subText {
+  color: #212121;
+
+  font-size: 1.3em;
+  font-weight: 400;
+}
+
+.coupenBox {
+  width: 30%;
+
+  padding: 0.7rem;
+
+  background-color: #f0f4f7;
+  border-radius: 1rem;
+}
+
+.coupenCode {
+  color: #6d6d6d;
+
+  margin-bottom: 0.5rem;
+
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.termsConditions {
+  color: var(--website);
+
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.applyBox {
+  color: #008526;
+
+  padding: 1rem;
+
+  font-size: 1.5rem;
+  font-weight: 600;
+
+  text-align: center;
+  background-color: #00852615;
+  border-radius: 1rem;
+  cursor: pointer;
+
+  border: 0.2rem dashed rgba(0, 0, 0, 0.1);
+}

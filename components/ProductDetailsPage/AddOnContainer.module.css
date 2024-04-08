@@ -1,0 +1,182 @@
+.container {
+  position: fixed;
+  top: 150%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  height: auto;
+  width: 80%;
+
+  background-color: #fff;
+  border-radius: 2rem;
+  animation: fadeIn 0.5s ease 0s 1 forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    top: 150%;
+  }
+  to {
+    top: 50%;
+  }
+}
+.headingContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+
+  background-color: #f0f7f9;
+  border-radius: 2rem 2rem 0rem 0rem;
+}
+
+.heading {
+  color: #212121;
+
+  font-size: 2.5em;
+  font-weight: 600;
+}
+
+.closeBtn {
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+.items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15%, 2fr));
+  gap: 2rem;
+
+  height: 65vh;
+  width: 100%;
+
+  padding: 1rem 2rem;
+
+  background-color: #fff;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  transition: all ease 0.5s;
+}
+
+.items::-webkit-scrollbar {
+  width: 0.7rem;
+}
+
+.items::-webkit-scrollbar-thumb {
+  background-color: #2828281e;
+
+  border-radius: 1rem;
+}
+
+.pricing {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+
+  width: 100%;
+
+  padding: 2rem;
+}
+
+.allPrices {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 60%;
+}
+
+.priceText {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  font-size: 1.7rem;
+}
+
+.controllers {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.proceedBtn {
+  padding: 1rem 2.5rem;
+
+  color: #fff;
+
+  font-size: 2rem;
+  font-weight: 600;
+
+  background-color: var(--website);
+  border-radius: 1rem;
+}
+
+.skinBtn {
+  color: #212121;
+
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+@media only screen and (max-width: 1140px) {
+  .items {
+    grid-template-columns: repeat(auto-fit, minmax(20%, 2fr));
+  }
+}
+@media only screen and (max-width: 992px) {
+  .items {
+    grid-template-columns: repeat(auto-fit, minmax(30%, 2fr));
+  }
+  .allPrices {
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    height: 100vh;
+    width: 100%;
+
+    border-radius: 0rem;
+  }
+
+  .headingContainer {
+    border-radius: 0rem;
+  }
+
+  .items {
+    height: 62vh;
+  }
+
+  .pricing {
+    flex-wrap: wrap;
+  }
+
+  .allPrices,
+  .controllers {
+    width: 100%;
+  }
+
+  .controllers {
+    justify-content: flex-end;
+
+    margin-top: 1.3rem;
+  }
+
+  .priceText {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .proceedBtn {
+    width: 50%;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .items {
+    grid-template-columns: repeat(auto-fit, minmax(45%, 2fr));
+    gap: 1rem;
+  }
+}

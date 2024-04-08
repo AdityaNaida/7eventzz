@@ -30,7 +30,6 @@ const ModalContainer2: React.FC<Props> = ({
           <div className={style.occasionContent}>
             <div className={style.occasionHeading}>
               <p>
-                {heading}
                 {headingIcon === "" ? null : (
                   <Image
                     src={headingIcon}
@@ -39,6 +38,7 @@ const ModalContainer2: React.FC<Props> = ({
                     width={25}
                   />
                 )}
+                {heading}
               </p>
               <span>{subText}</span>
             </div>

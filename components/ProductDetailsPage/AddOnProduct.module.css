@@ -1,0 +1,110 @@
+.container {
+  height: auto;
+  width: 100%;
+  /* box-shadow: 0 2px 8px rgba(28, 28, 28, 0.08);
+  border: 1px solid #e8e8e8;
+  border-radius: 1rem; */
+}
+
+.imageContainer {
+  height: auto;
+  width: 100%;
+  border-radius: 1rem 1rem 0rem 0rem;
+}
+
+.imageContainer > img {
+  height: 100%;
+  width: 100%;
+  border-radius: 1rem 1rem 0rem 0rem;
+}
+
+.name {
+  padding: 0.5rem;
+
+  color: #212121;
+
+  font-size: 1.6rem;
+  font-weight: 400;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-wrap: nowrap;
+}
+
+.price {
+  padding: 0rem 0.5rem 0.5rem;
+
+  color: #000;
+
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.controller {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.5rem;
+}
+
+.btns {
+  display: flex;
+  align-items: center;
+}
+
+.controllerBtn {
+  height: 2.5rem;
+  width: 2.5rem;
+
+  font-size: 2rem;
+
+  text-align: center;
+  cursor: pointer;
+
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.count {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 2.5rem;
+  width: 4rem;
+
+  font-size: 1.7rem;
+  background-color: #f3f7f8;
+}
+
+.addBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: auto;
+
+  padding: 0.4rem 0.6rem;
+
+  font-size: 1.4rem;
+  font-family: inherit;
+  font-weight: 500;
+
+  cursor: pointer;
+  background-color: transparent;
+  border: 0.1rem solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  white-space: nowrap;
+}
+
+.added {
+  color: #4caf50;
+  border-color: #4caf50;
+}
+
+@media only screen and (max-width: 992px) {
+  .addBtn {
+    font-size: 1.2rem;
+  }
+}

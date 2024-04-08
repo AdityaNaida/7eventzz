@@ -3,6 +3,7 @@
 import moment from "moment-timezone";
 import Calendar from "react-calendar";
 import { useState } from "react";
+import Image from "next/image";
 //styles
 import style from "@/components/ProductDetailsPage/ProductController.module.css";
 import "react-calendar/dist/Calendar.css";
@@ -18,6 +19,11 @@ const ProductController: React.FC = () => {
   const [calendar, setCalendar] = useState<boolean>(false);
   const [textDate, setTextDate] = useState<string>("Select Date & Time");
   const [date, setDate] = useState<string>("");
+  const [timeSlots, setTimeSlots] = useState<boolean>(false);
+
+  const [activeTimeSlot, setActiveTimeSlot] = useState<number | null>(null);
+  const [timeChunk, setTimeChunk] = useState<string>("");
+
   const cityHandler = () => {
     setCity(!city);
   };
@@ -31,8 +37,36 @@ const ProductController: React.FC = () => {
     const data = new Date(JSON.parse(date));
     const indianTimezone = moment(data).tz("Asia/kolkata");
     const formateDate = indianTimezone.format("DD-MM-YYYY");
-    setTextDate(formateDate);
+    alert(`Your booking date is ${formateDate}`);
     setCalendar(false);
+    setTimeSlots(true);
+  };
+
+  const timeSlotsHandler = () => {
+    setTimeSlots(!timeSlots);
+  };
+  const handleTimeSlotClick = (buttonIndex: number) => {
+    setActiveTimeSlot(buttonIndex === activeTimeSlot ? null : buttonIndex);
+  };
+  const getTimeChunk = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const data = new Date(JSON.parse(date));
+    const indianTimezone = moment(data).tz("Asia/kolkata");
+    const formateDate = indianTimezone.format("DD-MM-YYYY");
+
+    setTextDate(`${formateDate} ${e.target.value}`);
+    setTimeChunk(e.target.value);
+  };
+
+  const timeSlotPrev = () => {
+    setCalendar(true);
+    setTimeSlots(false);
+  };
+  const timeSlotNext = () => {
+    setTimeSlots(false);
+  };
+
+  const timeSlotBlockerHandler = () => {
+    alert("Please select the timeslot!");
   };
   return (
     <>
@@ -43,11 +77,6 @@ const ProductController: React.FC = () => {
         img="/icons/red_location.svg"
         isAnimate="Select City"
       />
-      {city && (
-        <Modal offModal={cityHandler}>
-          <Location closeBtn={cityHandler} />
-        </Modal>
-      )}
       <SelectOptions
         heading="Select Date & Time"
         value={textDate}
@@ -55,6 +84,11 @@ const ProductController: React.FC = () => {
         img="/icons/red_calendar.svg"
         isAnimate=""
       />
+      {city && (
+        <Modal offModal={cityHandler}>
+          <Location closeBtn={cityHandler} />
+        </Modal>
+      )}
       {calendar && (
         <>
           <ModalContainer2
@@ -82,6 +116,216 @@ const ProductController: React.FC = () => {
             />
           </ModalContainer2>
         </>
+      )}
+
+      {timeSlots && (
+        <ModalContainer2
+          heading="Time Slot"
+          subText="Select event timing"
+          closeFunction={timeSlotsHandler}
+          headingIcon="/icons/schedule.webp"
+        >
+          <div className={style.timeSlotContainer}>
+            <label htmlFor="morning" className={style.timeSlots}>
+              <p className={style.timeText}>
+                <input
+                  type="radio"
+                  id="morning"
+                  name="timeslot"
+                  onClick={() => handleTimeSlotClick(1)}
+                />{" "}
+                Morning Delivery{" "}
+                <span className={style.delievryCharge}>₹200</span>
+              </p>
+              <Image
+                src={`/icons/${
+                  activeTimeSlot === 1 ? "chevron_up" : "chevron_down"
+                }.svg`}
+                alt="chevron image"
+                height={20}
+                width={20}
+              />
+            </label>
+            {activeTimeSlot === 1 && (
+              <div className={style.timeChunks}>
+                <label htmlFor="7amto9am" className={style.timeHourly}>
+                  <input
+                    type="radio"
+                    id="7amto9am"
+                    value="(07:00 AM - 09:00 AM)"
+                    name="hour"
+                    onChange={getTimeChunk}
+                  />
+                  07:00 AM - 09:00 AM
+                </label>
+                <label htmlFor="9amto11am" className={style.timeHourly}>
+                  <input
+                    type="radio"
+                    id="9amto11am"
+                    value="(09:00 AM - 11:00 AM)"
+                    name="hour"
+                    onChange={getTimeChunk}
+                  />
+                  09:00 AM - 11:00 AM
+                </label>
+                <label htmlFor="11amto1pm" className={style.timeHourly}>
+                  <input
+                    type="radio"
+                    id="11amto1pm"
+                    value="(11:00 AM - 01:00 PM)"
+                    name="hour"
+                    onChange={getTimeChunk}
+                  />
+                  11:00 AM - 01:00 PM
+                </label>
+              </div>
+            )}
+            <label htmlFor="afternoon" className={style.timeSlots}>
+              <p className={style.timeText}>
+                <input
+                  type="radio"
+                  id="afternoon"
+                  name="timeslot"
+                  onClick={() => handleTimeSlotClick(2)}
+                />{" "}
+                Afternoon Delivery{" "}
+                <span className={style.delievryCharge}>₹300</span>
+              </p>
+              <Image
+                src={`/icons/${
+                  activeTimeSlot === 2 ? "chevron_up" : "chevron_down"
+                }.svg`}
+                alt="chevron image"
+                height={20}
+                width={20}
+              />
+            </label>
+            {activeTimeSlot === 2 && (
+              <div className={style.timeChunks}>
+                <label htmlFor="1pmto3pm" className={style.timeHourly}>
+                  <input
+                    type="radio"
+                    id="1pmto3pm"
+                    value="(01:00 PM - 03:00 PM)"
+                    name="hour"
+                    onChange={getTimeChunk}
+                  />
+                  01:00 PM - 03:00 PM
+                </label>
+                <label htmlFor="3pmto5pm" className={style.timeHourly}>
+                  <input
+                    type="radio"
+                    id="3pmto5pm"
+                    value="(03:00 PM - 05:00 PM)"
+                    name="hour"
+                    onChange={getTimeChunk}
+                  />
+                  03:00 PM - 05:00 PM
+                </label>
+              </div>
+            )}
+
+            <label htmlFor="evening" className={style.timeSlots}>
+              <p className={style.timeText}>
+                <input
+                  type="radio"
+                  id="evening"
+                  name="timeslot"
+                  onClick={() => handleTimeSlotClick(3)}
+                />{" "}
+                Evening Delivery{" "}
+                <span className={style.delievryCharge}>₹400</span>
+              </p>
+              <Image
+                src={`/icons/${
+                  activeTimeSlot === 3 ? "chevron_up" : "chevron_down"
+                }.svg`}
+                alt="chevron image"
+                height={20}
+                width={20}
+              />
+            </label>
+            {activeTimeSlot === 3 && (
+              <div className={style.timeChunks}>
+                <label htmlFor="5pmto7pm" className={style.timeHourly}>
+                  <input
+                    type="radio"
+                    id="5pmto7pm"
+                    value="(05:00 PM - 07:00 PM)"
+                    name="hour"
+                    onChange={getTimeChunk}
+                  />
+                  05:00 PM - 07:00 PM
+                </label>
+                <label htmlFor="7pmto9pm" className={style.timeHourly}>
+                  <input
+                    type="radio"
+                    id="7pmto9pm"
+                    value="(07:00 PM - 09:00 PM)"
+                    name="hour"
+                    onChange={getTimeChunk}
+                  />
+                  07:00 PM - 09:00 PM
+                </label>
+                <label htmlFor="9pmto11pm" className={style.timeHourly}>
+                  <input
+                    type="radio"
+                    id="9pmto11pm"
+                    value="(09:00 PM - 11:00 PM)"
+                    name="hour"
+                    onChange={getTimeChunk}
+                  />
+                  09:00 PM - 11:00 PM
+                </label>
+              </div>
+            )}
+            <label htmlFor="midnight" className={style.timeSlots}>
+              <p className={style.timeText}>
+                <input
+                  type="radio"
+                  id="midnight"
+                  name="timeslot"
+                  onClick={() => handleTimeSlotClick(4)}
+                />{" "}
+                Mid Night Delivery{" "}
+                <span className={style.delievryCharge}>₹500</span>
+              </p>
+              <Image
+                src={`/icons/${
+                  activeTimeSlot === 4 ? "chevron_up" : "chevron_down"
+                }.svg`}
+                alt="chevron image"
+                height={20}
+                width={20}
+              />
+            </label>
+            {activeTimeSlot === 4 && (
+              <div className={style.timeChunks}>
+                <label htmlFor="11pmto1am" className={style.timeHourly}>
+                  <input
+                    type="radio"
+                    id="11pmto1am"
+                    value="(11:00 PM - 01:00 AM)"
+                    name="hour"
+                    onChange={getTimeChunk}
+                  />
+                  11:00 PM - 01:00 AM
+                </label>
+              </div>
+            )}
+          </div>
+          <StepController
+            isPrevBtn={true}
+            prevFnc={timeSlotPrev}
+            isPrevBtnValue="Prev"
+            stateComponent={timeChunk}
+            stateComponentValue=""
+            blockFnc={timeSlotBlockerHandler}
+            nextBtnValue="Next"
+            isNextIcon=""
+            nextFnc={timeSlotNext}
+          />
+        </ModalContainer2>
       )}
     </>
   );

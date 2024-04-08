@@ -1,11 +1,12 @@
 .container {
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
 }
 .heading {
+  position: relative;
   font-size: 1.6em;
   font-weight: 700;
   color: #212121;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
 }
 .heading + div {
   position: relative;
@@ -13,36 +14,36 @@
 .btn {
   display: flex;
   align-items: center;
-  width: 70%;
-  border-radius: 10px;
-  padding: 15px;
+  width: 100%;
+  border-radius: 1rem;
+  padding: 1.5rem;
   color: #212121;
   font-size: 1.5em;
   font-family: inherit;
   font-weight: 600;
   border: none;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
   cursor: pointer;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 0.1rem solid rgba(0, 0, 0, 0.2);
   background-color: transparent;
 }
 .btn > img {
-  height: 20px;
-  width: 20px;
+  height: 2rem;
+  width: 2rem;
   vertical-align: middle;
   margin-right: 0.5em;
 }
 .animate {
   position: absolute;
-  left: 72%;
+  left: 27%;
   white-space: nowrap;
   text-wrap: nowrap;
-  font-size: 1.2em;
-  padding: 7px 15px;
+  font-size: 0.7em;
+  padding: 0.5rem 1rem;
   background-color: var(--website);
   color: #fff;
-  border-radius: 10px;
-  bottom: 15px;
+  border-radius: 1rem;
+  bottom: 1.5rem;
   animation: upDown 12s linear 0s infinite forwards;
 }
 .animate::before {
@@ -50,32 +51,29 @@
   position: absolute;
   top: 50%;
   right: 100%;
-  margin-top: -5px;
-  border: 5px solid transparent;
+  margin-top: -0.5rem;
+  border: 0.5rem solid transparent;
   border-right-color: var(--website);
 }
 @keyframes upDown {
   0% {
-    bottom: 0px;
+    bottom: -0.5rem;
   }
   25% {
-    bottom: 20px;
+    bottom: 0.5rem;
   }
   50% {
-    bottom: 0px;
+    bottom: -0.5rem;
   }
   75% {
-    bottom: 20px;
+    bottom: 0.5rem;
   }
   100% {
-    bottom: 0px;
+    bottom: -0.5rem;
   }
 }
 
 @media only screen and (max-width: 576px) {
-  .btn {
-    width: 100%;
-  }
   .animate {
     display: none;
   }
