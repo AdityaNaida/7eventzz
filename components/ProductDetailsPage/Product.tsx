@@ -15,7 +15,7 @@ import AddOnContainer from "./AddOnContainer";
 
 const Product: React.FC = () => {
   const images = ["/pr1.webp", "/pr2.webp", "/pr3.webp"];
-  const [addOns, setAddOns] = useState<boolean>(true);
+  const [addOns, setAddOns] = useState<boolean>(false);
 
   const addOnHandler = () => {
     setAddOns(!addOns);
