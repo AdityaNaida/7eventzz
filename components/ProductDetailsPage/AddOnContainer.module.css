@@ -118,6 +118,28 @@
   font-size: 1.5rem;
   font-weight: 500;
 }
+
+.categories {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+
+  width: 100%;
+
+  padding: 1rem 2rem;
+
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  transition: all ease 0.5s;
+}
+
+.categories::-webkit-scrollbar {
+  display: none;
+}
+
+.categories button {
+  min-width: 10rem;
+}
 @media only screen and (max-width: 1140px) {
   .items {
     grid-template-columns: repeat(auto-fit, minmax(20%, 2fr));
@@ -142,10 +164,14 @@
 
   .headingContainer {
     border-radius: 0rem;
+    padding: 1rem 2rem;
   }
 
+  .heading {
+    font-size: 2rem;
+  }
   .items {
-    height: 62vh;
+    height: 65vh;
   }
 
   .pricing {

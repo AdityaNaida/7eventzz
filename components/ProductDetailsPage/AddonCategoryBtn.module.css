@@ -1,0 +1,31 @@
+.btn {
+  padding: 0.5rem 0rem;
+
+  color: #828282;
+
+  font-family: inherit;
+  font-size: 1.5rem;
+
+  background-color: transparent;
+  border: none;
+  border-bottom: 0.2rem solid #d6d1d1;
+  cursor: pointer;
+
+  transition: all ease 0.5s;
+}
+
+.btn:hover {
+  color: var(--website);
+
+  font-weight: 700;
+
+  border-color: var(--website);
+}
+
+.active {
+  color: var(--website);
+
+  font-weight: 700;
+
+  border-color: var(--website);
+}

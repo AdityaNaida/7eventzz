@@ -53,3 +53,42 @@
   font-size: 1.5rem;
   font-weight: 500;
 }
+
+.container {
+  margin: 3rem 0rem 1rem;
+}
+
+.txt {
+  color: #212121;
+  font-weight: 400;
+  font-size: 1.4rem;
+
+  text-align: center;
+}
+
+.whatsappBtn,
+.actionCallBtn {
+  display: inline-block;
+
+  width: 49%;
+
+  padding: 1rem 1.5rem;
+  margin-top: 1rem;
+
+  font-size: 1.4rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(28, 28, 28, 0.08);
+  border: 1px solid #e8e8e8;
+  border-radius: 1rem;
+}
+.whatsappBtn {
+  margin-right: 0.3rem;
+}
+.whatsappIcon {
+  height: 2rem;
+  width: 2rem;
+
+  margin-right: 0.5rem;
+
+  vertical-align: middle;
+}

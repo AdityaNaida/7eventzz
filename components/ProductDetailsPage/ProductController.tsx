@@ -4,6 +4,7 @@ import moment from "moment-timezone";
 import Calendar from "react-calendar";
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 //styles
 import style from "@/components/ProductDetailsPage/ProductController.module.css";
 import "react-calendar/dist/Calendar.css";
@@ -114,6 +115,36 @@ const ProductController: React.FC = () => {
               isNextIcon=""
               nextFnc={nextTimeSlot}
             />
+            <div className={style.container}>
+              <p className={style.txt}>
+                Need service today or unable to find preferred time or date?
+              </p>
+              <Link
+                href="https://wa.me/8240590169"
+                className={style.whatsappBtn}
+              >
+                <Image
+                  src="/icons/whatsapp.webp"
+                  alt="whatsapp icon"
+                  height={20}
+                  width={20}
+                  unoptimized
+                  className={style.whatsappIcon}
+                />
+                Whatsapp
+              </Link>
+              <Link href="tel:8240590169" className={style.actionCallBtn}>
+                <Image
+                  src="/icons/telephone.webp"
+                  alt="telephone icon"
+                  height={20}
+                  width={20}
+                  unoptimized
+                  className={style.whatsappIcon}
+                />
+                Call us
+              </Link>
+            </div>
           </ModalContainer2>
         </>
       )}

@@ -9,11 +9,17 @@ export default function DiscountOffers({
   subText,
   isApplyable,
   coupenCode,
+  isOffers,
+  numberOffers,
+  offersFnc,
 }: {
   heading: string;
   subText: string;
   isApplyable: boolean;
   coupenCode: string;
+  isOffers: boolean;
+  numberOffers: number;
+  offersFnc: any;
 }) {
   return (
     <>
@@ -34,12 +40,22 @@ export default function DiscountOffers({
             <p className={style.subText}>{subText}</p>
           </div>
           <div className={style.coupenBox}>
-            <p className={style.coupenCode}>Use Code {coupenCode}</p>
+            <p className={style.coupenCode}>
+              Use Code <b className={style.code}>{coupenCode}</b>
+            </p>
             <Link href="/" className={style.termsConditions}>
               View T&amp;C
             </Link>
           </div>
         </div>
+        {isOffers && (
+          <div className={style.offersBox}>
+            <button className={style.offersBtn} onClick={offersFnc}>
+              +{numberOffers} More Offers
+            </button>
+          </div>
+        )}
+
         {isApplyable && <div className={style.applyBox}>Apply</div>}
       </div>
     </>

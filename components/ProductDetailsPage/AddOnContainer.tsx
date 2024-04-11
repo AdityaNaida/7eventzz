@@ -4,6 +4,7 @@ import Link from "next/link";
 import style from "@/components/ProductDetailsPage/AddOnContainer.module.css";
 //components
 import AddOnProduct from "./AddOnProduct";
+import AddonCategoryBtn from "./AddonCategoryBtn";
 export default function AddOnContainer({ closeFnc }: { closeFnc: () => void }) {
   const addOnAPI = [
     {
@@ -50,6 +51,12 @@ export default function AddOnContainer({ closeFnc }: { closeFnc: () => void }) {
           <span className={style.closeBtn} onClick={closeFnc}>
             &#x2715;
           </span>
+        </div>
+        <div className={style.categories}>
+          <AddonCategoryBtn value="All" isActive={true} />
+          <AddonCategoryBtn value="Flowers" isActive={false} />
+          <AddonCategoryBtn value="Cakes" isActive={false} />
+          <AddonCategoryBtn value="Plats" isActive={false} />
         </div>
         <div className={style.items}>
           {addOnAPI.map((elem) => (

@@ -25,32 +25,15 @@ export default function ProductOffers({
   };
   return (
     <>
-      <div className={style.container}>
-        <div>
-          <p className={style.heading}>
-            <Image
-              src="/icons/percentage.svg"
-              alt="Percentage icon"
-              height={20}
-              width={20}
-            />
-            {heading}
-          </p>
-          <p className={style.subText}>{subText}</p>
-        </div>
-
-        <div className={style.coupenBox}>
-          <p className={style.coupenCode}>Use Code {codeText}</p>
-          <Link href="/" className={style.termsConditions}>
-            View T&amp;C
-          </Link>
-        </div>
-      </div>
-      <div className={style.moreOffers}>
-        <button className={style.moreOffersBtn} onClick={offersHandler}>
-          {offersText}
-        </button>
-      </div>
+      <DiscountOffers
+        heading="Get it for ₹700"
+        subText="10% off on your first Purchase"
+        coupenCode="newuser"
+        isApplyable={false}
+        isOffers={true}
+        offersFnc={offersHandler}
+        numberOffers={5}
+      />
       {offers && (
         <ModalContainer2
           heading="All Offers"
@@ -63,31 +46,46 @@ export default function ProductOffers({
               heading="Get it for ₹650"
               subText="10% off on your first Purchase"
               coupenCode="Eventzz10"
-              isApplyable={!false}
+              isApplyable={false}
+              isOffers={false}
+              offersFnc=""
+              numberOffers={0}
             />
             <DiscountOffers
               heading="Get it for ₹650"
               subText="10% off on your first Purchase"
               coupenCode="Eventzz10"
-              isApplyable={!false}
+              isApplyable={false}
+              isOffers={false}
+              offersFnc=""
+              numberOffers={0}
             />
             <DiscountOffers
               heading="Get it for ₹650"
               subText="10% off on your first Purchase"
               coupenCode="Eventzz10"
-              isApplyable={!false}
+              isApplyable={false}
+              isOffers={false}
+              offersFnc=""
+              numberOffers={0}
             />
             <DiscountOffers
               heading="Get it for ₹650"
               subText="10% off on your first Purchase"
               coupenCode="Eventzz10"
-              isApplyable={!false}
+              isApplyable={false}
+              isOffers={false}
+              offersFnc=""
+              numberOffers={0}
             />
             <DiscountOffers
               heading="Get it for ₹650"
               subText="10% off on your first Purchase"
               coupenCode="Eventzz10"
-              isApplyable={!false}
+              isApplyable={false}
+              isOffers={false}
+              offersFnc=""
+              numberOffers={0}
             />
           </div>
         </ModalContainer2>
