@@ -1,0 +1,38 @@
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  height: auto;
+  width: 100%;
+
+  list-style: none;
+  padding: 1rem 0rem;
+
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  transition: all ease 0.5s;
+}
+.container::-webkit-scrollbar {
+  display: none;
+}
+.image,
+.image img {
+  height: 9rem;
+  width: 9rem;
+
+  border-radius: 1rem;
+}
+
+.viewmoreBtn {
+  color: var(--website);
+
+  font-family: inherit;
+  font-size: 1.5rem;
+  white-space: nowrap;
+
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}

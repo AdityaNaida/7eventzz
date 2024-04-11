@@ -140,6 +140,26 @@
 
   margin-bottom: 1rem;
 }
+
+.extraText {
+  /* display: none; */
+  margin-bottom: 2rem;
+}
+.price {
+  color: #212121;
+
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.inclusionTxt {
+  color: #828282;
+
+  font-size: 1.4rem;
+  font-weight: 400;
+
+  cursor: pointer;
+}
 @keyframes fullBorder {
   from {
     width: 0%;
@@ -159,9 +179,20 @@
     width: 58%;
   }
   .chatBtn {
-    width: 40%;
+    height: auto;
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    padding: 0.5rem 2rem;
   }
 
+  .chatBtn img {
+    height: 3rem;
+    width: 3rem;
+    margin: 0;
+  }
   .actionsContainer {
     position: fixed;
     bottom: 0rem;
@@ -176,5 +207,9 @@
 
   .controls .btn {
     font-size: 1.2rem;
+  }
+
+  .chatBtn > span {
+    display: none;
   }
 }

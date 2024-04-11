@@ -1,0 +1,104 @@
+.container {
+  height: auto;
+  width: 100%;
+
+  padding: 1rem 0rem;
+
+  border-bottom: 0.1rem solid rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.5s ease 0s 1 forwards;
+}
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+.nameHolder {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.userImage {
+  height: 3rem;
+  width: 3rem;
+
+  opacity: 0.7;
+}
+
+.userName {
+  font-size: 1.5rem;
+}
+
+.verifiedHolder {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.verifiedIcon {
+  height: 1.5rem;
+  width: 1.5rem;
+
+  vertical-align: middle;
+}
+
+.reviewDate {
+  color: #212121;
+
+  font-size: 1.3rem;
+}
+
+.otherDetails {
+  height: auto;
+  width: 100%;
+  padding: 0rem 3rem;
+}
+.cityHolder {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.location {
+  display: flex;
+  align-items: center;
+
+  padding: 0.1rem 0.8rem;
+  margin: 0.3rem 0.3rem;
+
+  color: #000;
+  font-size: 1.3rem;
+  font-weight: 500;
+
+  background-color: #ffc1051a;
+  border-radius: 0.5rem;
+}
+.locationIcon {
+  height: 1rem;
+  width: 1rem;
+
+  margin-right: 0.3rem;
+
+  opacity: 0.8;
+}
+.star {
+  display: inline-block;
+
+  padding: 0.1rem 0.8rem;
+
+  color: #499b1f;
+  font-size: 1.3rem;
+  font-weight: 500;
+
+  background-color: #ecf9e5;
+  border-radius: 0.5rem;
+}
+
+.messsage {
+  padding: 0.1rem 0.8rem;
+
+  color: #212121;
+
+  font-size: 1.4rem;
+  font-weight: 400;
+}

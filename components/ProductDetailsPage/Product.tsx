@@ -1,6 +1,6 @@
 "use client";
 //libraries
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Image from "next/image";
 //style
 import style from "@/components/ProductDetailsPage/Product.module.css";
@@ -15,13 +15,15 @@ import AddOnContainer from "./AddOnContainer";
 import InclusionDetails from "./InclusionDetails";
 import BulletPoints from "./BulletPoints";
 import Faq from "../FAQ/Faq";
-import FaqWrapper from "../FAQ/FaqWrapper";
+import ReviewSection from "./ReviewSection";
 
 const Product: React.FC = () => {
   const images = ["/pr1.webp", "/pr2.webp", "/pr3.webp"];
   const [addOns, setAddOns] = useState<boolean>(false);
   const [inclusion, setInclusion] = useState<boolean>(true);
   const [fcd, setFcd] = useState<number | null>(1);
+
+  const inclusionArea = useRef<HTMLDivElement>(null);
 
   const addOnHandler = () => {
     setAddOns(!addOns);
@@ -35,6 +37,13 @@ const Product: React.FC = () => {
 
   const fcdHandler = (num: number) => {
     setFcd(num === fcd ? num : num);
+  };
+
+  const inclusionFollower = () => {
+    window.scrollTo({
+      top: inclusionArea.current?.offsetTop || 0,
+      behavior: "smooth",
+    });
   };
   return (
     <>
@@ -50,6 +59,12 @@ const Product: React.FC = () => {
             <ProductController />
           </ProductDetailsCard>
           <div className={style.actionsContainer}>
+            <div className={style.extraText}>
+              <p className={style.price}>₹770</p>
+              <span className={style.inclusionTxt} onClick={inclusionFollower}>
+                View Inclusion*
+              </span>
+            </div>
             <button className={style.chatBtn}>
               <Image
                 src="/icons/whatsapp-icon.svg"
@@ -57,8 +72,9 @@ const Product: React.FC = () => {
                 height={25}
                 width={25}
               />
-              Whatsapp
+              <span> Whatsapp</span>
             </button>
+
             <button className={style.buyNowBtn} onClick={addOnHandler}>
               <Image
                 src="/icons/white-cart-icon.svg"
@@ -78,7 +94,7 @@ const Product: React.FC = () => {
             />
           </ProductDetailsCard>
           <ProductDetailsCard>
-            <div className={style.inclusionExclusion}>
+            <div className={style.inclusionExclusion} ref={inclusionArea}>
               <button
                 className={`${style.btn} ${inclusion ? style.active : ""}`}
                 onClick={inclucionHandler}
@@ -222,6 +238,9 @@ const Product: React.FC = () => {
                 </BulletPoints>
               </InclusionDetails>
             )}
+          </ProductDetailsCard>
+          <ProductDetailsCard>
+            <ReviewSection />
           </ProductDetailsCard>
         </div>
       </div>
