@@ -160,18 +160,30 @@
     width: 100%;
 
     border-radius: 0rem;
+
+    transform: none;
+    top: 0rem;
+    left: 0rem;
+  }
+  @keyframes fadeIn {
+    from {
+      top: 150%;
+    }
+    to {
+      top: 0%;
+    }
   }
 
   .headingContainer {
     border-radius: 0rem;
-    padding: 1rem 2rem;
+    padding: 4rem 2rem 1rem;
   }
 
   .heading {
     font-size: 2rem;
   }
   .items {
-    height: 65vh;
+    height: 60vh;
   }
 
   .pricing {
