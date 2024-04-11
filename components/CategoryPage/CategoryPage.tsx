@@ -1,7 +1,7 @@
 //style
 import style from "@/components/CategoryPage/CategoryPage.module.css";
 //components
-import CategoryHeading from "../HomePage/CategoryHeading";
+import BigHeading from "./BigHeading";
 import CategoryList from "./CategoryList";
 import Sort from "./Sort";
 import QuickLinks from "./QuickLinks";
@@ -16,11 +16,7 @@ const CategoryPage: React.FC = () => {
     <>
       <div className={style.container}>
         <BreadCrumbs main="Category" subText="" />
-        <CategoryHeading
-          heading="Everyday Occasions"
-          text="Adding love & beauty to every occasion"
-          isBorder={true}
-        />
+        <BigHeading heading="Birthday Decoration at Home" />
         <CategoryList />
         <Sort />
         <QuickLinks />
