@@ -5,6 +5,8 @@
   left: 10px;
 }
 .container {
+  position: relative;
+
   height: auto;
   width: 100%;
 }
@@ -19,11 +21,182 @@
   border-radius: 1em;
   cursor: pointer;
 }
+
+.viewsimilarBtn {
+  position: absolute;
+  top: 92%;
+  left: 75%;
+
+  padding: 0.5rem 1.2rem;
+
+  font-family: inherit;
+  font-size: 1.4rem;
+  font-weight: 600;
+  white-space: nowrap;
+
+  background-color: #fff;
+  border: 0.1rem solid rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.viewsimilarBtn img {
+  height: 1.5rem;
+  width: 1.5rem;
+
+  vertical-align: middle;
+}
+
+.sidebar {
+  position: fixed;
+  right: 0;
+  z-index: 9;
+  height: 100vh;
+  width: 30%;
+
+  background-color: #fff;
+  animation: fadeIn 0.5s ease 0s 1 forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    right: -100%;
+  }
+  to {
+    right: 0%;
+  }
+}
+
+.closeBtn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+
+  font-size: 2.5rem;
+  border: 0.1rem solid rgba(0, 0, 0, 1);
+
+  padding: 0rem 0.7rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.sidebarHeading {
+  padding: 2rem;
+}
+
+.similarHeading {
+  color: #212121;
+
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.similarHeading img {
+  height: 2.5rem;
+  width: 2.5rem;
+
+  margin-right: 0.5rem;
+
+  vertical-align: middle;
+}
+
+.similarTxt {
+  color: #828282;
+
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.similarProducts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(32%, 2fr));
+  gap: 1.3rem;
+
+  height: 85vh;
+  width: 100%;
+
+  padding: 2rem;
+
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  transition: all ease 0.5s;
+}
+
+.similarProducts::-webkit-scrollbar {
+  width: 0.3rem;
+  background-color: #2828282f;
+  border-radius: 1rem;
+}
+.similarProducts::-webkit-scrollbar-thumb {
+  background-color: #000;
+  border-radius: 1rem;
+}
+@media only screen and (max-width: 1250px) {
+  .viewsimilarBtn {
+    top: 90%;
+    left: 70%;
+  }
+}
 @media only screen and (max-width: 997px) {
   .container_wrapper {
     top: 0px;
     left: 0px;
     position: relative;
+  }
+  .viewsimilarBtn {
+    top: 90%;
+    left: 65%;
+  }
+  .sidebar {
+    width: 45%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .viewsimilarBtn {
+    top: 92%;
+    left: 78%;
+  }
+
+  .sidebar {
+    bottom: 0rem;
+
+    height: auto;
+    width: 100%;
+  }
+
+  .similarProducts {
+    display: flex;
+    flex-wrap: nowrap;
+    grid-template-columns: none;
+
+    height: auto;
+  }
+
+  .similarProducts::-webkit-scrollbar {
+    display: none;
+  }
+
+  .similarProducts a {
+    min-width: 45%;
+  }
+
+  .closeBtn {
+    top: -12%;
+    right: 2%;
+
+    color: #fff;
+    border-color: #fff;
+    border-width: 0.3rem;
+  }
+  @keyframes fadeIn {
+    from {
+      right: 0%;
+      bottom: -150%;
+    }
+    to {
+      right: 0%;
+      bottom: 0%;
+    }
   }
 }
 @media only screen and (max-width: 576px) {
@@ -33,5 +206,10 @@
   }
   .mainImage img {
     border-radius: 0px;
+  }
+
+  .viewsimilarBtn {
+    top: 90%;
+    left: 3%;
   }
 }

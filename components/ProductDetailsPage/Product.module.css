@@ -7,6 +7,10 @@
   background-color: #fff;
   padding: 1rem;
 }
+.productImages {
+  height: auto;
+  width: 100%;
+}
 .details {
   height: auto;
   width: 100%;
