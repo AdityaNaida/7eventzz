@@ -142,7 +142,7 @@
 }
 
 .extraText {
-  /* display: none; */
+  display: none;
   margin-bottom: 2rem;
 }
 .price {
@@ -153,12 +153,29 @@
 }
 
 .inclusionTxt {
-  color: #828282;
+  color: #212121;
 
   font-size: 1.4rem;
-  font-weight: 400;
+  font-weight: 600;
 
   cursor: pointer;
+  text-decoration: underline;
+  white-space: nowrap;
+}
+.inclusionTxt > span {
+  color: var(--website);
+  font-weight: 900;
+}
+
+.offPrice {
+  color: #4caf50;
+  font-size: 1.2rem;
+}
+
+.beforePrice {
+  font-size: 1.4rem;
+  color: #828282;
+  text-decoration: line-through;
 }
 @keyframes fullBorder {
   from {
@@ -176,9 +193,9 @@
   }
 
   .buyNowBtn {
-    width: 58%;
+    width: 50%;
   }
-  .chatBtn {
+  /* .chatBtn {
     height: auto;
     width: 10%;
     display: flex;
@@ -186,7 +203,7 @@
     align-items: center;
     border-radius: 50%;
     padding: 0.5rem 2rem;
-  }
+  } */
 
   .chatBtn img {
     height: 3rem;
@@ -209,7 +226,11 @@
     font-size: 1.2rem;
   }
 
-  .chatBtn > span {
+  .chatBtn {
     display: none;
+  }
+
+  .extraText {
+    display: block;
   }
 }

@@ -75,6 +75,7 @@
 
 @media only screen and (max-width: 576px) {
   .animate {
-    display: none;
+    left: 36%;
+    animation: upDown 6s linear 0s infinite forwards;
   }
 }

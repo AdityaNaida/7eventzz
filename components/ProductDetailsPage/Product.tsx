@@ -60,9 +60,11 @@ const Product: React.FC = () => {
           </ProductDetailsCard>
           <div className={style.actionsContainer}>
             <div className={style.extraText}>
-              <p className={style.price}>₹770</p>
+              <p className={style.price}>
+                <span className={style.beforePrice}>₹2499</span> ₹1999
+              </p>
               <span className={style.inclusionTxt} onClick={inclusionFollower}>
-                View Inclusion*
+                View Package Inclusion<span>*</span>
               </span>
             </div>
             <button className={style.chatBtn}>

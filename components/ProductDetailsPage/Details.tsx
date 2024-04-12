@@ -23,7 +23,7 @@ const Details: React.FC = () => {
     <>
       <div className={style.container}>
         <ProductHeading heading="Chocolate Truffle Cake" />
-        <ProductPrice price="₹770" previousPrice="₹1000" discount="33% OFF" />
+        <ProductPrice price="₹1999" previousPrice="2499" discount="20% OFF" />
 
         <p className={style.text}>Pick an Upgrade</p>
         <div className={style.nestedContainer}>
