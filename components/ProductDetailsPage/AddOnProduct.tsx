@@ -46,12 +46,12 @@ export default function AddOnProduct({
 
         <div className={style.controller}>
           <div className={style.btns}>
-            <button onClick={increment} className={style.controllerBtn}>
-              &#43;
-            </button>
-            <span className={style.count}>{itemCount}</span>
             <button onClick={decrement} className={style.controllerBtn}>
               &#8722;
+            </button>
+            <span className={style.count}>{itemCount}</span>
+            <button onClick={increment} className={style.controllerBtn}>
+              &#43;
             </button>
           </div>
           <button

@@ -1,46 +1,9 @@
-.timeSlotContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-
-  width: 100%;
-}
-
-.timeSlots {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  color: #212121e3;
-  font-size: 1.7rem;
-  font-weight: 700;
-
-  padding: 1rem 0.5rem;
-
-  border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-}
-
-.timeSlots input[type="radio"],
-.timeHourly input[type="radio"] {
-  accent-color: var(--website);
-}
-
-.delievryCharge {
-  color: #4caf50;
-}
-
-.timeText {
-  display: flex;
-  gap: 1rem;
-}
-
 .timeChunks {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 
-  padding: 1rem 2rem;
+  padding: 0rem 2rem 1rem;
 }
 
 .timeHourly {
@@ -52,8 +15,11 @@
 
   font-size: 1.5rem;
   font-weight: 500;
+  cursor: pointer;
 }
-
+.timeHourly input[type="radio"] {
+  accent-color: var(--website);
+}
 .container {
   margin: 3rem 0rem 1rem;
 }
@@ -91,4 +57,169 @@
   margin-right: 0.5rem;
 
   vertical-align: middle;
+}
+
+.calendarSlider {
+  display: flex;
+  align-items: center;
+}
+
+.deliveryButtonContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20%, 2fr));
+  gap: 2rem;
+}
+
+.deliveryBtns {
+  font-family: inherit;
+  font-size: 1.4rem;
+  font-weight: 400;
+
+  padding: 1rem;
+
+  background-color: #fff;
+  border: 0.1rem solid rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+
+  border-radius: 1rem;
+}
+.deliveryBtns b {
+  font-weight: 700;
+}
+.activedeliveryBtns {
+  color: var(--website);
+  font-weight: 600;
+  background-color: #eca5b21f;
+  border-color: 0.1rem solid var(--website);
+}
+
+.buttonsWrapper {
+  padding: 1.5rem 0rem 1rem;
+}
+
+.timeTxt {
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+
+  margin-bottom: 1rem;
+}
+
+.nextStepControlls {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.disabled {
+  font-size: 1.9rem;
+  font-family: inherit;
+  font-weight: 600;
+
+  background-color: var(--website);
+  color: #fff;
+
+  padding: 0.5rem 2rem;
+
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+
+  opacity: 0.8;
+}
+
+.active {
+  font-size: 1.9rem;
+  font-family: inherit;
+  font-weight: 600;
+
+  background-color: var(--website);
+  color: #fff;
+
+  padding: 0.5rem 2rem;
+
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+.dayListWrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dayListWrapper > img {
+  height: 2rem;
+  width: 2rem;
+  cursor: pointer;
+}
+.dayList {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+
+  width: 90%;
+
+  padding-bottom: 1rem;
+
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  transition: all ease 0.5s;
+}
+
+.dayList::-webkit-scrollbar {
+  display: none;
+}
+
+.dayButton {
+  font-family: inherit;
+  font-size: 1.5rem;
+
+  background-color: transparent;
+  border: none;
+
+  height: auto;
+  min-width: 7rem;
+
+  padding: 0.3rem 0rem;
+  border-radius: 1rem;
+}
+
+.dayList .dayButton:first-child {
+  background-color: var(--website);
+
+  color: #fff;
+}
+
+.calendarBtn {
+  font-family: inherit;
+  font-size: 1.4rem;
+
+  height: auto;
+  min-width: 7rem;
+
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.calendarBtn > img {
+  height: 2rem;
+  width: 2rem;
+}
+
+.calendarBtn p > img {
+  height: 1rem;
+  width: 1rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .dayListWrapper > img {
+    display: none;
+  }
+
+  .dayList {
+    width: 100%;
+  }
 }

@@ -9,10 +9,11 @@
   gap: 5px;
 }
 .price {
-  font-size: 3.5em;
+  font-size: 3em;
   font-weight: 600;
   color: #212121;
   opacity: 0.8;
+  margin-right: 0.8rem;
 }
 .prevPrice {
   color: #a6a3a5;
@@ -20,7 +21,6 @@
   line-height: 160%;
   text-decoration: line-through;
   white-space: nowrap;
-  margin-left: 4px;
 }
 .discount {
   margin-left: 0.8rem;

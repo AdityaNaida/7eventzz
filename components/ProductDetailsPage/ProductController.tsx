@@ -2,7 +2,7 @@
 //libraries
 import moment from "moment-timezone";
 import Calendar from "react-calendar";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 //styles
@@ -14,16 +14,60 @@ import SelectOptions from "./SelectOptions";
 import Modal from "../Navbar/Modal";
 import Location from "../Navbar/Location";
 import ModalContainer2 from "./ModalContainer2";
-import StepController from "../Navbar/StepController";
 const ProductController: React.FC = () => {
   const [city, setCity] = useState<boolean>(false);
   const [calendar, setCalendar] = useState<boolean>(false);
   const [textDate, setTextDate] = useState<string>("Select Date & Time");
   const [date, setDate] = useState<string>("");
-  const [timeSlots, setTimeSlots] = useState<boolean>(false);
-
   const [activeTimeSlot, setActiveTimeSlot] = useState<number | null>(null);
   const [timeChunk, setTimeChunk] = useState<string>("");
+
+  const [currentDate, setCurrentDate] = useState<string>("");
+  const [upcomingDates, setUpcomingDates] = useState<
+    { date: Date; dayName: string }[]
+  >([]);
+
+  const calendarSlider = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    //formating data
+    const formatDate = (date: Date) => {
+      const dayName = date.toLocaleString("default", { weekday: "long" });
+      const day = date.getDate();
+      const month = date.toLocaleString("default", { month: "long" });
+      const year = date.getFullYear();
+      return `${dayName}, ${day} ${month} ${year}`;
+    };
+
+    //get current date
+    const today = new Date();
+    setCurrentDate(formatDate(today));
+
+    //get upcoming 7 days
+    const upcomingDays = [];
+    for (let i = 0; i <= 29; i++) {
+      const nextDate = new Date(today);
+      nextDate.setDate(today.getDate() + i);
+      const dayName = nextDate.toLocaleString("default", { weekday: "short" });
+      upcomingDays.push({ date: nextDate, dayName });
+    }
+
+    setUpcomingDates(upcomingDays);
+  }, []);
+
+  const handleDateClick = (date: Date) => {
+    // const formattedDate = `${date.toLocaleString("default", {
+    //   weekday: "long",
+    // })}, ${date.getDate()}${date.toLocaleString("default", {
+    //   month: "long",
+    // })} ${date.getFullYear()}`;
+    const formattedDate = `${date.getDate()}-${date.toLocaleString("default", {
+      month: "numeric",
+    })}-${date.getFullYear()}`;
+
+    setDate(formattedDate);
+    console.log(formattedDate);
+  };
 
   const cityHandler = () => {
     setCity(!city);
@@ -34,41 +78,41 @@ const ProductController: React.FC = () => {
   const calendarHandler = () => {
     setCalendar(!calendar);
   };
-  const nextTimeSlot = () => {
-    const data = new Date(JSON.parse(date));
-    const indianTimezone = moment(data).tz("Asia/kolkata");
-    const formateDate = indianTimezone.format("DD-MM-YYYY");
-    alert(`Your booking date is ${formateDate}`);
-    setCalendar(false);
-    setTimeSlots(true);
-  };
 
-  const timeSlotsHandler = () => {
-    setTimeSlots(!timeSlots);
-  };
   const handleTimeSlotClick = (buttonIndex: number) => {
-    setActiveTimeSlot(buttonIndex === activeTimeSlot ? null : buttonIndex);
+    setActiveTimeSlot(
+      buttonIndex === activeTimeSlot ? buttonIndex : buttonIndex
+    );
   };
   const getTimeChunk = (e: React.ChangeEvent<HTMLInputElement>) => {
     const data = new Date(JSON.parse(date));
     const indianTimezone = moment(data).tz("Asia/kolkata");
     const formateDate = indianTimezone.format("DD-MM-YYYY");
-
     setTextDate(`${formateDate} ${e.target.value}`);
     setTimeChunk(e.target.value);
   };
 
-  const timeSlotPrev = () => {
-    setCalendar(true);
-    setTimeSlots(false);
-  };
-  const timeSlotNext = () => {
-    setTimeSlots(false);
+  const timeBlockerHandler = () => {
+    alert("Please select the time");
   };
 
-  const timeSlotBlockerHandler = () => {
-    alert("Please select the timeslot!");
+  const nextClick = () => {
+    alert(`You booked on ${textDate}`);
+    setCalendar(false);
   };
+
+  const rightClick = () => {
+    if (calendarSlider.current) {
+      calendarSlider.current.scrollLeft += calendarSlider.current.offsetWidth;
+    }
+  };
+
+  const leftClick = () => {
+    if (calendarSlider.current) {
+      calendarSlider.current.scrollLeft -= calendarSlider.current.offsetWidth;
+    }
+  };
+
   return (
     <>
       <SelectOptions
@@ -98,85 +142,104 @@ const ProductController: React.FC = () => {
             subText="Select event date"
             headingIcon="/icons/caledar.svg"
           >
-            <Calendar
+            <div className={style.dayListWrapper}>
+              <Image
+                src="/icons/chevron-left.svg"
+                alt="Chevron left image"
+                height={20}
+                width={20}
+                onClick={leftClick}
+              />
+              <div className={style.dayList} ref={calendarSlider}>
+                {upcomingDates.map((item, index) => (
+                  <button
+                    key={index}
+                    onClick={() => handleDateClick(item.date)}
+                    className={style.dayButton}
+                  >
+                    <p>{` 
+                  ${item.date.toLocaleString("default", {
+                    month: "short",
+                  })}`}</p>
+                    <b>{` ${item.date.getDate()} `}</b>
+                    <p>{`${item.dayName}`}</p>
+                  </button>
+                ))}
+                <button className={style.calendarBtn}>
+                  <Image
+                    src="/icons/calendar-icon.svg"
+                    alt="calendar icon"
+                    height={20}
+                    width={20}
+                  />
+                  <p>
+                    Select Date{" "}
+                    <Image
+                      src="/icons/pencil.svg"
+                      alt="pencil icon"
+                      height={10}
+                      width={10}
+                    />
+                  </p>
+                </button>
+              </div>
+              <Image
+                src="/icons/chevron-right.svg"
+                alt="Chevron right image"
+                height={20}
+                width={20}
+                onClick={rightClick}
+              />
+            </div>
+            {/* <Calendar
               minDate={new Date()}
               className="calendarBox"
               view="month"
               onClickDay={(res) => setDate(JSON.stringify(res))}
-            />
-            <StepController
-              isPrevBtn={false}
-              prevFnc=""
-              isPrevBtnValue=""
-              stateComponent={date}
-              stateComponentValue=""
-              blockFnc={dateBlockerHandler}
-              nextBtnValue="Next"
-              isNextIcon=""
-              nextFnc={nextTimeSlot}
-            />
-            <div className={style.container}>
-              <p className={style.txt}>
-                Need service today or unable to find preferred time or date?
-              </p>
-              <Link
-                href="https://wa.me/8240590169"
-                className={style.whatsappBtn}
-              >
-                <Image
-                  src="/icons/whatsapp.webp"
-                  alt="whatsapp icon"
-                  height={20}
-                  width={20}
-                  unoptimized
-                  className={style.whatsappIcon}
-                />
-                Whatsapp
-              </Link>
-              <Link href="tel:8240590169" className={style.actionCallBtn}>
-                <Image
-                  src="/icons/telephone.webp"
-                  alt="telephone icon"
-                  height={20}
-                  width={20}
-                  unoptimized
-                  className={style.whatsappIcon}
-                />
-                Call us
-              </Link>
-            </div>
-          </ModalContainer2>
-        </>
-      )}
-
-      {timeSlots && (
-        <ModalContainer2
-          heading="Time Slot"
-          subText="Select event timing"
-          closeFunction={timeSlotsHandler}
-          headingIcon="/icons/schedule.webp"
-        >
-          <div className={style.timeSlotContainer}>
-            <label htmlFor="morning" className={style.timeSlots}>
-              <p className={style.timeText}>
-                <input
-                  type="radio"
-                  id="morning"
-                  name="timeslot"
-                  onClick={() => handleTimeSlotClick(1)}
-                />{" "}
-                Morning Delivery{" "}
-                <span className={style.delievryCharge}>₹200</span>
-              </p>
-              <Image
-                src={`/icons/${
-                  activeTimeSlot === 1 ? "chevron_up" : "chevron_down"
-                }.svg`}
-                alt="chevron image"
-                height={20}
-                width={20}
-              />
-            </label>
+            /> */}
+            {date && (
+              <div className={style.buttonsWrapper}>
+                <p className={style.timeTxt}>Select Time</p>
+                <div className={style.deliveryButtonContainer}>
+                  <button
+                    className={`${style.deliveryBtns} ${
+                      activeTimeSlot === 1 && style.activedeliveryBtns
+                    }`}
+                    onClick={() => handleTimeSlotClick(1)}
+                  >
+                    <p>Morning </p>
+                    <b>₹200</b>
+                  </button>
+                  <button
+                    className={`${style.deliveryBtns} ${
+                      activeTimeSlot === 2 && style.activedeliveryBtns
+                    }`}
+                    onClick={() => handleTimeSlotClick(2)}
+                  >
+                    <p>Afternoon </p>
+                    <b>₹300</b>
+                  </button>
+                  <button
+                    className={`${style.deliveryBtns} ${
+                      activeTimeSlot === 3 && style.activedeliveryBtns
+                    }`}
+                    onClick={() => handleTimeSlotClick(3)}
+                  >
+                    <p>Evening </p>
+                    <b>₹400</b>
+                  </button>
+                  <button
+                    className={`${style.deliveryBtns} ${
+                      activeTimeSlot === 4 && style.activedeliveryBtns
+                    }`}
+                    onClick={() => handleTimeSlotClick(4)}
+                  >
+                    <p>Mid Night </p>
+                    <b>₹500</b>
+                  </button>
+                </div>
+              </div>
+            )}
             {activeTimeSlot === 1 && (
               <div className={style.timeChunks}>
                 <label htmlFor="7amto9am" className={style.timeHourly}>
@@ -211,26 +274,6 @@ const ProductController: React.FC = () => {
                 </label>
               </div>
             )}
-            <label htmlFor="afternoon" className={style.timeSlots}>
-              <p className={style.timeText}>
-                <input
-                  type="radio"
-                  id="afternoon"
-                  name="timeslot"
-                  onClick={() => handleTimeSlotClick(2)}
-                />{" "}
-                Afternoon Delivery{" "}
-                <span className={style.delievryCharge}>₹300</span>
-              </p>
-              <Image
-                src={`/icons/${
-                  activeTimeSlot === 2 ? "chevron_up" : "chevron_down"
-                }.svg`}
-                alt="chevron image"
-                height={20}
-                width={20}
-              />
-            </label>
             {activeTimeSlot === 2 && (
               <div className={style.timeChunks}>
                 <label htmlFor="1pmto3pm" className={style.timeHourly}>
@@ -255,27 +298,6 @@ const ProductController: React.FC = () => {
                 </label>
               </div>
             )}
-
-            <label htmlFor="evening" className={style.timeSlots}>
-              <p className={style.timeText}>
-                <input
-                  type="radio"
-                  id="evening"
-                  name="timeslot"
-                  onClick={() => handleTimeSlotClick(3)}
-                />{" "}
-                Evening Delivery{" "}
-                <span className={style.delievryCharge}>₹400</span>
-              </p>
-              <Image
-                src={`/icons/${
-                  activeTimeSlot === 3 ? "chevron_up" : "chevron_down"
-                }.svg`}
-                alt="chevron image"
-                height={20}
-                width={20}
-              />
-            </label>
             {activeTimeSlot === 3 && (
               <div className={style.timeChunks}>
                 <label htmlFor="5pmto7pm" className={style.timeHourly}>
@@ -310,26 +332,6 @@ const ProductController: React.FC = () => {
                 </label>
               </div>
             )}
-            <label htmlFor="midnight" className={style.timeSlots}>
-              <p className={style.timeText}>
-                <input
-                  type="radio"
-                  id="midnight"
-                  name="timeslot"
-                  onClick={() => handleTimeSlotClick(4)}
-                />{" "}
-                Mid Night Delivery{" "}
-                <span className={style.delievryCharge}>₹500</span>
-              </p>
-              <Image
-                src={`/icons/${
-                  activeTimeSlot === 4 ? "chevron_up" : "chevron_down"
-                }.svg`}
-                alt="chevron image"
-                height={20}
-                width={20}
-              />
-            </label>
             {activeTimeSlot === 4 && (
               <div className={style.timeChunks}>
                 <label htmlFor="11pmto1am" className={style.timeHourly}>
@@ -344,19 +346,55 @@ const ProductController: React.FC = () => {
                 </label>
               </div>
             )}
-          </div>
-          <StepController
-            isPrevBtn={true}
-            prevFnc={timeSlotPrev}
-            isPrevBtnValue="Prev"
-            stateComponent={timeChunk}
-            stateComponentValue=""
-            blockFnc={timeSlotBlockerHandler}
-            nextBtnValue="Next"
-            isNextIcon=""
-            nextFnc={timeSlotNext}
-          />
-        </ModalContainer2>
+            {/* <div className={style.nextStepControlls}>
+              {date === "" && (
+                <button className={style.disabled} onClick={dateBlockerHandler}>
+                  Next
+                </button>
+              )}
+              {timeChunk === "" && (
+                <button className={style.disabled} onClick={timeBlockerHandler}>
+                  Next
+                </button>
+              )}
+              {timeChunk && (
+                <button className={style.active} onClick={nextClick}>
+                  Next
+                </button>
+              )}
+            </div> */}
+            <div className={style.container}>
+              <p className={style.txt}>
+                Need service today or unable to find preferred time or date?
+              </p>
+              <Link
+                href="https://wa.me/8240590169"
+                className={style.whatsappBtn}
+              >
+                <Image
+                  src="/icons/whatsapp.webp"
+                  alt="whatsapp icon"
+                  height={20}
+                  width={20}
+                  unoptimized
+                  className={style.whatsappIcon}
+                />
+                Whatsapp
+              </Link>
+              <Link href="tel:8240590169" className={style.actionCallBtn}>
+                <Image
+                  src="/icons/telephone.webp"
+                  alt="telephone icon"
+                  height={20}
+                  width={20}
+                  unoptimized
+                  className={style.whatsappIcon}
+                />
+                Call us
+              </Link>
+            </div>
+          </ModalContainer2>
+        </>
       )}
     </>
   );
