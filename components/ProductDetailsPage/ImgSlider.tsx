@@ -16,7 +16,7 @@ interface SliderImgProps {
   images: string[];
 }
 const ImgSlider: React.FC<SliderImgProps> = ({ images }) => {
-  const [similarPackages, setSimilarPackages] = useState<boolean>(true);
+  const [similarPackages, setSimilarPackages] = useState<boolean>(false);
   const settings: Settings = {
     dots: true,
     infinite: true,
