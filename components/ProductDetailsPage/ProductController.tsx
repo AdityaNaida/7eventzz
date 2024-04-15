@@ -17,8 +17,10 @@ import ModalContainer2 from "./ModalContainer2";
 const ProductController: React.FC = () => {
   const [city, setCity] = useState<boolean>(false);
   const [calendar, setCalendar] = useState<boolean>(false);
+  const [monthsCalendar, setMonthsCalendar] = useState<boolean>(false);
   const [textDate, setTextDate] = useState<string>("Select Date & Time");
   const [date, setDate] = useState<string>("");
+  const [rawDate, setRawDate] = useState<string>("");
   const [activeTimeSlot, setActiveTimeSlot] = useState<number | null>(null);
   const [timeChunk, setTimeChunk] = useState<string>("");
 
@@ -29,6 +31,7 @@ const ProductController: React.FC = () => {
 
   const calendarSlider = useRef<HTMLDivElement>(null);
 
+  //for 30 days calendar
   useEffect(() => {
     //formating data
     const formatDate = (date: Date) => {
@@ -54,19 +57,15 @@ const ProductController: React.FC = () => {
 
     setUpcomingDates(upcomingDays);
   }, []);
-
   const handleDateClick = (date: Date) => {
-    // const formattedDate = `${date.toLocaleString("default", {
-    //   weekday: "long",
-    // })}, ${date.getDate()}${date.toLocaleString("default", {
-    //   month: "long",
-    // })} ${date.getFullYear()}`;
+    setRawDate(JSON.stringify(date));
     const formattedDate = `${date.getDate()}-${date.toLocaleString("default", {
       month: "numeric",
     })}-${date.getFullYear()}`;
 
     setDate(formattedDate);
     console.log(formattedDate);
+    console.log(typeof JSON.stringify(date));
   };
 
   const cityHandler = () => {
@@ -85,11 +84,19 @@ const ProductController: React.FC = () => {
     );
   };
   const getTimeChunk = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const data = new Date(JSON.parse(date));
-    const indianTimezone = moment(data).tz("Asia/kolkata");
-    const formateDate = indianTimezone.format("DD-MM-YYYY");
-    setTextDate(`${formateDate} ${e.target.value}`);
-    setTimeChunk(e.target.value);
+    if (date.length > 10) {
+      const data = new Date(JSON.parse(date));
+      const indianTimezone = moment(data).tz("Asia/kolkata");
+      const formateDate = indianTimezone.format("DD-MM-YYYY");
+      setDate(formateDate);
+      setRawDate(formateDate);
+      setTextDate(`${formateDate} ${e.target.value}`);
+      setTimeChunk(e.target.value);
+    } else {
+      const formateDate = date;
+      setTextDate(`${formateDate} ${e.target.value}`);
+      setTimeChunk(e.target.value);
+    }
   };
 
   const timeBlockerHandler = () => {
@@ -97,7 +104,6 @@ const ProductController: React.FC = () => {
   };
 
   const nextClick = () => {
-    alert(`You booked on ${textDate}`);
     setCalendar(false);
   };
 
@@ -111,6 +117,10 @@ const ProductController: React.FC = () => {
     if (calendarSlider.current) {
       calendarSlider.current.scrollLeft -= calendarSlider.current.offsetWidth;
     }
+  };
+
+  const monthsCalendarHandler = () => {
+    setMonthsCalendar(!monthsCalendar);
   };
 
   return (
@@ -138,8 +148,8 @@ const ProductController: React.FC = () => {
         <>
           <ModalContainer2
             closeFunction={calendarHandler}
-            heading="Event Date"
-            subText="Select event date"
+            heading="Select Date & Time"
+            subText="Set Event Date"
             headingIcon="/icons/caledar.svg"
           >
             <div className={style.dayListWrapper}>
@@ -151,21 +161,43 @@ const ProductController: React.FC = () => {
                 onClick={leftClick}
               />
               <div className={style.dayList} ref={calendarSlider}>
-                {upcomingDates.map((item, index) => (
+                {upcomingDates.slice(0, 1).map((item, index) => (
                   <button
                     key={index}
                     onClick={() => handleDateClick(item.date)}
-                    className={style.dayButton}
+                    className={`${style.dayButton} ${
+                      rawDate === JSON.stringify(item.date) &&
+                      style.activedeliveryBtns
+                    } `}
                   >
-                    <p>{` 
-                  ${item.date.toLocaleString("default", {
-                    month: "short",
-                  })}`}</p>
+                    <p>Today</p>
                     <b>{` ${item.date.getDate()} `}</b>
                     <p>{`${item.dayName}`}</p>
                   </button>
                 ))}
-                <button className={style.calendarBtn}>
+                {upcomingDates
+                  .slice(1, upcomingDates.length)
+                  .map((item, index) => (
+                    <button
+                      key={index}
+                      onClick={() => handleDateClick(item.date)}
+                      className={`${style.dayButton} ${
+                        rawDate === JSON.stringify(item.date) &&
+                        style.activedeliveryBtns
+                      }`}
+                    >
+                      <p>{` 
+                  ${item.date.toLocaleString("default", {
+                    month: "short",
+                  })}`}</p>
+                      <b>{` ${item.date.getDate()} `}</b>
+                      <p>{`${item.dayName}`}</p>
+                    </button>
+                  ))}
+                <button
+                  className={style.calendarBtn}
+                  onClick={monthsCalendarHandler}
+                >
                   <Image
                     src="/icons/calendar-icon.svg"
                     alt="calendar icon"
@@ -191,15 +223,10 @@ const ProductController: React.FC = () => {
                 onClick={rightClick}
               />
             </div>
-            {/* <Calendar
-              minDate={new Date()}
-              className="calendarBox"
-              view="month"
-              onClickDay={(res) => setDate(JSON.stringify(res))}
-            /> */}
+
             {date && (
               <div className={style.buttonsWrapper}>
-                <p className={style.timeTxt}>Select Time</p>
+                <p className={style.timeTxt}>Select Your Prefer Time</p>
                 <div className={style.deliveryButtonContainer}>
                   <button
                     className={`${style.deliveryBtns} ${
@@ -346,23 +373,24 @@ const ProductController: React.FC = () => {
                 </label>
               </div>
             )}
-            {/* <div className={style.nextStepControlls}>
+            <div className={style.nextStepControlls}>
               {date === "" && (
                 <button className={style.disabled} onClick={dateBlockerHandler}>
-                  Next
+                  Continue
                 </button>
               )}
-              {timeChunk === "" && (
+
+              {date.length > 0 && timeChunk === "" && (
                 <button className={style.disabled} onClick={timeBlockerHandler}>
-                  Next
+                  Continue
                 </button>
               )}
-              {timeChunk && (
+              {date.length > 0 && timeChunk.length > 0 && (
                 <button className={style.active} onClick={nextClick}>
-                  Next
+                  Continue
                 </button>
               )}
-            </div> */}
+            </div>
             <div className={style.container}>
               <p className={style.txt}>
                 Need service today or unable to find preferred time or date?
@@ -395,6 +423,40 @@ const ProductController: React.FC = () => {
             </div>
           </ModalContainer2>
         </>
+      )}
+
+      {monthsCalendar && (
+        <div className={style.nestedCalendar}>
+          <div className={style.backdrop} onClick={monthsCalendarHandler}></div>
+          <div className={style.reactCalendar}>
+            <button
+              className={style.closeMonths}
+              onClick={monthsCalendarHandler}
+            >
+              &#x2715;
+            </button>
+            <Calendar
+              minDate={new Date()}
+              className="calendarBox"
+              view="month"
+              onClickDay={(res) => setDate(JSON.stringify(res))}
+            />
+            <div className={style.monthsController}>
+              {date ? (
+                <button
+                  className={style.active}
+                  onClick={monthsCalendarHandler}
+                >
+                  Proceed
+                </button>
+              ) : (
+                <button className={style.disabled} onClick={dateBlockerHandler}>
+                  Proceed
+                </button>
+              )}
+            </div>
+          </div>
+        </div>
       )}
     </>
   );

@@ -36,3 +36,65 @@
   border: none;
   cursor: pointer;
 }
+.count {
+  color: #fff;
+
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+.nestedImages {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  height: auto;
+  width: 30%;
+}
+
+.nestedImages img {
+  height: auto;
+  width: 100%;
+  border-radius: 1rem;
+}
+.nestedImageHeading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 1rem;
+}
+
+.closeModal {
+  font-size: 2rem;
+
+  padding: 0.5rem 1rem;
+
+  border-radius: 50%;
+  border: none;
+}
+@media only screen and (max-width: 1250px) {
+  .nestedImages {
+    width: 40%;
+  }
+}
+@media only screen and (max-width: 1140px) {
+  .nestedImages {
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .nestedImages {
+    width: 60%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .nestedImages {
+    width: 70%;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .nestedImages {
+    width: 80%;
+  }
+}

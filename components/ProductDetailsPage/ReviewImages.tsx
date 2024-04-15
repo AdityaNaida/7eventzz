@@ -7,6 +7,8 @@ import Image from "next/image";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import style from "@/components/ProductDetailsPage/ReviewImages.module.css";
+//components
+import Modal from "../Navbar/Modal";
 //props
 interface Image {
   url: string;
@@ -28,7 +30,7 @@ const ReviewImages: React.FC<ImageListProps> = ({ images, applyFunction }) => {
     }
   };
   const closePopup = () => {
-    setModalIsOpen(false);
+    setModalIsOpen(!modalIsOpen);
   };
   const settings: Settings = {
     dots: false,
@@ -36,6 +38,9 @@ const ReviewImages: React.FC<ImageListProps> = ({ images, applyFunction }) => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    afterChange: (index: number) => {
+      setCurrentImage(index);
+    },
   };
   return (
     <>
@@ -55,8 +60,39 @@ const ReviewImages: React.FC<ImageListProps> = ({ images, applyFunction }) => {
             />
           </li>
         ))}
-        <button className={style.viewmoreBtn}>+View More</button>
+        <button className={style.viewmoreBtn} onClick={closePopup}>
+          +View More
+        </button>
       </ul>
+
+      {modalIsOpen && (
+        <Modal offModal={closePopup}>
+          <div className={style.nestedImages}>
+            <div className={style.nestedImageHeading}>
+              <p className={style.count}>
+                {currentImage + 1} / {images.length}
+              </p>
+
+              <button className={style.closeModal} onClick={closePopup}>
+                &#x2715;
+              </button>
+            </div>
+
+            <Slider {...settings}>
+              {images.map((elem) => (
+                <Image
+                  src={elem.url}
+                  alt={elem.alt}
+                  height={50}
+                  width={50}
+                  unoptimized
+                  key={Math.random()}
+                />
+              ))}
+            </Slider>
+          </div>
+        </Modal>
+      )}
     </>
   );
 };

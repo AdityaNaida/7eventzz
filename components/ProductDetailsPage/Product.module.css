@@ -19,7 +19,7 @@
   position: fixed;
   bottom: 0;
   right: 0;
-  z-index: 2;
+  z-index: 4;
 
   height: auto;
   width: 50%;
@@ -223,7 +223,7 @@
 
     width: 100vw;
 
-    padding: 2.8rem 1rem 0 2.3rem;
+    padding: 0.8rem 1rem 0 2.3rem;
     margin-bottom: 0rem;
   }
 

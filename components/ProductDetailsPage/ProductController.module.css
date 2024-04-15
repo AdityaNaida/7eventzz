@@ -87,10 +87,10 @@
   font-weight: 700;
 }
 .activedeliveryBtns {
-  color: var(--website);
-  font-weight: 600;
-  background-color: #eca5b21f;
-  border-color: 0.1rem solid var(--website);
+  color: var(--website) !important;
+  font-weight: 600 !important;
+  background-color: #eca5b21f !important;
+  border: 0.1rem solid var(--website) !important;
 }
 
 .buttonsWrapper {
@@ -103,11 +103,6 @@
   text-align: center;
 
   margin-bottom: 1rem;
-}
-
-.nextStepControlls {
-  display: flex;
-  justify-content: flex-end;
 }
 
 .disabled {
@@ -146,6 +141,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  padding-bottom: 1rem;
+
+  border-bottom: 0.1rem solid var(--website);
 }
 
 .dayListWrapper > img {
@@ -184,6 +183,7 @@
 
   padding: 0.3rem 0rem;
   border-radius: 1rem;
+  cursor: pointer;
 }
 
 .dayList .dayButton:first-child {
@@ -214,12 +214,118 @@
   width: 1rem;
 }
 
+.nestedCalendar {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+  width: 100%;
+
+  z-index: 999;
+}
+
+.reactCalendar {
+  position: relative;
+  z-index: 10;
+
+  width: 40%;
+
+  border-radius: 2rem !important;
+  background-color: #fff;
+
+  padding: 0rem 2rem 2rem;
+}
+
+.backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  height: 100%;
+  width: 100%;
+
+  background-color: rgba(0, 0, 0, 0.6);
+
+  z-index: 9;
+}
+
+.closeMonths {
+  position: absolute;
+  right: 0;
+  top: -5rem;
+
+  font-size: 2.5rem;
+
+  padding: 0.5rem 1rem;
+
+  border: none;
+  border-radius: 50%;
+
+  cursor: pointer;
+}
+
+.monthsController {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nextStepControlls {
+  width: 100%;
+}
+
+.nextStepControlls button {
+  position: relative;
+
+  width: 100%;
+
+  padding: 1rem 2rem;
+}
+
+.nextStepControlls button::before {
+  content: "";
+  position: absolute;
+  top: -0.4rem;
+  left: -0.2rem;
+
+  height: 5rem;
+  width: 10%;
+
+  transform: rotate(10deg);
+
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0), #ffffff65);
+  animation: buttonAnimation 2.5s ease 0s infinite forwards;
+}
+
+@keyframes buttonAnimation {
+  from {
+    left: 0%;
+  }
+  to {
+    left: 91%;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .reactCalendar {
+    width: 50%;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .dayListWrapper > img {
     display: none;
   }
 
-  .dayList {
+  .dayList,
+  .reactCalendar {
     width: 100%;
+  }
+
+  .closeMonths {
+    right: 1rem;
   }
 }
