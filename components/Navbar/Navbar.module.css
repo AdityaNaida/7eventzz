@@ -15,13 +15,11 @@
   margin-right: 1.5em;
   display: flex;
 }
-.logo a {
-  display: inline;
-}
-.logo a > img {
+
+/* .logo a > img {
   height: auto;
   width: 30%;
-}
+} */
 .navbarLinks {
   display: flex;
   align-items: center;

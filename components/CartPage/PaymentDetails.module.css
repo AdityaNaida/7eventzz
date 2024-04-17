@@ -1,0 +1,88 @@
+.priceDetailsContainer {
+  margin: 1em 0em;
+  height: auto;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  border-radius: 5px;
+}
+.priceDetailsContainer > h4 {
+  font: 500;
+  font-size: 2em;
+  color: #000;
+}
+.priceDetailsContainer > p {
+  font-weight: 400;
+  font-size: 1.6em;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0.9em 0em;
+}
+.priceDetailsContainer > p:nth-child(5) {
+  color: #0f9c0d;
+  padding-top: 10px;
+  border-top: 2px dashed rgba(0, 0, 0, 0.2);
+}
+.priceDetailsContainer > p:last-child {
+  margin: 1em 0em;
+  padding: 7px 0px;
+  border-top: 2px dashed rgba(0, 0, 0, 0.2);
+}
+
+.proceedToBuyContainer {
+  position: relative;
+  width: 100%;
+  padding: 10px;
+  height: auto;
+  background-color: var(--white);
+  z-index: 9;
+}
+.proceedToBuyContainer > a {
+  position: relative;
+  padding: 10px 15px;
+  display: block;
+  width: 100%;
+  background-color: #0f0d19;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1.7em;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+}
+.proceedToBuyContainer > a::before {
+  content: "";
+  height: 100%;
+  width: 5%;
+  background-color: #f8dfba5e;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  transform: rotate(3deg);
+  animation: buyshadow 2s ease-in-out 0s infinite forwards;
+}
+.proceedToBuyContainer > a > IMG {
+  height: 30px;
+  width: 30px;
+  vertical-align: middle;
+  margin-left: 0.2em;
+}
+@keyframes buyshadow {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: 95%;
+  }
+}
+
+@media only screen and (max-width: 997px) {
+  .proceedToBuyContainer {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+  }
+}

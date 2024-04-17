@@ -1,0 +1,108 @@
+.stepsContainer {
+  height: auto;
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.stepsContainer > p {
+  font-size: 2em;
+  font-weight: 500;
+  color: #000;
+}
+.stepsCount {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  padding: 10px 0px;
+}
+.stepsRuler {
+  position: absolute;
+  height: 1px;
+  width: 98%;
+  background-color: #867b7b4b;
+  top: 40%;
+  right: 0px;
+}
+.filler {
+  height: 1px;
+  width: 0%;
+  background-color: #32c780;
+  animation: fillerMove 2s ease 0s 1 forwards;
+}
+@keyframes fillerMove {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 60%;
+  }
+}
+.stepBox {
+  position: relative;
+  z-index: 2;
+}
+.stepBox:last-child {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.stepBox > span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: #ccc;
+  color: #fff;
+  font-weight: 400;
+  font-size: 2em;
+}
+.stepBox > span.activeStep {
+  background-color: #32c780;
+  color: #f8dfba;
+  animation: drop 1s ease 0s 1 forwards;
+}
+@keyframes drop {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.stepBox > span.activeStep2 {
+  animation: colorChange 1s ease 1s 1 forwards;
+}
+@keyframes colorChange {
+  0% {
+    background-color: #ccc;
+    color: #fff;
+  }
+  100% {
+    background-color: #32c780;
+    color: #f8dfba;
+  }
+}
+.stepBox > p {
+  font-weight: 400;
+  font-size: 1.5em;
+  color: #282828;
+  text-align: right;
+}
+
+@media only screen and (max-width: 600px) {
+  .stepsContainer > p {
+    display: none;
+  }
+  .stepsContainer {
+    justify-content: center;
+  }
+  .stepsCount {
+    width: 100%;
+  }
+}

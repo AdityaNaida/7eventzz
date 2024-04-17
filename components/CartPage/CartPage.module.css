@@ -1,0 +1,30 @@
+.container {
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.product {
+  width: 65%;
+  height: auto;
+  padding: 10px;
+}
+.payment {
+  height: auto;
+  padding: 10px;
+  width: 33%;
+}
+
+@media only screen and (max-width: 997px) {
+  .container {
+    flex-wrap: wrap;
+  }
+  .product,
+  .payment {
+    width: 100%;
+    padding: 0px;
+  }
+}
+@media only screen and (max-width: 767px) {
+}

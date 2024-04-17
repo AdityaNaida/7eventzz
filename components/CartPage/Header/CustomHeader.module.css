@@ -1,0 +1,73 @@
+.container {
+  height: auto;
+  width: 100%;
+
+  border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  max-width: 1200px;
+
+  padding: 2rem 1rem;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 4em;
+  font-weight: 600;
+  color: var(--website);
+}
+
+.text {
+  color: #212121;
+
+  font-size: 1.5rem;
+  font-weight: 600;
+
+  margin-bottom: 1rem;
+}
+
+.whatsappBtn {
+  margin-right: 1.5rem;
+
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #212121;
+
+  border-radius: 1rem;
+}
+
+.whatsappBtn > img {
+  height: 2rem;
+  width: 2rem;
+
+  vertical-align: middle;
+}
+
+@media only screen and (max-width: 1250px) {
+  .navbar {
+    max-width: 1140px;
+  }
+}
+@media only screen and (max-width: 1140px) {
+  .navbar {
+    max-width: 960px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .navbar {
+    max-width: 720px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar {
+    max-width: 540px;
+    padding: 1rem;
+  }
+}

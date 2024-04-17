@@ -1,0 +1,51 @@
+.container {
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+  gap: 10px;
+}
+
+.container > img {
+  height: auto;
+  width: 10%;
+}
+.container > h1 {
+  font-size: 3em;
+  font-weight: 600;
+  color: #1c1c1c;
+  opacity: 0.7;
+}
+.container > p {
+  font-size: 1.5em;
+  font-weight: 400;
+  color: #000000;
+  text-align: center;
+}
+.container > a {
+  color: #fff;
+  border-radius: 30px;
+  background-image: linear-gradient(90deg, #ff8889 0, #ff6769 50%, #ff8889);
+  font-size: 1.6em;
+  padding: 10px 30px;
+  text-align: center;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  border: none;
+  cursor: pointer;
+  background-size: 200% auto;
+  margin-top: 2em;
+}
+
+@media only screen and (max-width: 600px) {
+  .container > img {
+    width: 40%;
+  }
+  .container > a {
+    margin-top: 1em;
+  }
+}

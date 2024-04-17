@@ -83,10 +83,10 @@ export default function AddOnContainer({ closeFnc }: { closeFnc: () => void }) {
             </p>
           </div>
           <div className={style.controllers}>
-            <Link href="/" className={style.skinBtn}>
+            <Link href="/cart" className={style.skinBtn}>
               Skip
             </Link>
-            <Link href="/" className={style.proceedBtn}>
+            <Link href="/cart" className={style.proceedBtn}>
               Proceed
             </Link>
           </div>

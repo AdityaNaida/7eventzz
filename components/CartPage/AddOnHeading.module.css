@@ -1,0 +1,28 @@
+.heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.heading > p {
+  font-weight: 500;
+  font-size: 1.8em;
+  color: #0d1619;
+  text-wrap: nowrap;
+}
+.heading > button {
+  padding: 10px;
+  background: #0d1619;
+  color: #fff;
+  font-weight: 400;
+  font-size: 1.5em;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-family: inherit;
+}
+@media only screen and (max-width: 767px) {
+  .heading > button {
+    padding: 5px 10px;
+  }
+}

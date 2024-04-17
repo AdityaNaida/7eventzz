@@ -1,0 +1,15 @@
+.button {
+  padding: 10px 20px;
+  font-size: 1.5em;
+  font-weight: 500;
+  color: var(--black);
+  border: none;
+  border-bottom: 2px solid var(--white);
+  transition: all 0.5s ease;
+  cursor: pointer;
+  background-color: transparent;
+  font-family: inherit;
+}
+.button:hover {
+  border-color: #0d1619;
+}

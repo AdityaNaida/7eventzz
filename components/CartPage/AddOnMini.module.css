@@ -1,0 +1,51 @@
+.container {
+  height: auto;
+  border-radius: 1em;
+  padding-bottom: 10px;
+  min-width: 120px;
+}
+.container > img {
+  height: 100px;
+  width: 100%;
+  border-radius: 10px 10px 0px 0px;
+  margin-bottom: 0.5em;
+}
+.container > p {
+  font-size: 1.5em;
+  color: #0d1619;
+  font-weight: 500;
+  padding: 0 10px;
+  display: block;
+  overflow: hidden;
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
+}
+
+.container > button {
+  color: #fff;
+  font-weight: 400;
+  font-size: 1.2em;
+  font-family: inherit;
+  padding: 2px 8px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  margin: 1em 0.5em;
+}
+.container > button.add {
+  background-color: #0d1619;
+}
+.container > button.added {
+  background-color: #32c780;
+}
+.container > button + span {
+  font-size: 1.4em;
+  font-weight: 400;
+  color: black;
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    min-width: 100px;
+  }
+}

@@ -1,0 +1,224 @@
+.container {
+  height: auto;
+  width: 100%;
+  /* box-shadow: 0 0 5.3px rgba(0, 0, 0, 0.028), 0 0 17.9px rgba(0, 0, 0, 0.042),
+    0 0 80px rgba(0, 0, 0, 0.07); */
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin-bottom: 0.5em;
+}
+.heading {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+.heading > p {
+  font-weight: 500;
+  font-size: 1.9em;
+  color: #0d1619;
+}
+.heading > img {
+  height: 25px;
+  width: 25px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.productContainer {
+  height: auto;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 5px 5px 0 0;
+}
+.productContainer > img {
+  height: 200px;
+  width: 200px;
+  border-radius: 5px;
+}
+.ProductDetails {
+  width: 80%;
+  padding: 10px;
+  height: auto;
+}
+.pHeading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.pHeading > h1 {
+  font-weight: 500;
+  font-size: 2em;
+  color: #000;
+}
+.pHeading > img {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+.Additions {
+  color: #0d1619;
+  font-weight: 600;
+  font-size: 1.8em;
+}
+
+.detailsHolder {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(47%, 2fr));
+  gap: 20px;
+}
+
+.date {
+  font-size: 1.5em;
+  font-weight: 500;
+  margin: 0.5em 0em;
+  color: #0d1619;
+}
+.date > span {
+  font-weight: 600;
+  margin-left: 0.3em;
+}
+
+.bookingDate {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  font-size: 1.5em;
+  font-weight: 500;
+  color: #0d1619;
+  margin: 0.5em 0em;
+}
+.bookingDate > img {
+  height: 25px;
+  width: 25px;
+  margin-right: 0.5em;
+}
+.bookingDate > div > span {
+  font-weight: 600;
+  margin-left: 0.5em;
+}
+
+.bookingDate ~ span {
+  font-weight: 400;
+  font-size: 1.3em;
+  font-family: inherit;
+  color: #000;
+  background-color: #fff;
+  width: 100%;
+  padding: 10px;
+  display: block;
+  margin-bottom: 0.5em;
+  border-radius: 10px;
+}
+.bookingDate ~ p {
+  font-size: 1.4em;
+  font-weight: 600;
+  color: #0d1619;
+  margin: 1em 0em 0.3em;
+}
+
+.instructionsBox {
+  width: 100%;
+}
+.instructionsBox > button {
+  background-color: transparent;
+  border: none;
+  color: #0d1619;
+  font-size: 1.5em;
+  font-weight: 500;
+  font-family: inherit;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 1em 0em;
+}
+.instructionsBox > button > img {
+  height: 20px;
+  width: 20px;
+  vertical-align: middle;
+}
+.instructionsBox > div > span {
+  font-size: 1.3em;
+  font-weight: 400;
+  color: var(--black);
+}
+.ammount {
+  display: flex;
+  align-items: center;
+  margin-top: 1em;
+}
+.ammount > button {
+  color: #fff;
+  background-color: #0d1619;
+  font-weight: 400;
+  font-size: 1.5em;
+  font-family: inherit;
+  padding: 1px 6px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.ammount > span {
+  padding: 1px 6px;
+  background-color: #ebebeb;
+  text-align: center;
+  font-weight: 400;
+  font-size: 1.4em;
+  font-family: inherit;
+  color: #282828;
+  border-radius: 2px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  margin: 0 0.5em;
+}
+@media only screen and (max-width: 997px) {
+}
+@media only screen and (max-width: 767px) {
+  .detailsHolder {
+    grid-template-columns: repeat(auto-fit, minmax(100%, 2fr));
+    gap: 10px;
+  }
+  .detailsHolder > div:last-child {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .productContainer {
+    padding: 0px;
+    flex-wrap: wrap;
+  }
+  .productContainer > img {
+    display: block;
+    height: auto;
+    width: 80%;
+    margin: auto;
+    border-radius: 10px;
+  }
+  .ProductDetails {
+    width: 100%;
+  }
+  .pHeading {
+    margin-bottom: 0.5em;
+    padding: 0px;
+  }
+  .detailsHolder > div:first-child {
+    position: relative;
+  }
+  .ammount {
+    position: absolute;
+    background-color: var(--white);
+    top: 50%;
+    right: 0%;
+  }
+  .Additions {
+    font-size: 2.5em;
+    font-weight: 500;
+  }
+}
