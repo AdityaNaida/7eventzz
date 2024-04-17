@@ -5,9 +5,6 @@ import Link from "next/link";
 //styles
 import styles from "@/components/CartPage/EmptyCart.module.css";
 
-//components
-import Category from "../Home/Category";
-
 const EmptyCart: React.FC = () => {
   return (
     <>
@@ -27,7 +24,6 @@ const EmptyCart: React.FC = () => {
           checkout process!
         </p>
         <Link href="/category">Browse Category</Link>
-        <Category />
       </div>
     </>
   );
