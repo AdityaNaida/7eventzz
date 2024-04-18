@@ -1,112 +1,111 @@
-.discountDialouge {
-  height: auto;
-  width: 100%;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  padding: 10px;
-  border-radius: 5px;
-}
-.discountQuestion {
+.container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 0px;
-  cursor: pointer;
+
+  padding: 1rem;
 }
-.discountQuestion > p {
-  font: 400;
-  font-size: 1.5em;
-  color: var(--black);
-  display: flex;
-  align-items: center;
-  gap: 5px;
+
+.heading {
+  color: #212121;
+
+  font-size: 1.7rem;
+  font-weight: 600;
 }
-.discountQuestion > img {
-  cursor: pointer;
-}
-.discountBoxWrapper > form > .login_input {
-  margin: 1em 0em;
-}
-.discountBoxWrapper > form > .login_input > input {
-  padding: 8px;
-  font-weight: 400;
-  font-size: 1.5em;
+
+.inputField {
+  padding: 0.7rem 1rem;
+  margin-right: 1rem;
+
   font-family: inherit;
-  color: var(--black);
-  transition: all ease 0.5s;
-  width: 100%;
-  padding: 12px 20px;
-  background-color: #f7fafb;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
+  font-size: 1.4rem;
+  font-weight: 400;
+
+  border: 0.1rem solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
 }
-.discountBoxWrapper > form > input[type="submit"] {
-  padding: 9px 15px;
-  display: block;
-  width: 100%;
-  background-color: #0f0d19;
-  color: #fff;
-  font-weight: 500;
-  font-size: 1.7em;
+
+.submitBtn {
+  color: var(--website);
+  padding: 0.7rem 1rem;
+
   font-family: inherit;
-  text-align: center;
-  cursor: pointer;
-  border: none;
-  border-radius: 10px;
-  margin: 1em 0em 0.7em;
-}
-.availabelCoupenCodeHeading {
-  padding: 10px 0px;
-  height: auto;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  font-size: 1.4rem;
+  font-weight: 600;
+
+  background-color: transparent;
+  border: 0.1rem solid var(--website);
+  border-radius: 0.5rem;
   cursor: pointer;
 }
-.availabelCoupenCodeHeading > p {
-  font-weight: 400;
-  font-size: 1.5em;
-  color: #000;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-.availabelCoupenCodeHeading > p > img {
-  transform: rotate(265deg);
-  height: 25px;
-  width: 25px;
-  margin-left: 0.3em;
-}
-.availableCoupenCode {
-  height: auto;
-  width: 100%;
-  transition: all ease 1s;
-}
-.availableCoupenCode > p {
-  font-weight: 400;
-  font-size: 1.4em;
-  color: var(--black);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.availableCoupenCode > p > span > b {
-  color: var(--medium-purple);
-}
-.availableCoupenCode > p > button {
-  color: #fff;
-  border-radius: 30px;
-  background-image: linear-gradient(90deg, #ff8889 0, #ff6769 50%, #ff8889);
-  /* font-size: 1.6em; */
-  padding: 6px 20px;
-  margin-bottom: 1em;
-  font-size: 0.9em;
-  text-align: center;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
+
+.offersContainer {
   position: relative;
-  border: none;
-  cursor: pointer;
-  background-size: 200% auto;
+
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+
+  margin: 1rem;
+  padding: 2rem;
+
+  border: 0.1rem solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+}
+
+.offersContainer img {
+  height: 5rem;
+  width: 5rem;
+}
+
+.offersContainer span {
+  color: #000;
+
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+.offersContainer p {
+  color: #212121;
+
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.selectBtn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: var(--website);
   font-family: inherit;
+  font-size: 1.5rem;
+  font-weight: 500;
+
+  background-color: transparent;
+  border: none;
+
+  cursor: pointer;
+}
+
+.discountSlider {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  width: 100%;
+  height: 40vh;
+
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  transition: all ease 0.5s;
+}
+
+.discountSlider::-webkit-scrollbar {
+  width: 0.7rem;
+}
+
+.discountSlider::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.164);
+  border-radius: 1rem;
 }

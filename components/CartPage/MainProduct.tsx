@@ -72,13 +72,15 @@ const MainProduct: React.FC = () => {
             </div>
             <div className={styles.detailsHolder}>
               <div>
-                <p className={styles.date}>
-                  Event Date: <span>25 September 2024</span>
-                </p>
-                <p className={styles.date}>
-                  Time: <span>06:00 PM - 08:00 PM</span>
-                </p>
-                <div className={styles.Additions}>₹2400</div>
+                <div className={styles.dateContainer}>
+                  <p className={styles.date}>
+                    Event Date: <span>25 September 2024</span>
+                  </p>
+                  <p className={styles.date}>
+                    Time: <span>06:00 PM - 08:00 PM</span>
+                  </p>
+                  <p className={styles.Additions}>₹2400</p>
+                </div>
                 <div className={styles.ammount}>
                   <button
                     onClick={() => {

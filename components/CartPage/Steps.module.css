@@ -23,9 +23,11 @@
   position: absolute;
   height: 1px;
   width: 98%;
-  background-color: #867b7b4b;
-  top: 40%;
+  /* background-color: #867b7b4b; */
+  top: 50%;
   right: 0px;
+
+  border-bottom: 0.3rem dotted #867b7b4b;
 }
 .filler {
   height: 1px;
@@ -43,29 +45,34 @@
 }
 .stepBox {
   position: relative;
-  z-index: 2;
-}
-.stepBox:last-child {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
+  gap: 1rem;
+
+  background-color: #fff;
+  z-index: 2;
+
+  padding: 0rem 1rem;
 }
 .stepBox > span {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 40px;
-  width: 40px;
+  height: 2rem;
+  width: 2rem;
   border-radius: 50%;
-  background-color: #ccc;
+  border: 0.2rem solid #ccc;
   color: #fff;
   font-weight: 400;
   font-size: 2em;
 }
 .stepBox > span.activeStep {
-  background-color: #32c780;
-  color: #f8dfba;
+  border-color: var(--website);
   animation: drop 1s ease 0s 1 forwards;
+}
+
+.stepBox > span.activeStep + p {
+  font-weight: 600;
 }
 @keyframes drop {
   from {

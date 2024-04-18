@@ -15,7 +15,7 @@ const Steps: React.FC<StepProps> = ({ isActive, isfill, number }) => {
             {isfill && <div className={styles.filler}></div>}
           </div>
           <div className={styles.stepBox}>
-            <span className={styles.activeStep}>&#10003;</span>
+            <span className={styles.activeStep}></span>
             <p>Cart</p>
           </div>
           <div className={styles.stepBox}>
@@ -25,7 +25,7 @@ const Steps: React.FC<StepProps> = ({ isActive, isfill, number }) => {
             <p>Address</p>
           </div>
           <div className={styles.stepBox}>
-            <span>3</span>
+            <span></span>
             <p>Payment</p>
           </div>
         </div>

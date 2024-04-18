@@ -23,8 +23,8 @@ const CartPage: React.FC = () => {
           <SimilarWrapper />
         </div>
         <div className={styles.payment}>
-          <DiscountBox />
           <PaymentDetails />
+          <DiscountBox />
         </div>
       </div>
     </>

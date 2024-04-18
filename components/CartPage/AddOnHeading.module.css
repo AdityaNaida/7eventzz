@@ -10,8 +10,8 @@
   text-wrap: nowrap;
 }
 .heading > button {
-  padding: 10px;
-  background: #0d1619;
+  padding: 1rem;
+  background: var(--website);
   color: #fff;
   font-weight: 400;
   font-size: 1.5em;

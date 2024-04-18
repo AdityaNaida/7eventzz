@@ -1,99 +1,107 @@
 "use client";
-
-//styles
-import styles from "@/components/CartPage/DiscountBox.module.css";
-
-//libraries
 import { useState } from "react";
 import Image from "next/image";
 
-const DiscountBox: React.FC = () => {
-  const [coupen, setCoupen] = useState<Boolean>(false);
-  const [coupenCode, setCoupenCode] = useState<Boolean>(false);
-  const showCoupenHandler = () => {
-    setCoupen(!coupen);
-  };
-  const showCoupencodeHandler = () => {
-    setCoupenCode(!coupenCode);
+import style from "@/components/CartPage/DiscountBox.module.css";
+
+import ModalContainer2 from "../ProductDetailsPage/ModalContainer2";
+import DiscountOffers from "../ProductDetailsPage/DiscountOffers";
+
+export default function DiscountBox() {
+  const [offers, setOffers] = useState<boolean>(false);
+  const offersHandler = () => {
+    setOffers(!offers);
   };
   return (
     <>
-      <div className={styles.discountDialouge}>
-        <div className={styles.discountQuestion} onClick={showCoupenHandler}>
-          <p>
-            <Image
-              src="/icons/coupon.svg"
-              alt="coupon icon "
-              height={30}
-              width={30}
-              unoptimized
-            />{" "}
-            Do You have a Coupon?
-          </p>
-          <Image
-            src={coupen ? "/icons/minus.svg" : "/icons/plus.svg"}
-            alt="plus icon"
-            className={styles.discountPopUpImg}
-            height={20}
-            width={20}
-            unoptimized
+      <div className={style.container}>
+        <p className={style.heading}>Coupen</p>
+        <form>
+          <input
+            type="text"
+            placeholder="Enter Coupen Code"
+            required
+            className={style.inputField}
           />
-        </div>
-        {coupen && (
-          <div className={styles.discountBoxWrapper}>
-            <form action="" method="post">
-              <div className={styles.login_input}>
-                <input type="text" required placeholder="Enter Coupen code" />
-              </div>
-              <input type="submit" value="Submit Coupen Code" />
-              <div
-                className={styles.availabelCoupenCodeHeading}
-                onClick={showCoupencodeHandler}
-              >
-                <p>
-                  Availabel Coupon Code{" "}
-                  <Image
-                    src="/icons/green-price-tag.svg"
-                    alt="green-price-tag icon"
-                    height={30}
-                    width={30}
-                    unoptimized
-                  />
-                </p>
-                <Image
-                  src={
-                    coupenCode
-                      ? "/icons/chevron-up.svg"
-                      : "/icons/chevron-down.svg"
-                  }
-                  alt="chevron-up"
-                  height={20}
-                  width={20}
-                  unoptimized
-                />
-              </div>
-              {coupenCode && (
-                <div className={styles.availableCoupenCode}>
-                  <p>
-                    <span>
-                      1. Use <b>NEWUSER</b> Get ₹ 100 off
-                    </span>{" "}
-                    <button>Appply</button>
-                  </p>
-                  <p>
-                    <span>
-                      2. Use <b>Decor24</b> Get 2% off{" "}
-                    </span>
-                    <button>Appply</button>
-                  </p>
-                </div>
-              )}
-            </form>
-          </div>
-        )}
+          <button className={style.submitBtn}>Submit</button>
+        </form>
       </div>
+
+      <div className={style.offersContainer}>
+        <Image
+          src="/icons/gift.webp"
+          alt="gift image"
+          width={30}
+          height={30}
+          unoptimized
+        />
+
+        <div>
+          <span>Offers for you!</span>
+          <p>Choose and apply voucher in 2 simple steps</p>
+
+          <button className={style.selectBtn} onClick={offersHandler}>
+            Select
+          </button>
+        </div>
+      </div>
+
+      {offers && (
+        <ModalContainer2
+          heading="All Offers"
+          headingIcon="/icons/discount.svg"
+          subText="Save more with our exiting offers!"
+          closeFunction={offersHandler}
+        >
+          <div className={style.discountSlider}>
+            <DiscountOffers
+              heading="Get it for ₹650"
+              subText="10% off on your first Purchase"
+              coupenCode="Eventzz10"
+              isApplyable={true}
+              isOffers={false}
+              offersFnc=""
+              numberOffers={0}
+            />
+            <DiscountOffers
+              heading="Get it for ₹650"
+              subText="10% off on your first Purchase"
+              coupenCode="Eventzz10"
+              isApplyable={true}
+              isOffers={false}
+              offersFnc=""
+              numberOffers={0}
+            />
+            <DiscountOffers
+              heading="Get it for ₹650"
+              subText="10% off on your first Purchase"
+              coupenCode="Eventzz10"
+              isApplyable={true}
+              isOffers={false}
+              offersFnc=""
+              numberOffers={0}
+            />
+            <DiscountOffers
+              heading="Get it for ₹650"
+              subText="10% off on your first Purchase"
+              coupenCode="Eventzz10"
+              isApplyable={true}
+              isOffers={false}
+              offersFnc=""
+              numberOffers={0}
+            />
+            <DiscountOffers
+              heading="Get it for ₹650"
+              subText="10% off on your first Purchase"
+              coupenCode="Eventzz10"
+              isApplyable={true}
+              isOffers={false}
+              offersFnc=""
+              numberOffers={0}
+            />
+          </div>
+        </ModalContainer2>
+      )}
     </>
   );
-};
-
-export default DiscountBox;
+}
