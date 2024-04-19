@@ -15,7 +15,6 @@ const MainProduct: React.FC = () => {
   const [instruction, setInstruction] = useState<boolean>(false);
   const [innerText, setInnerText] = useState<string>("");
   const [modal, setModal] = useState<boolean>(false);
-  const [ammount, setAmmount] = useState<number>(1);
   const modalHandler = () => {
     setModal(!modal);
   };
@@ -34,29 +33,17 @@ const MainProduct: React.FC = () => {
   };
   return (
     <>
-      {modal && (
-        <Modal closeModal={modalHandler}>
-          <Instructions
-            offModal={modalHandler}
-            getValue={saveInputedValue}
-            save={clickSave}
-            cancle={clickCancle}
-            currentState={innerText}
-          />
-        </Modal>
-      )}
-
+      <div className={styles.heading}>
+        <p>Your Cart (1 Item)</p>
+        <Image
+          src="/icons/trash.svg"
+          height={20}
+          width={20}
+          unoptimized
+          alt="Trash Icons"
+        />
+      </div>
       <div className={styles.container}>
-        <div className={styles.heading}>
-          <p>Your Cart (1 Item)</p>
-          <Image
-            src="/icons/trash.svg"
-            height={20}
-            width={20}
-            unoptimized
-            alt="Trash Icons"
-          />
-        </div>
         <div className={styles.productContainer}>
           <Image
             src="/pr1.webp"
@@ -72,52 +59,108 @@ const MainProduct: React.FC = () => {
             </div>
             <div className={styles.detailsHolder}>
               <div>
-                <div className={styles.dateContainer}>
-                  <p className={styles.date}>
-                    Event Date: <span>25 September 2024</span>
-                  </p>
-                  <p className={styles.date}>
-                    Time: <span>06:00 PM - 08:00 PM</span>
-                  </p>
-                  <p className={styles.Additions}>₹2400</p>
-                </div>
-                <div className={styles.ammount}>
-                  <button
-                    onClick={() => {
-                      ammount === 1 ? setAmmount(1) : setAmmount(ammount - 1);
-                    }}
-                  >
-                    -
+                <p className={styles.date}>
+                  <Image
+                    src="/icons/calendar-icon.svg"
+                    alt="calendar icon"
+                    height={20}
+                    width={20}
+                  />{" "}
+                  <span>25 September 2024</span>
+                </p>
+                <p className={styles.date}>
+                  <Image
+                    src="/icons/clock-icon.svg"
+                    alt="clock icon"
+                    height={20}
+                    width={20}
+                  />{" "}
+                  <span>06:00 PM - 08:00 PM</span>
+                </p>
+                <div className={styles.instructionsBox}>
+                  <button onClick={modalHandler}>
+                    <span className={styles.iconHolder}>
+                      <Image
+                        src={`${
+                          modal
+                            ? "/icons/grey-minus.svg"
+                            : "/icons/grey-plus.svg"
+                        }`}
+                        alt="grey-plus icon"
+                        height={25}
+                        width={25}
+                        unoptimized
+                      />
+                    </span>
+                    Add Instructions{" "}
+                    <Image
+                      src="/icons/pencil-icon.svg"
+                      alt="pencil icon"
+                      height={20}
+                      width={20}
+                    />
                   </button>
-                  <span>{ammount}</span>
-                  <button
-                    onClick={() => {
-                      setAmmount(ammount + 1);
-                    }}
-                  >
-                    +
-                  </button>
+                  {modal && (
+                    <Modal closeModal={modalHandler}>
+                      <Instructions
+                        offModal={modalHandler}
+                        getValue={saveInputedValue}
+                        save={clickSave}
+                        cancle={clickCancle}
+                        currentState={innerText}
+                      />
+                    </Modal>
+                  )}
+                  <div>
+                    {instruction && (
+                      <>
+                        <span>{innerText}</span>
+                      </>
+                    )}
+                  </div>
                 </div>
-              </div>
-            </div>
+                <div className={styles.priceHolder}>
+                  <div>
+                    <p className={styles.Additions}>₹1999</p>
+                    <p className={styles.beforePrice}>₹2499</p>
+                    <p className={styles.discount}>(20% OFF)</p>
+                  </div>
 
-            <div className={styles.instructionsBox}>
-              <button onClick={modalHandler}>
-                Your Instructions{" "}
-                <Image
-                  src="/icons/edit-line.svg"
-                  alt="edit icon"
-                  height={25}
-                  width={25}
-                  unoptimized
-                />
-              </button>
-              <div>
-                {instruction && (
-                  <>
-                    <span>{innerText}</span>
-                  </>
-                )}
+                  <div className={styles.ammount}>
+                    <select name="quantity" id="  quantity">
+                      <option value="1" selected>
+                        1
+                      </option>
+                      <option value="2" selected>
+                        2
+                      </option>
+                      <option value="2" selected>
+                        2
+                      </option>
+                      <option value="4" selected>
+                        4
+                      </option>
+                      <option value="5" selected>
+                        5
+                      </option>
+                      <option value="6" selected>
+                        6
+                      </option>
+                      <option value="7" selected>
+                        7
+                      </option>
+                      <option value="8" selected>
+                        8
+                      </option>
+                      <option value="9" selected>
+                        9
+                      </option>
+                      <option value="10" selected>
+                        10
+                      </option>
+                    </select>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

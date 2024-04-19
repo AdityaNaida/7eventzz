@@ -28,11 +28,12 @@ const Instructions: React.FC<InstrcutionProps> = ({
           <div className={styles.nestedHeading}>
             <span className={styles.imageHolder}>
               <Image
-                src="/icons/grey-info.svg"
+                src="/icons/red-info.svg"
                 alt="info icon"
                 height={25}
                 width={25}
                 unoptimized
+                className={styles.infoIcon}
               />
             </span>
             <div>
@@ -40,14 +41,16 @@ const Instructions: React.FC<InstrcutionProps> = ({
               <span>Write all the instructions down below</span>
             </div>
           </div>
-          <Image
-            src="/icons/close.svg"
-            alt="close svg"
-            height={25}
-            width={25}
-            unoptimized
-            onClick={offModal}
-          />
+          <span className={styles.closeIcon}>
+            <Image
+              src="/icons/close.svg"
+              alt="close svg"
+              height={25}
+              width={25}
+              unoptimized
+              onClick={offModal}
+            />
+          </span>
         </div>
         <form action="" method="post">
           <textarea

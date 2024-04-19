@@ -1,11 +1,11 @@
 .container {
+  position: relative;
   height: auto;
   width: 100%;
-  /* box-shadow: 0 0 5.3px rgba(0, 0, 0, 0.028), 0 0 17.9px rgba(0, 0, 0, 0.042),
-    0 0 80px rgba(0, 0, 0, 0.07); */
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(28, 28, 28, 0.08);
+  border: 1px solid #e8e8e8;
   border-radius: 10px;
-  margin-bottom: 0.5em;
+  margin-bottom: 1em;
 }
 .heading {
   width: 100%;
@@ -41,7 +41,7 @@
   border-radius: 5px;
 }
 .ProductDetails {
-  position: relative;
+  /* position: relative; */
 
   height: auto;
   width: 80%;
@@ -66,7 +66,7 @@
 .Additions {
   color: #0d1619;
   font-weight: 600;
-  font-size: 1.8em;
+  font-size: 2.5rem;
 }
 
 .detailsHolder {
@@ -79,12 +79,17 @@
 
 .date {
   font-size: 1.5em;
-  font-weight: 500;
+  font-weight: 600;
   margin: 0.5em 0em;
   color: #0d1619;
 }
+.date > img {
+  height: 2rem;
+  width: 2rem;
+
+  vertical-align: middle;
+}
 .date > span {
-  font-weight: 600;
   margin-left: 0.3em;
 }
 
@@ -129,64 +134,82 @@
 
 .instructionsBox {
   width: 100%;
+
+  padding: 0.5rem 0rem 1rem;
+  border-radius: 1rem;
 }
 .instructionsBox > button {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 1rem;
+
+  width: 40%;
+
   background-color: transparent;
   border: none;
+
   color: #0d1619;
   font-size: 1.5em;
   font-weight: 500;
   font-family: inherit;
-  border-radius: 10px;
+
   cursor: pointer;
-  margin: 1em 0em;
-}
-.instructionsBox > button > img {
-  height: 20px;
-  width: 20px;
-  vertical-align: middle;
-}
-.instructionsBox > div > span {
-  font-size: 1.3em;
-  font-weight: 400;
-  color: var(--black);
-}
-.ammount {
-  position: absolute;
-  bottom: 0.5rem;
-  right: 0.5rem;
-  display: flex;
-  align-items: center;
-  margin-top: 1em;
-}
-.ammount > button {
-  color: #fff;
-  background-color: #0d1619;
-  font-weight: 400;
-  font-size: 1.5em;
-  font-family: inherit;
-  padding: 1px 6px;
-  border: none;
-  border-radius: 2px;
-  cursor: pointer;
-}
-.ammount > span {
-  padding: 1px 6px;
-  background-color: #ebebeb;
-  text-align: center;
-  font-weight: 400;
-  font-size: 1.4em;
-  font-family: inherit;
-  color: #282828;
-  border-radius: 2px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  margin: 0 0.5em;
 }
 
-.dateContainer {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(45%, 2fr));
-  gap: 1rem;
+.iconHolder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.2rem;
+  border: 0.2rem solid #848484;
+
+  border-radius: 50%;
+}
+
+.iconHolder img {
+  height: 1.5rem;
+  width: 1.5rem;
+  vertical-align: middle;
+}
+
+.priceHolder {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.priceHolder > div {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+
+  gap: 1em;
+}
+
+.beforePrice {
+  color: #808080;
+
+  font-size: 1.4rem;
+  font-weight: 400;
+  text-decoration: line-through;
+}
+
+.discount {
+  color: #45bb00;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.ammount > select {
+  font-family: inherit;
+  font-size: 1.4rem;
+  font-weight: 400;
+
+  padding: 0.2rem 0.8rem;
+  border: 0.1rem solid rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
 }
 
 @media only screen and (max-width: 767px) {
@@ -203,6 +226,12 @@
   .dateContainer {
     grid-template-columns: repeat(auto-fit, minmax(100%, 2fr));
     gap: 0;
+
+    padding-bottom: 5rem;
+  }
+
+  .instructionsBox > button {
+    width: 60%;
   }
 }
 @media only screen and (max-width: 600px) {
@@ -215,7 +244,7 @@
     border-radius: 1rem;
   }
   .ProductDetails {
-    padding: 0rem 1rem;
+    padding: 0rem;
     width: 100%;
   }
   .pHeading {
@@ -225,14 +254,32 @@
   .detailsHolder > div:first-child {
     position: relative;
   }
-  .ammount {
-    position: absolute;
-    background-color: var(--white);
-    top: 50%;
-    right: 0%;
-  }
   .Additions {
-    font-size: 2.5em;
+    font-size: 1.9rem;
     font-weight: 500;
+  }
+
+  .priceHolder {
+    margin-top: 2rem;
+  }
+
+  .priceHolder > div {
+    gap: 0.5rem;
+  }
+
+  .beforePrice,
+  .discount {
+    font-size: 1.2rem;
+    white-space: nowrap;
+  }
+
+  .instructionsBox > button {
+    width: 70%;
+  }
+
+  .ammount > select {
+    position: absolute;
+    top: 50%;
+    left: -35%;
   }
 }

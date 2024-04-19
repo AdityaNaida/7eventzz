@@ -9,7 +9,6 @@ import AddedProduct from "./AddedProduct";
 import SimilarWrapper from "./SimilarWrapper";
 import DiscountBox from "./DiscountBox";
 import PaymentDetails from "./PaymentDetails";
-// import Assurance from "../CheckOutPage/Assurance";
 
 const CartPage: React.FC = () => {
   return (

@@ -4,12 +4,14 @@
   display: flex;
   flex-direction: column;
   background-color: var(--white);
-  padding: 10px;
-  border-radius: 0 0 5px 5px;
+  padding: 1rem;
+  border-radius: 1rem;
+
+  box-shadow: 0 2px 8px rgba(28, 28, 28, 0.08);
+  border: 1px solid #e8e8e8;
 }
 
 .product {
-  padding: 10px;
   display: flex;
   justify-content: space-between;
   flex-wrap: nowrap;
@@ -28,64 +30,43 @@
 .details > p {
   margin: 0.5em 0;
   gap: 10px;
-  font-weight: 400;
+  font-weight: 700;
   font-size: 1.6em;
   color: #0d1619;
   display: flex;
 }
-.details > p > span {
-  border-radius: 10px;
-  font-weight: 600;
-  color: black;
 
-  white-space: nowrap;
-}
-
-.ammount {
+.controller {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0.5em 0;
+
+  width: 100%;
 }
-.ammount > div > button {
-  color: #fff;
-  background-color: #0d1619;
-  font-weight: 400;
-  font-size: 1.5em;
+
+.controller > select {
   font-family: inherit;
-  padding: 2px 8px;
-  border: none;
-  border-radius: 2px;
-  cursor: pointer;
-}
-.ammount > div > span {
-  padding: 3px 8px;
-  background-color: #ebebeb;
-  text-align: center;
+  font-size: 1.4rem;
   font-weight: 400;
-  font-size: 1.4em;
-  font-family: inherit;
-  color: #282828;
-  border-radius: 2px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  margin: 0 0.5em;
+
+  padding: 0.2rem 0.8rem;
+  border: 0.1rem solid rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
 }
+
 .price {
   margin: 0.5em 0;
   gap: 10px;
   font-weight: 400;
   font-size: 1.6em;
   color: #282828;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
 }
 
 @media only screen and (max-width: 997px) {
   .container {
     margin: 1em 0em;
   }
-  .container,
+
   .product {
     padding: 0px;
   }
@@ -99,6 +80,6 @@
     width: 60px;
   }
   .details > p {
-    margin: 0em;
+    margin: 0rem;
   }
 }

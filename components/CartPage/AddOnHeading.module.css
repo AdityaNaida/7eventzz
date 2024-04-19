@@ -1,28 +1,57 @@
-.heading {
+.container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  width: 100%;
+
+  padding: 2rem 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(28, 28, 28, 0.08);
+  border: 1px solid #e8e8e8;
+  border-radius: 1rem;
 }
-.heading > p {
-  font-weight: 500;
-  font-size: 1.8em;
-  color: #0d1619;
-  text-wrap: nowrap;
+
+.txt {
+  color: #212121;
+
+  font-size: 1.5rem;
+  font-weight: 600;
 }
-.heading > button {
-  padding: 1rem;
-  background: var(--website);
+
+.count {
+  display: inline-block;
+  padding: 0.2rem 0.7rem;
+  background-color: var(--website);
   color: #fff;
-  font-weight: 400;
-  font-size: 1.5em;
-  cursor: pointer;
-  border: none;
-  border-radius: 10px;
-  text-transform: uppercase;
-  font-family: inherit;
+
+  border-radius: 50%;
 }
-@media only screen and (max-width: 767px) {
-  .heading > button {
-    padding: 5px 10px;
-  }
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: inherit;
+  font-size: 1.5rem;
+  font-weight: 600;
+
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.btnIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.2rem;
+  border: 0.2rem solid #848484;
+  border-radius: 50%;
+}
+
+.btnIcon > img {
+  height: 1.5rem;
+  width: 1.5rem;
+  vertical-align: middle;
 }

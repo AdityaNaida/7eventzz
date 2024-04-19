@@ -1,16 +1,8 @@
-"use client";
-
-//libraries
-import { useState } from "react";
 import Image from "next/image";
 
-//styles
 import styles from "@/components/CartPage/AddedProduct.module.css";
 
 const AddedProduct: React.FC = () => {
-  const [ammount, setAmmount] = useState<number>(1);
-  const [addPrice, setAddPrice] = useState<number>(600);
-
   return (
     <>
       <div className={styles.container}>
@@ -24,28 +16,42 @@ const AddedProduct: React.FC = () => {
             priority
           />
           <div className={styles.details}>
-            <p>
-              <span>Add On:</span>Two Hersheys Milk Chocolates Each 33 gm
-            </p>
-            <div className={styles.ammount}>
-              <div>
-                <button
-                  onClick={() => {
-                    ammount === 0 ? setAmmount(0) : setAmmount(ammount - 1);
-                  }}
-                >
-                  -
-                </button>
-                <span>{ammount}</span>
-                <button
-                  onClick={() => {
-                    setAmmount(ammount + 1);
-                  }}
-                >
-                  +
-                </button>
-              </div>
-              <div className={styles.price}>₹600 X 1 = {addPrice}</div>
+            <p>Two Hersheys Milk Chocolates Each 33 gm</p>
+
+            <div className={styles.controller}>
+              <div className={styles.price}>₹600 X 1 = ₹600</div>
+              <select name="quantity" id="  quantity">
+                <option value="1" selected>
+                  1
+                </option>
+                <option value="2" selected>
+                  2
+                </option>
+                <option value="2" selected>
+                  2
+                </option>
+                <option value="4" selected>
+                  4
+                </option>
+                <option value="5" selected>
+                  5
+                </option>
+                <option value="6" selected>
+                  6
+                </option>
+                <option value="7" selected>
+                  7
+                </option>
+                <option value="8" selected>
+                  8
+                </option>
+                <option value="9" selected>
+                  9
+                </option>
+                <option value="10" selected>
+                  10
+                </option>
+              </select>
             </div>
           </div>
         </div>
