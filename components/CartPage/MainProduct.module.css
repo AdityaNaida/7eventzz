@@ -212,6 +212,22 @@
   border-radius: 1rem;
 }
 
+.textOutput {
+  width: 100%;
+
+  color: #212121;
+
+  font-size: 1.4rem;
+  font-weight: 400;
+
+  margin-top: 1rem;
+  padding: 1rem;
+
+  background-color: transparent;
+  border-radius: 1rem;
+  border: 0.1rem solid rgba(0, 0, 0, 0.1);
+}
+
 @media only screen and (max-width: 767px) {
   .detailsHolder {
     grid-template-columns: repeat(auto-fit, minmax(100%, 2fr));
