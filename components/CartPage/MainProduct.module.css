@@ -201,7 +201,17 @@
   font-size: 1.4rem;
   font-weight: 700;
 }
+.ammount {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.ammount > p {
+  color: #212121;
 
+  font-size: 1.4rem;
+  font-weight: 400;
+}
 .ammount > select {
   font-family: inherit;
   font-size: 1.5rem;
@@ -291,7 +301,9 @@
 }
 
 @media only screen and (max-width: 500px) {
-  .ammount > select {
+  .ammount {
+    flex-direction: column;
+    gap: 0rem;
     position: absolute;
     top: 50%;
     left: -25%;
@@ -299,7 +311,7 @@
 }
 
 @media only screen and (max-width: 410px) {
-  .ammount > select {
+  .ammount {
     left: -35%;
   }
 }

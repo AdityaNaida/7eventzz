@@ -25,12 +25,6 @@ export default function CustomHeader() {
               width={25}
             />
             <p className={style.location}>Select Location</p>
-            <Image
-              src="/icons/chevron_down.svg"
-              alt="chevron_down icon"
-              height={25}
-              width={25}
-            />
           </div>
           <div>
             <p className={style.text}>

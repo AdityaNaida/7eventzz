@@ -8,7 +8,7 @@ import Image from "next/image";
 import styles from "@/components/CartPage/MainProduct.module.css";
 
 //components
-import Modal from "./Modal";
+import Modal from "../Navbar/Modal";
 import Instructions from "./Instructions";
 
 const MainProduct: React.FC = () => {
@@ -101,7 +101,7 @@ const MainProduct: React.FC = () => {
                     />
                   </button>
                   {modal && (
-                    <Modal closeModal={modalHandler}>
+                    <Modal offModal={modalHandler}>
                       <Instructions
                         offModal={modalHandler}
                         getValue={saveInputedValue}
@@ -127,6 +127,7 @@ const MainProduct: React.FC = () => {
                   </div>
 
                   <div className={styles.ammount}>
+                    <p>Qty</p>
                     <select name="quantity" id="  quantity">
                       <option value="1" selected>
                         1

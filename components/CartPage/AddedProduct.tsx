@@ -17,9 +17,9 @@ const AddedProduct: React.FC = () => {
           />
           <div className={styles.details}>
             <p>Two Hersheys Milk Chocolates Each 33 gm</p>
-
+            <div className={styles.price}>₹600 X 1 = ₹600</div>
             <div className={styles.controller}>
-              <div className={styles.price}>₹600 X 1 = ₹600</div>
+              <p>Qty</p>
               <select name="quantity" id="  quantity">
                 <option value="1" selected>
                   1
@@ -35,6 +35,14 @@ const AddedProduct: React.FC = () => {
                 <option value="10">10</option>
               </select>
             </div>
+            <button className={styles.deleteBtn}>
+              <Image
+                src="/icons/trash.svg"
+                alt="trash icon"
+                height={20}
+                width={20}
+              />
+            </button>
           </div>
         </div>
       </div>

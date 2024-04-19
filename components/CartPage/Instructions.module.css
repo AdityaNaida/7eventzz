@@ -1,6 +1,15 @@
 .container {
-  width: 100%;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  background-color: #fff;
+
+  width: 30%;
   height: auto;
+  padding: 2rem;
+  border-radius: 2rem;
 }
 .headings {
   display: flex;
@@ -103,8 +112,27 @@
   background-color: #f4f7f8;
 }
 
+@media only screen and (max-width: 992px) {
+  .container {
+    width: 50%;
+  }
+}
+
 @media only screen and (max-width: 767px) {
+  .container {
+    width: 70%;
+  }
   .controllers > button:last-child {
     padding: 5px 10px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .container {
+    width: 100%;
+  }
+
+  .closeIcon {
+    right: 1rem;
   }
 }

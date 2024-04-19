@@ -1,4 +1,6 @@
 .container {
+  position: relative;
+
   height: auto;
   width: 100%;
   display: flex;
@@ -35,13 +37,16 @@
   color: #0d1619;
   display: flex;
 }
-
 .controller {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 1rem;
+}
+.controller > p {
+  color: #212121;
 
-  width: 100%;
+  font-size: 1.4rem;
+  font-weight: 400;
 }
 
 .controller > select {
@@ -62,6 +67,14 @@
   color: #282828;
 }
 
+.deleteBtn {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.5rem;
+
+  background-color: transparent;
+  border: none;
+}
 @media only screen and (max-width: 997px) {
   .container {
     margin: 1em 0em;
