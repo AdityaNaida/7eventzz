@@ -9,6 +9,7 @@ import AddedProduct from "./AddedProduct";
 import SimilarWrapper from "./SimilarWrapper";
 import DiscountBox from "./DiscountBox";
 import PaymentDetails from "./PaymentDetails";
+import Assurance from "./Assurance";
 
 const CartPage: React.FC = () => {
   return (
@@ -24,6 +25,7 @@ const CartPage: React.FC = () => {
         <div className={styles.payment}>
           <PaymentDetails />
           <DiscountBox />
+          <Assurance />
         </div>
       </div>
     </>

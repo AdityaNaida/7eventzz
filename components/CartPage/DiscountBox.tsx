@@ -15,11 +15,11 @@ export default function DiscountBox() {
   return (
     <>
       <div className={style.container}>
-        <p className={style.heading}>Coupen</p>
+        <p className={style.heading}>Coupon</p>
         <form>
           <input
             type="text"
-            placeholder="Enter Coupen Code"
+            placeholder="Enter Coupon Code"
             required
             className={style.inputField}
           />
@@ -28,28 +28,31 @@ export default function DiscountBox() {
       </div>
 
       <div className={style.offersContainer}>
-        <Image
-          src="/icons/gift.webp"
-          alt="gift image"
-          width={30}
-          height={30}
-          unoptimized
-        />
-
         <div>
-          <span>Offers for you!</span>
-          <p>Choose and apply voucher in 2 simple steps</p>
+          <Image
+            src="/icons/hot-sale.webp"
+            alt="discount-icon image"
+            width={20}
+            height={20}
+            unoptimized
+          />
 
-          <button className={style.selectBtn} onClick={offersHandler}>
-            Select
-          </button>
+          <span>Offers for you!</span>
         </div>
+        <button className={style.selectBtn} onClick={offersHandler}>
+          <Image
+            src={`/icons/${offers ? "grey-minus" : "grey-plus"}.svg`}
+            alt="rey-plus icon"
+            height={20}
+            width={20}
+          />
+        </button>
       </div>
 
       {offers && (
         <ModalContainer2
           heading="All Offers"
-          headingIcon="/icons/discount.svg"
+          headingIcon="/icons/hot-sale.webp"
           subText="Save more with our exiting offers!"
           closeFunction={offersHandler}
         >

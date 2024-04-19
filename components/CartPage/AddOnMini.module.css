@@ -21,7 +21,7 @@
   text-overflow: ellipsis;
 }
 
-.container > button {
+.added {
   color: #fff;
   font-weight: 400;
   font-size: 1.2em;
@@ -30,18 +30,28 @@
   border: none;
   border-radius: 2px;
   cursor: pointer;
-  margin: 1em 0.5em;
-}
-.container > button.add {
-  background-color: #0d1619;
-}
-.container > button.added {
   background-color: #32c780;
 }
-.container > button + span {
+.price {
   font-size: 1.4em;
   font-weight: 400;
   color: black;
+}
+
+.priceHolder {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+
+  width: 100%;
+}
+
+.plusImage {
+  height: 2rem;
+  width: 2rem;
+
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 600px) {

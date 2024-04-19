@@ -32,14 +32,24 @@ const AddOnMini: React.FC<AddonProps> = ({ img, name, price }) => {
         />
         <p>{name}</p>
 
-        <button
-          className={add ? styles.added : styles.add}
-          onClick={addHandler}
-        >
-          {add ? "✓" : "+"}{" "}
-        </button>
-
-        <span>{price}</span>
+        <div className={styles.priceHolder}>
+          <span className={styles.price}>{price}</span>
+          {add ? (
+            <button className={styles.added} onClick={addHandler}>
+              ✓
+            </button>
+          ) : (
+            <Image
+              src="/icons/add_plus.webp"
+              alt="plus icon"
+              height={25}
+              width={25}
+              unoptimized
+              className={styles.plusImage}
+              onClick={addHandler}
+            />
+          )}
+        </div>
       </div>
     </>
   );

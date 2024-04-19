@@ -10,6 +10,9 @@
   background-color: #fff;
   border-radius: 2rem;
   animation: fadeIn 0.5s ease 0s 1 forwards;
+  z-index: 9999;
+
+  border-radius: 2rem;
 }
 
 @keyframes fadeIn {
@@ -51,11 +54,13 @@
   width: 100%;
 
   padding: 1rem 2rem;
+  margin-bottom: 1rem;
 
   background-color: #fff;
   overflow-y: auto;
   scroll-behavior: smooth;
   transition: all ease 0.5s;
+  border-radius: 0rem 0rem 1rem 1rem;
 }
 
 .items::-webkit-scrollbar {

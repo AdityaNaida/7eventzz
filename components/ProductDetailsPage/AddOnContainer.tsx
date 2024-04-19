@@ -5,7 +5,13 @@ import style from "@/components/ProductDetailsPage/AddOnContainer.module.css";
 //components
 import AddOnProduct from "./AddOnProduct";
 import AddonCategoryBtn from "./AddonCategoryBtn";
-export default function AddOnContainer({ closeFnc }: { closeFnc: () => void }) {
+export default function AddOnContainer({
+  closeFnc,
+  isDetails,
+}: {
+  closeFnc: () => void;
+  isDetails: boolean;
+}) {
   const addOnAPI = [
     {
       name: "Magic Candles",
@@ -70,27 +76,29 @@ export default function AddOnContainer({ closeFnc }: { closeFnc: () => void }) {
             </>
           ))}
         </div>
-        <div className={style.pricing}>
-          <div className={style.allPrices}>
-            <p className={style.priceText}>
-              <b>Base Price:</b> ₹770
-            </p>
-            <p className={style.priceText}>
-              <b>Addon Price:</b> ₹0
-            </p>
-            <p className={style.priceText}>
-              <b>Total Price:</b> ₹770
-            </p>
+        {isDetails && (
+          <div className={style.pricing}>
+            <div className={style.allPrices}>
+              <p className={style.priceText}>
+                <b>Base Price:</b> ₹770
+              </p>
+              <p className={style.priceText}>
+                <b>Addon Price:</b> ₹0
+              </p>
+              <p className={style.priceText}>
+                <b>Total Price:</b> ₹770
+              </p>
+            </div>
+            <div className={style.controllers}>
+              <Link href="/cart" className={style.skinBtn}>
+                Skip
+              </Link>
+              <Link href="/cart" className={style.proceedBtn}>
+                Proceed
+              </Link>
+            </div>
           </div>
-          <div className={style.controllers}>
-            <Link href="/cart" className={style.skinBtn}>
-              Skip
-            </Link>
-            <Link href="/cart" className={style.proceedBtn}>
-              Proceed
-            </Link>
-          </div>
-        </div>
+        )}
       </div>
     </>
   );

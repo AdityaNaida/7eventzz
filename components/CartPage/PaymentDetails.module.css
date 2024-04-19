@@ -6,7 +6,7 @@
   border: 1px solid #e8e8e8;
 
   padding: 1rem;
-  border-radius: 5px;
+  border-radius: 1rem;
 }
 .priceDetailsContainer > h4 {
   font: 500;
@@ -22,7 +22,7 @@
   justify-content: space-between;
   margin: 0.9em 0em;
 }
-.priceDetailsContainer > p:nth-child(5) {
+.priceDetailsContainer > p:nth-child(6) {
   color: #0f9c0d;
   padding-top: 10px;
   border-top: 2px dashed rgba(0, 0, 0, 0.2);
@@ -36,13 +36,13 @@
 .proceedToBuyContainer {
   position: relative;
   width: 100%;
-  padding: 10px;
+  padding: 1rem;
   height: auto;
   background-color: var(--white);
 }
 .proceedToBuyContainer > a {
   position: relative;
-  padding: 10px 15px;
+  padding: 1.5rem;
   display: block;
   width: 100%;
   background-color: var(--website);
@@ -80,12 +80,82 @@
   }
 }
 
+.deliveryTag {
+  padding: 0.2rem 0.8rem;
+  color: #136129;
+
+  font-family: inherit;
+  font-size: 1.4rem;
+  margin-left: 1rem;
+
+  background-color: #e5f8eb;
+  border-radius: 0.5rem;
+}
+
+.priceBillHolder {
+  display: none;
+}
+
+.txt {
+  color: #000;
+
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+.txt > span {
+  color: #46b275;
+  font-weight: 700;
+}
+
+.totalPrice {
+  color: #212121;
+
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.viewBillBtn {
+  color: #212121;
+
+  padding-bottom: 0.5rem;
+
+  font-family: inherit;
+  font-size: 1.6rem;
+  font-weight: 500;
+  text-decoration: underline;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 997px) {
   .proceedToBuyContainer {
     position: fixed;
     bottom: 0px;
     left: 0px;
 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+
+    padding: 2rem 2rem 1rem;
+    border-radius: 3rem 3rem 0rem 0rem;
+
+    box-shadow: 0px -12px 11px rgba(3, 7, 18, 0.03),
+      0px -50px 42px rgba(3, 7, 18, 0.02), 0px -112px 95px rgba(3, 7, 18, 0.01);
+
     z-index: 9;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .priceBillHolder {
+    display: block;
+  }
+
+  .proceedToBuyContainer > a {
+    width: 60%;
   }
 }

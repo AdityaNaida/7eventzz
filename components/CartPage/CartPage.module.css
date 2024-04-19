@@ -26,5 +26,8 @@
     padding: 0px;
   }
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
+  .container {
+    padding: 1rem 1rem 12rem;
+  }
 }

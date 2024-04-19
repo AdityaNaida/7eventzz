@@ -443,7 +443,7 @@ const Product: React.FC = () => {
       </SimilarContainer>
       {addOns && (
         <Modal offModal={addOnHandler}>
-          <AddOnContainer closeFnc={addOnHandler} />
+          <AddOnContainer closeFnc={addOnHandler} isDetails={true} />
         </Modal>
       )}
     </>
