@@ -274,6 +274,7 @@
   width: 2rem;
   top: 1.5rem;
   right: 1rem;
+  cursor: pointer;
   animation: shake 0.5s linear 0s 1 forwards;
 }
 
@@ -283,6 +284,7 @@
 
 .wrong {
   border: 0.1rem solid #ff0000;
+
   animation: shake 0.5s linear 0s 1 forwards;
 }
 
@@ -320,6 +322,27 @@
   font-weight: 400;
 }
 
+.backBtn {
+  position: absolute;
+  top: 3rem;
+  left: 1rem;
+
+  display: none;
+  color: #000;
+  background-color: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.backBtn img {
+  height: 2.5rem;
+  width: 2.5rem;
+  vertical-align: middle;
+  margin-right: 1rem;
+}
+
 @media only screen and (max-width: 997px) {
   .proceedToBuyContainer {
     position: fixed;
@@ -350,7 +373,7 @@
     display: block;
   }
 
-  .proceedToBuyContainer > a,
+  .proceedToBuyContainer > button,
   .signUpContaier {
     width: 60%;
   }
@@ -364,5 +387,29 @@
     height: 100vh;
     width: 100%;
     border-radius: 0rem;
+  }
+
+  .signUpContaier {
+    top: 0%;
+    left: 0%;
+    transform: none;
+    z-index: 99;
+  }
+
+  @keyframes fadeIn {
+    from {
+      top: 150%;
+    }
+    to {
+      top: 0%;
+    }
+  }
+
+  .closeBtn {
+    top: 3rem;
+  }
+
+  .backBtn {
+    display: block;
   }
 }

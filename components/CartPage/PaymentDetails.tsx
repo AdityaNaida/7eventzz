@@ -49,6 +49,11 @@ const PaymentDetails: React.FC = () => {
   const numberBlurHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setWrongNumber(e.target.value);
   };
+
+  const cleanupNumber = () => {
+    setNumber("");
+    setWrongNumber("");
+  };
   return (
     <>
       <div className={style.priceDetailsContainer} ref={bill}>
@@ -104,17 +109,27 @@ const PaymentDetails: React.FC = () => {
             View Bill*
           </button>
         </div>
+
         <button onClick={signUpController}>Proceed To Buy </button>
       </div>
 
       {signUp && (
         <Modal offModal={signUpController}>
           <div className={style.signUpContaier}>
-            <h2 className={style.signUpHeading}>Sign up </h2>
+            <h2 className={style.signUpHeading}>Sign up / Sign in</h2>
             <p className={style.signUpText}>
               Enjoy the convenience of a single account across all participating
               brands
             </p>
+            <button className={style.backBtn} onClick={signUpController}>
+              <Image
+                src="/icons/back-icon.svg"
+                alt="back icon"
+                height={20}
+                width={20}
+              />
+              Back
+            </button>
             <button className={style.closeBtn} onClick={signUpController}>
               <Image
                 src="/icons/close.svg"
@@ -182,6 +197,7 @@ const PaymentDetails: React.FC = () => {
                       height={20}
                       width={20}
                       className={style.wrongIcon}
+                      onClick={cleanupNumber}
                     />
                     <p className={style.warningMessage}>
                       *Incorrect number detected
