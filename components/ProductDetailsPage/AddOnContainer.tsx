@@ -64,7 +64,7 @@ export default function AddOnContainer({
           <AddonCategoryBtn value="Cakes" isActive={false} />
           <AddonCategoryBtn value="Plats" isActive={false} />
         </div>
-        <div className={style.items}>
+        <div className={`${style.items} ${isDetails ? "" : style.fullwidth}`}>
           {addOnAPI.map((elem) => (
             <>
               <AddOnProduct

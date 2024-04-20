@@ -33,6 +33,26 @@ const AddedProduct: React.FC = () => {
                 <option defaultValue="8">8</option>
                 <option defaultValue="9">9</option>
                 <option defaultValue="10">10</option>
+                <option defaultValue="11">11</option>
+                <option defaultValue="12">12</option>
+                <option defaultValue="13">13</option>
+                <option defaultValue="14">14</option>
+                <option defaultValue="15">15</option>
+                <option defaultValue="16">16</option>
+                <option defaultValue="17">17</option>
+                <option defaultValue="18">18</option>
+                <option defaultValue="19">19</option>
+                <option defaultValue="20">20</option>
+                <option defaultValue="21">21</option>
+                <option defaultValue="22">22</option>
+                <option defaultValue="23">23</option>
+                <option defaultValue="24">24</option>
+                <option defaultValue="25">25</option>
+                <option defaultValue="26">26</option>
+                <option defaultValue="27">27</option>
+                <option defaultValue="28">28</option>
+                <option defaultValue="29">29</option>
+                <option defaultValue="30">30</option>
               </select>
             </div>
             <button className={styles.deleteBtn}>

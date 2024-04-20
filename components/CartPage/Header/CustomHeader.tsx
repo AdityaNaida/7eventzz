@@ -1,31 +1,22 @@
-"use client";
-import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 import style from "@/components/CartPage/Header/CustomHeader.module.css";
 
-import Location from "@/components/Navbar/Location";
-import Modal from "@/components/Navbar/Modal";
-
 export default function CustomHeader() {
-  const [location, setLocation] = useState<boolean>(false);
-  const locationHandler = () => {
-    setLocation(!location);
-  };
   return (
     <>
       <div className={style.container}>
         <div className={style.navbar}>
-          <div className={style.locationCont} onClick={locationHandler}>
+          <Link href="/productdetails" className={style.checkoutLink}>
             <Image
-              src="/icons/navigation.svg"
-              alt="navigation"
+              src="/icons/back-icon.svg"
+              alt="back icon"
               height={25}
               width={25}
             />
-            <p className={style.location}>Select Location</p>
-          </div>
+            Checkout <span>(1 / 3)</span>
+          </Link>
           <div>
             <p className={style.text}>
               <Image
@@ -57,12 +48,6 @@ export default function CustomHeader() {
           </div>
         </div>
       </div>
-
-      {location && (
-        <Modal offModal={locationHandler}>
-          <Location closeBtn={locationHandler} />
-        </Modal>
-      )}
     </>
   );
 }

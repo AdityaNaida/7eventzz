@@ -16,29 +16,30 @@
   margin: 0 auto;
 }
 
-.locationCont {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+.checkoutLink {
+  color: #000;
 
-  cursor: pointer;
+  font-size: 2rem;
+  font-weight: 600;
 }
 
-.locationCont > img {
-  height: 1.6rem;
-  width: 1.6rem;
+.checkoutLink img {
+  height: 2.5rem;
+  width: 2.5rem;
+
+  vertical-align: middle;
+  margin-right: 1rem;
 }
 
-.location {
-  font-size: 1.5rem;
-  font-weight: 400;
+.checkoutLink span {
+  color: #929391;
 }
 
 .text {
   color: #212121;
 
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 700;
 
   margin-bottom: 1rem;
 }

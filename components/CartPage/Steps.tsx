@@ -19,9 +19,9 @@ const Steps: React.FC<StepProps> = ({ isActive, isfill, number }) => {
             <p>Cart</p>
           </div>
           <div className={styles.stepBox}>
-            <span className={isActive ? styles.activeStep2 : styles.nothing}>
-              {number ? 2 : "✓"}
-            </span>
+            <span
+              className={isActive ? styles.activeStep2 : styles.nothing}
+            ></span>
             <p>Address</p>
           </div>
           <div className={styles.stepBox}>
