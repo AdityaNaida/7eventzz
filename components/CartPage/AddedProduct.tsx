@@ -21,18 +21,18 @@ const AddedProduct: React.FC = () => {
             <div className={styles.controller}>
               <p>Qty</p>
               <select name="quantity" id="  quantity">
-                <option value="1" selected>
+                <option defaultValue="1" aria-selected>
                   1
                 </option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
+                <option defaultValue="2">2</option>
+                <option defaultValue="3">3</option>
+                <option defaultValue="4">4</option>
+                <option defaultValue="5">5</option>
+                <option defaultValue="6">6</option>
+                <option defaultValue="7">7</option>
+                <option defaultValue="8">8</option>
+                <option defaultValue="9">9</option>
+                <option defaultValue="10">10</option>
               </select>
             </div>
             <button className={styles.deleteBtn}>

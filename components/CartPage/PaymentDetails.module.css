@@ -40,13 +40,14 @@
   height: auto;
   background-color: var(--white);
 }
-.proceedToBuyContainer > a {
+.proceedToBuyContainer > button {
   position: relative;
   padding: 1.5rem;
   display: block;
   width: 100%;
   background-color: var(--website);
   color: #fff;
+  font-family: inherit;
   font-weight: 500;
   font-size: 1.7em;
   text-align: center;
@@ -54,7 +55,7 @@
   border: none;
   border-radius: 10px;
 }
-.proceedToBuyContainer > a::before {
+.proceedToBuyContainer > button::before {
   content: "";
   height: 100%;
   width: 5%;
@@ -65,12 +66,7 @@
   transform: rotate(3deg);
   animation: buyshadow 2s ease-in-out 0s infinite forwards;
 }
-.proceedToBuyContainer > a > img {
-  height: 30px;
-  width: 30px;
-  vertical-align: middle;
-  margin-left: 0.2em;
-}
+
 @keyframes buyshadow {
   0% {
     left: 0%;
@@ -129,6 +125,201 @@
   cursor: pointer;
 }
 
+.signUpContaier {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99;
+
+  height: auto;
+  width: 35%;
+
+  padding: 4rem 2rem;
+
+  background-color: #fff;
+  border-radius: 2rem;
+  overflow: hidden;
+  animation: fadeIn 0.5s ease 0s 1 forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    top: 150%;
+  }
+  to {
+    top: 50%;
+  }
+}
+
+.signUpHeading {
+  color: #212121;
+
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.signUpText {
+  color: #848484;
+
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+
+  padding: 2rem 0rem 1rem;
+}
+
+.form label {
+  color: #000;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.input {
+  display: block;
+  width: 100%;
+
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+
+  font-family: inherit;
+  font-size: 1.5rem;
+  font-weight: 400;
+
+  border: 0.1rem solid rgba(0, 0, 0, 0.3);
+  border-radius: 0.4rem;
+}
+
+.input[type="number"]::-webkit-inner-spin-button,
+.input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.termsText {
+  color: #000;
+
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.termsText > a {
+  color: var(--website);
+  font-weight: 500;
+}
+
+.submitBtn {
+  width: 30%;
+  align-self: flex-end;
+
+  padding: 1rem;
+
+  color: #fff;
+  background-color: var(--website);
+  font-size: 1.8rem;
+  font-weight: 600;
+  font-family: inherit;
+
+  border: none;
+  border-radius: 1rem;
+
+  cursor: pointer;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+
+  background-color: transparent;
+  border: 0.1rem solid rgba(0, 0, 0, 0.5);
+
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.closeBtn img {
+  height: 3rem;
+  width: 3rem;
+
+  vertical-align: middle;
+}
+
+.inputHolder {
+  position: relative;
+}
+
+.correct {
+  position: absolute;
+  height: 2rem;
+  width: 2rem;
+  top: 1.5rem;
+  right: 1rem;
+  animation: visible 0.2s ease 0s 1 forwards;
+}
+
+.wrongIcon {
+  position: absolute;
+  height: 2rem;
+  width: 2rem;
+  top: 1.5rem;
+  right: 1rem;
+  animation: shake 0.5s linear 0s 1 forwards;
+}
+
+.right {
+  border: 0.1rem solid #46b275 !important;
+}
+
+.wrong {
+  border: 0.1rem solid #ff0000;
+  animation: shake 0.5s linear 0s 1 forwards;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(5px);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes visible {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.warningMessage {
+  color: #ff0000;
+
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
 @media only screen and (max-width: 997px) {
   .proceedToBuyContainer {
     position: fixed;
@@ -148,6 +339,10 @@
 
     z-index: 9;
   }
+
+  .signUpContaier {
+    width: 50%;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -155,7 +350,19 @@
     display: block;
   }
 
-  .proceedToBuyContainer > a {
+  .proceedToBuyContainer > a,
+  .signUpContaier {
     width: 60%;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .signUpContaier {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    border-radius: 0rem;
   }
 }
