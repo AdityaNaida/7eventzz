@@ -7,19 +7,33 @@ import style from "@/components/Navbar/FooterMenuLink.module.css";
 interface Props {
   img: string;
   path: string;
+  isLink: boolean;
+  controller: any;
 }
-const FooterMenuLink: React.FC<Props> = ({ img, path }) => {
+const FooterMenuLink: React.FC<Props> = ({ img, path, isLink, controller }) => {
   return (
     <>
-      <Link href={path} className={style.link}>
-        <Image
-          src={img}
-          alt={`${img} Image`}
-          height={25}
-          width={25}
-          unoptimized
-        />
-      </Link>
+      {isLink ? (
+        <Link href={path} className={style.link}>
+          <Image
+            src={img}
+            alt={`${img} Image`}
+            height={25}
+            width={25}
+            unoptimized
+          />
+        </Link>
+      ) : (
+        <button className={style.link} onClick={controller}>
+          <Image
+            src={img}
+            alt={`${img} Image`}
+            height={25}
+            width={25}
+            unoptimized
+          />
+        </button>
+      )}
     </>
   );
 };

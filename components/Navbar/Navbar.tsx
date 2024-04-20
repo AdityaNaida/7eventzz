@@ -15,11 +15,13 @@ import FooterMenu from "./FooterMenu";
 import NormalSearch from "./NormalSearch";
 import SearchPopup from "./SearchPopup";
 import Location from "./Location";
+import SignUp from "./SignUp";
 
 const Navbar: React.FC = () => {
   const [navbar, setNavbar] = useState<boolean>(false);
   const [searchBox, setSearchBox] = useState<boolean>(false);
   const [locationBox, setlocationBox] = useState<boolean>(false);
+  const [signUp, setSignUp] = useState<boolean>(false);
   const navbarHandler = () => {
     setNavbar(!navbar);
   };
@@ -28,6 +30,10 @@ const Navbar: React.FC = () => {
   };
   const locationHandler = () => {
     setlocationBox(!locationBox);
+  };
+
+  const signUpcontroller = () => {
+    setSignUp(!signUp);
   };
   return (
     <>
@@ -58,8 +64,20 @@ const Navbar: React.FC = () => {
           </div>
           <div className={style.flex1}></div>
           <div className={style.navbarLinks}>
-            <NavbarLink path="/" img="/icons/user.svg" text="Hello, Log in" />
-            <NavbarLink path="/" img="/icons/cart.svg" text="Cart" />
+            <NavbarLink
+              path="/"
+              img="/icons/user.svg"
+              text="Hello, Log in"
+              isLink={false}
+              controller={signUpcontroller}
+            />
+            <NavbarLink
+              path="/"
+              img="/icons/cart.svg"
+              text="Cart"
+              isLink={true}
+              controller=""
+            />
           </div>
         </nav>
       </header>
@@ -110,8 +128,8 @@ const Navbar: React.FC = () => {
           <Location closeBtn={locationHandler} />
         </Modal>
       )}
-
-      <FooterMenu searchFnc={searchBoxHandler} />
+      {signUp && <SignUp controller={signUpcontroller} />}
+      <FooterMenu searchFnc={searchBoxHandler} signupFnc={signUpcontroller} />
     </>
   );
 };

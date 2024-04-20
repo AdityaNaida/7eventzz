@@ -6,3 +6,8 @@
   opacity: 0.6;
   vertical-align: middle;
 }
+
+.link {
+  background-color: transparent;
+  border: none;
+}

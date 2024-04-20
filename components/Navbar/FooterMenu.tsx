@@ -7,13 +7,24 @@ import FooterMenuLink from "./FooterMenuLink";
 //props
 interface Props {
   searchFnc: () => void;
+  signupFnc: () => void;
 }
-const FooterMenu: React.FC<Props> = ({ searchFnc }) => {
+const FooterMenu: React.FC<Props> = ({ searchFnc, signupFnc }) => {
   return (
     <>
       <div className={style.container}>
-        <FooterMenuLink img="/icons/home.svg" path="/" />
-        <FooterMenuLink img="/icons/category.svg" path="/" />
+        <FooterMenuLink
+          img="/icons/home.svg"
+          path="/"
+          isLink={true}
+          controller=""
+        />
+        <FooterMenuLink
+          img="/icons/category.svg"
+          path="/category"
+          isLink={true}
+          controller=""
+        />
         <button className={style.ai} onClick={searchFnc}>
           <Image
             src="/icons/white-search.svg"
@@ -23,8 +34,18 @@ const FooterMenu: React.FC<Props> = ({ searchFnc }) => {
             unoptimized
           />
         </button>
-        <FooterMenuLink img="/icons/user.svg" path="/" />
-        <FooterMenuLink img="/icons/cart.svg" path="/" />
+        <FooterMenuLink
+          img="/icons/user.svg"
+          path="/"
+          isLink={false}
+          controller={signupFnc}
+        />
+        <FooterMenuLink
+          img="/icons/cart.svg"
+          path="/cart"
+          isLink={true}
+          controller=""
+        />
       </div>
     </>
   );
