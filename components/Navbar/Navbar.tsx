@@ -72,7 +72,7 @@ const Navbar: React.FC = () => {
               controller={signUpcontroller}
             />
             <NavbarLink
-              path="/"
+              path="/cart"
               img="/icons/cart.svg"
               text="Cart"
               isLink={true}
