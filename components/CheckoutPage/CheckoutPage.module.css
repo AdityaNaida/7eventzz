@@ -1,0 +1,35 @@
+.container {
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  padding: 0rem 1rem;
+}
+
+.form {
+  width: 60%;
+}
+
+.bill {
+  height: auto;
+  width: 38%;
+  padding: 1rem 0rem;
+  position: relative;
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    flex-wrap: wrap;
+  }
+
+  .form,
+  .bill {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .container {
+    padding: 0rem 1rem 12rem;
+  }
+}

@@ -1,0 +1,25 @@
+.inputFields {
+  font-family: inherit;
+  font-size: 1.5em;
+  font-weight: 500;
+  color: #000;
+  box-shadow: 0 0.2rem 0.8rem rgba(28, 28, 28, 0.08);
+  border: 0.1rem solid #e8e8e8;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  display: block;
+  width: 100%;
+  margin: 1em 0;
+}
+
+.container > label {
+  display: block;
+  font-size: 1.6em;
+  font-weight: 600;
+  color: var(--black);
+  margin: 1em 0;
+}
+
+.container > label > span {
+  color: #ff0000;
+}

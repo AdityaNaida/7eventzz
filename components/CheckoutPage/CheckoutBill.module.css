@@ -1,0 +1,130 @@
+.container {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 1rem;
+  left: 0;
+
+  width: 100%;
+  box-shadow: 0 0.2rem 0.8rem rgba(28, 28, 28, 0.08);
+  border: 0.1rem solid #e8e8e8;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.container > h2 {
+  color: var(--black);
+  font-weight: 600;
+  font-size: 2.5em;
+}
+
+.pricedetails_image {
+  height: 2.5rem;
+  width: 2.5rem;
+  vertical-align: middle;
+}
+
+.container > p {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #848484;
+}
+
+.nested {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  padding: 1rem 0rem;
+}
+
+.checkout_image_holder > img {
+  height: 7rem;
+  width: 7rem;
+  border-radius: 1rem;
+}
+
+.checkout_details > h2 {
+  font-weight: 500;
+  font-size: 2rem;
+  color: var(--black);
+}
+
+.checkout_details > p {
+  font-size: 1.5em;
+  font-weight: 600;
+  margin: 0.5em 0rem;
+  color: #0d1619;
+}
+.checkout_details > p > img {
+  height: 2rem;
+  width: 2rem;
+  margin-right: 0.3rem;
+  vertical-align: middle;
+}
+
+.payment_options {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  width: 100%;
+}
+
+.payment_options input[type="radio"] {
+  accent-color: var(--website);
+}
+
+.payment_options label {
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-left: 0.7rem;
+}
+
+.payments_container > a {
+  position: relative;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  display: block;
+  width: 100%;
+  background-color: var(--website);
+  color: #fff;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 1.7em;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+}
+
+.payments_container > a::before {
+  content: "";
+  height: 100%;
+  width: 5%;
+  background-color: #f8dfba5e;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  transform: rotate(3deg);
+  animation: buyShadow 2s ease-in-out 0s infinite forwards;
+}
+
+@keyframes buyShadow {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: 95%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .payments_container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 2rem 1rem 1rem;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0px -16px 48px -3px rgba(0, 0, 0, 0.1);
+    border-radius: 1rem 1rem 0rem 0rem;
+  }
+}

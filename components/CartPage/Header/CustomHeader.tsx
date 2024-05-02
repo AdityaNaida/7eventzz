@@ -3,19 +3,27 @@ import Link from "next/link";
 
 import style from "@/components/CartPage/Header/CustomHeader.module.css";
 
-export default function CustomHeader() {
+export default function CustomHeader({
+  pageName,
+  pageNumber,
+  prevPath,
+}: {
+  pageName: string;
+  pageNumber: number;
+  prevPath: string;
+}) {
   return (
     <>
       <div className={style.container}>
         <div className={style.navbar}>
-          <Link href="/productdetails" className={style.checkoutLink}>
+          <Link href={prevPath} className={style.checkoutLink}>
             <Image
               src="/icons/back-icon.svg"
               alt="back icon"
               height={25}
               width={25}
             />
-            Checkout <span>(1 / 3)</span>
+            {pageName} <span>({pageNumber} / 3)</span>
           </Link>
           <div>
             <p className={style.text}>

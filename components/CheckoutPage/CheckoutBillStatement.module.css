@@ -1,0 +1,46 @@
+.container {
+  margin: 1em 0em;
+  height: auto;
+  width: 100%;
+  box-shadow: 0 0.2rem 0.8rem rgba(28, 28, 28, 0.08);
+  border: 0.1rem solid #e8e8e8;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.container > h2 {
+  font-size: 2em;
+  color: #000;
+}
+
+.container > p {
+  font-weight: 400;
+  font-size: 1.6em;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0.9em 0em;
+}
+
+.deliveryTime {
+  padding: 0.2rem 0.8rem;
+  color: #136129;
+  font-family: inherit;
+  font-size: 1.4rem;
+  margin-left: 1rem;
+  background-color: #e5f8eb;
+  border-radius: 0.5rem;
+}
+
+.container > p:nth-child(6) {
+  color: #0f9c0d;
+  padding-top: 10px;
+  border-top: 2px dashed rgba(0, 0, 0, 0.2);
+}
+
+.container > p:last-child {
+  margin: 1em 0em;
+  padding: 7px 0px;
+  border-top: 2px dashed rgba(0, 0, 0, 0.2);
+}

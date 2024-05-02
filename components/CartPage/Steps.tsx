@@ -2,18 +2,14 @@ import styles from "@/components/CartPage/Steps.module.css";
 
 interface StepProps {
   isActive: boolean;
-  isfill: boolean;
-  number: boolean;
 }
-const Steps: React.FC<StepProps> = ({ isActive, isfill, number }) => {
+const Steps: React.FC<StepProps> = ({ isActive }) => {
   return (
     <>
       <div className={styles.stepsContainer}>
         <p>Steps:</p>
         <div className={styles.stepsCount}>
-          <div className={styles.stepsRuler}>
-            {isfill && <div className={styles.filler}></div>}
-          </div>
+          <div className={styles.stepsRuler}></div>
           <div className={styles.stepBox}>
             <span className={styles.activeStep}></span>
             <p>Cart</p>
@@ -26,7 +22,7 @@ const Steps: React.FC<StepProps> = ({ isActive, isfill, number }) => {
           </div>
           <div className={styles.stepBox}>
             <span></span>
-            <p>Payment</p>
+            <p>Confirm</p>
           </div>
         </div>
       </div>

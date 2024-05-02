@@ -236,7 +236,7 @@ export default function SignUp({ controller }: { controller: () => void }) {
                 </p>
               </div>
               {password.length >= 6 ? (
-                <Link href="/" className={style.submitBtn}>
+                <Link href="/checkout" className={style.submitBtn}>
                   Next
                 </Link>
               ) : (

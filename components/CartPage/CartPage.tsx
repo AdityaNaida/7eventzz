@@ -16,7 +16,7 @@ const CartPage: React.FC = () => {
     <>
       <div className={styles.container}>
         <div className={styles.product}>
-          <Steps isActive={false} isfill={false} number={true} />
+          <Steps isActive={false} />
           <MainProduct />
           <AddOnHeading />
           <AddedProduct />

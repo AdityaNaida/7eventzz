@@ -1,0 +1,40 @@
+.container {
+  height: auto;
+  width: 100%;
+}
+
+.checkout_container {
+  display: block;
+  width: 100%;
+}
+
+.checkout_container > h1 {
+  color: #212121;
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.checkout_container > p {
+  color: var(--website);
+  padding: 2rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+  background-color: #ff000011;
+  border-radius: 1rem;
+}
+
+.extrafields {
+  height: auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .extrafields {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0rem;
+  }
+}

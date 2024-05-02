@@ -21,18 +21,12 @@
 }
 .stepsRuler {
   position: absolute;
-  height: 1px;
+  height: 0.1rem;
   width: 98%;
   top: 50%;
-  right: 0px;
+  right: 0rem;
 
   border-bottom: 0.3rem dotted #867b7b4b;
-}
-.filler {
-  height: 1px;
-  width: 0%;
-  background-color: #32c780;
-  animation: fillerMove 2s ease 0s 1 forwards;
 }
 @keyframes fillerMove {
   0% {
@@ -72,7 +66,7 @@
   animation: bigSmall 3s linear 0s infinite forwards;
 }
 
-@keyframes bigSmall {
+/* @keyframes bigSmall {
   0% {
     transform: scale(0.8);
   }
@@ -88,9 +82,10 @@
   100% {
     transform: scale(0.8);
   }
-}
+} */
 
-.stepBox > span.activeStep + p {
+.stepBox > span.activeStep + p,
+.stepBox > span.activeStep2 + p {
   font-weight: 600;
 }
 @keyframes drop {
@@ -102,18 +97,10 @@
   }
 }
 .stepBox > span.activeStep2 {
-  animation: colorChange 1s ease 1s 1 forwards;
+  border-color: var(--website);
+  border-width: 0.3rem;
 }
-@keyframes colorChange {
-  0% {
-    background-color: #ccc;
-    color: #fff;
-  }
-  100% {
-    background-color: #32c780;
-    color: #f8dfba;
-  }
-}
+
 .stepBox > p {
   font-weight: 400;
   font-size: 1.5em;
