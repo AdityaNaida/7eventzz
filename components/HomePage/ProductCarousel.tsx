@@ -54,13 +54,6 @@ const ProductCarousel: React.FC<Props> = ({
             </>
           )}
         </div>
-        {/* <div className={style.ratingReviews}>
-          <span className={style.rating}>
-            <span>&#9733;</span>
-            {rating}
-          </span>
-          <span className={style.reviews}>({reviews})</span>
-        </div> */}
       </Link>
     </>
   );

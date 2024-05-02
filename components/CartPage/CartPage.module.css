@@ -16,24 +16,6 @@
   width: 33%;
 }
 
-.locationCont {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-
-  cursor: pointer;
-}
-
-.locationCont > img {
-  height: 1.6rem;
-  width: 1.6rem;
-}
-
-.location {
-  font-size: 1.4rem;
-  font-weight: 400;
-}
-
 @media only screen and (max-width: 997px) {
   .container {
     flex-wrap: wrap;

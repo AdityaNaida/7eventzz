@@ -16,10 +16,6 @@
   display: flex;
 }
 
-/* .logo a > img {
-  height: auto;
-  width: 30%;
-} */
 .navbarLinks {
   display: flex;
   align-items: center;
