@@ -1,0 +1,71 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  border: 0.1rem solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem 1rem;
+  font-size: 1.6rem;
+  font-weight: 400;
+  transition: all ease 0.5s;
+}
+
+.link:hover {
+  background-color: #ff385d10;
+}
+.active {
+  background-color: #ff385d10;
+}
+
+.svgIcon {
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+.menuBtn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1rem;
+  display: none;
+}
+
+.menuBtn > img {
+  height: 2rem;
+  width: 2rem;
+}
+
+.menuBtn > div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+@media only screen and (max-width: 768px) {
+  .menuLinks {
+    position: fixed;
+    display: none;
+    background-color: white;
+    width: 90%;
+    z-index: 9;
+    top: 22%;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+  }
+  .menuBtn {
+    display: flex;
+    padding: 2rem;
+  }
+
+  .visible {
+    display: block;
+  }
+}

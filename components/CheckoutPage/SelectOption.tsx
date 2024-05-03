@@ -13,13 +13,13 @@ export default function SelectOption({
     <>
       {isSelected && isDisabled ? (
         <>
-          <option value={value} selected disabled>
+          <option defaultValue={value} selected disabled>
             {innerText}
           </option>
         </>
       ) : (
         <>
-          <option value={value}>{innerText}</option>
+          <option defaultValue={value}>{innerText}</option>
         </>
       )}
     </>

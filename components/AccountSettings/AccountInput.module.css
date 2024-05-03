@@ -1,0 +1,51 @@
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.container > label {
+  color: #000000b3;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+.container > input {
+  margin-top: 0.8rem;
+  padding: 1.5rem;
+  border: 0.1rem solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  transition: all ease-in-out 0.2s;
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-family: inherit;
+}
+
+.container > input:focus {
+  outline-color: var(--website);
+}
+
+.container > input[type="number"]::-webkit-inner-spin-button,
+.container > input[type="number"]::-webkit-outer-spin-button {
+  display: none;
+  -moz-appearance: none;
+}
+
+.container > svg {
+  position: absolute;
+  right: 1rem;
+  top: 4rem;
+  height: 2.5rem;
+  width: 2.5rem;
+  cursor: pointer;
+  stroke: #979fa7;
+}
+.container > div > img {
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+.container > div {
+  font-size: 1.6rem;
+  font-weight: 400;
+}

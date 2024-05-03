@@ -1,0 +1,100 @@
+.container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: nowrap;
+  padding: 2rem;
+}
+
+.container > div:first-child {
+  height: fit-content;
+  width: 33%;
+}
+
+.profileDetails {
+  height: auto;
+  width: 65%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.personalInfo {
+  height: auto;
+  width: 100%;
+  padding: 1rem 0rem;
+  border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1);
+}
+
+.personalInfo > h2 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.personalInfo > form {
+  padding: 2rem 0rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+.personalInfo > form > div > label {
+  margin: 0rem;
+  color: #000000b3;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+.personalInfo > form > div > label > span {
+  color: #000000b3;
+  font-weight: 400;
+}
+.personalInfo > form > div > select {
+  margin-top: 0.8rem;
+  padding: 1.4rem 1.5rem;
+  font-weight: 400;
+  border: 0.1rem solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  box-shadow: none;
+  transition: all ease-in-out 0.2s;
+}
+
+.personalInfo > form > div > select:focus {
+  outline-color: var(--website);
+}
+
+.saveBtn {
+  margin-top: 2rem;
+  width: 40%;
+  align-self: flex-end;
+  padding: 1.5rem;
+  font-size: 2rem;
+  font-weight: 600;
+  font-family: inherit;
+  background-color: var(--website);
+  color: var(--white);
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    flex-wrap: wrap;
+  }
+  .container > div:first-child,
+  .profileDetails {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .personalInfo > form {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+  }
+  .saveBtn {
+    width: 100%;
+    white-space: nowrap;
+  }
+}
