@@ -1,0 +1,54 @@
+.TableRow {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+
+  padding: 1rem 0rem;
+}
+
+.TableRow td {
+  height: 5rem;
+  min-width: 16.5%;
+  padding: 1rem 1.5rem 1rem 2rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #212121;
+  white-space: nowrap;
+  text-align: left;
+  border-bottom: 0.1rem solid rgba(0, 0, 0, 0.2);
+}
+
+.delivered,
+.pending {
+  display: inline-block;
+  height: 1.2rem;
+  width: 1.2rem;
+
+  margin-right: 0.3rem;
+  border-radius: 50%;
+}
+
+.delivered {
+  background-color: #02b290;
+}
+
+.pending {
+  background-color: var(--website);
+}
+
+.viewBtn {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.viewBtn img {
+  height: 2.2rem;
+  width: 2.2rem;
+}
+
+@media only screen and (max-width: 992px) {
+  .TableRow td {
+    min-width: 12rem;
+  }
+}

@@ -45,7 +45,7 @@ export default function DashboardMenu() {
           />
         </div>
         <div className={`${style.menuLinks} ${menu ? style.visible : ""}`}>
-          <Link href="/" className={`${style.link}`}>
+          <Link href="/account-settings" className={`${style.link}`}>
             {" "}
             <svg
               width="22"
@@ -69,7 +69,7 @@ export default function DashboardMenu() {
             </svg>
             Account Settings
           </Link>
-          <Link href="/" className={`${style.link}`}>
+          <Link href="/orders" className={`${style.link}`}>
             <svg
               width="22"
               height="22"
@@ -93,7 +93,7 @@ export default function DashboardMenu() {
             </svg>
             Orders
           </Link>
-          <Link href="/" className={`${style.link}`}>
+          <Link href="/support-tickets" className={`${style.link}`}>
             <svg
               width="22"
               height="22"
@@ -128,7 +128,7 @@ export default function DashboardMenu() {
             </svg>
             Tickets
           </Link>
-          <Link href="/" className={`${style.link}`}>
+          <Link href="/helpcenter" className={`${style.link}`}>
             {" "}
             <svg
               width="22"

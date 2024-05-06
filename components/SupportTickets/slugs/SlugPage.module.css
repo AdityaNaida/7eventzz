@@ -1,0 +1,77 @@
+.container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: nowrap;
+  padding: 2rem;
+}
+
+.container > div:first-child {
+  height: fit-content;
+  width: 25%;
+}
+
+.ticketContainer {
+  height: auto;
+  width: 73%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-bottom: 1rem;
+  border-bottom: 0.1rem solid rgba(0, 0, 0, 0.2);
+}
+
+.heading h1 {
+  color: #212121;
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+
+.closed {
+  padding: 0.3rem 0.8rem;
+  border-radius: 1rem;
+
+  margin-left: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #4caf50;
+  background-color: #4caf4f1e;
+}
+
+.heading a {
+  color: #02b290;
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  background-color: #02b28f15;
+}
+
+.chats {
+  margin: 1rem 0rem;
+  padding: 1rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    flex-wrap: wrap;
+  }
+
+  .container > div:first-child,
+  .ticketContainer {
+    width: 100%;
+  }
+
+  .ticketContainer {
+    border: none;
+    padding: 0rem;
+  }
+}

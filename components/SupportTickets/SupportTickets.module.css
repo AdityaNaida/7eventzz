@@ -1,0 +1,177 @@
+.container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: nowrap;
+  padding: 2rem;
+}
+
+.container > div:first-child {
+  height: fit-content;
+  width: 25%;
+}
+
+.ticketContainer {
+  height: auto;
+  width: 73%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 2rem;
+}
+
+.heading h1 {
+  color: #212121;
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+
+.heading button {
+  padding: 0.5rem 1.5rem;
+
+  color: #02b290;
+  font-size: 1.7rem;
+  font-weight: 600;
+  font-family: inherit;
+
+  background-color: transparent;
+  border: 0.1rem solid #02b290;
+  border-radius: 1rem;
+
+  cursor: pointer;
+}
+
+.plusIcon {
+  border: 0.1rem solid var(--website);
+  margin-left: 1rem;
+  padding: 0.2rem;
+  border-radius: 50%;
+}
+
+.ticketList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ticketDialouge {
+  position: absolute;
+  top: 150%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  height: auto;
+  width: 30%;
+
+  padding: 2rem;
+
+  background-color: #fff;
+  border-radius: 2rem;
+  animation: fadeIn 0.5s ease 0s 1 forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    top: 150%;
+  }
+  to {
+    top: 50%;
+  }
+}
+.ticketHeading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0rem 0rem 1rem;
+}
+
+.ticketHeading > p {
+  color: #212121;
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+
+.ticketHeading > button {
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.ticketDialouge > form {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0rem;
+}
+
+.messageBox {
+  height: 30vh;
+  font-family: inherit;
+  font-size: 1.5rem;
+  font-weight: 400;
+  padding: 1.5rem;
+  border: 0.1rem solid #2121212d;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+  transition: all ease-in-out 0.2s;
+}
+
+.messageBox:focus {
+  outline-color: #02b290;
+}
+
+.submitBtn {
+  font-family: inherit;
+  font-size: 2rem;
+  font-weight: 600;
+
+  padding: 1.5rem;
+
+  color: #fff;
+  border-radius: 1rem;
+  border: none;
+  background-color: #02b290;
+  cursor: pointer;
+}
+@media only screen and (max-width: 992px) {
+  .messageBox {
+    height: 20vh;
+  }
+
+  .ticketDialouge {
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .container {
+    flex-wrap: wrap;
+  }
+
+  .container > div:first-child,
+  .ticketContainer {
+    width: 100%;
+  }
+
+  .ticketContainer {
+    border: none;
+    padding: 0rem;
+  }
+
+  .ticketDialouge {
+    width: 60%;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .ticketDialouge {
+    width: 95%;
+  }
+}

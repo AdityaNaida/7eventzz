@@ -1,0 +1,79 @@
+.container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: nowrap;
+  padding: 2rem;
+}
+
+.container > div:first-child {
+  height: fit-content;
+  width: 25%;
+}
+
+.faqContainer {
+  height: auto;
+  width: 73%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.faqContainer > h1,
+.faqContainer > h2 {
+  color: #212121;
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+
+.faqContainer > h2 {
+  margin: 2rem 0rem;
+}
+
+.controller {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.controller > a {
+  font-size: 1.6rem;
+  font-weight: 500;
+  border: 0.1rem solid #212121;
+  padding: 1rem 2.5rem;
+  border-radius: 1rem;
+}
+
+.controller > a > img {
+  height: 2.5rem;
+  width: 2.5rem;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
+
+.controller > a:first-child {
+  border-color: #4caf50;
+  color: #4caf50;
+}
+
+.controller > a:last-child {
+  border-color: #1a73ec;
+  color: #1a73ec;
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    flex-wrap: wrap;
+  }
+
+  .container > div:first-child,
+  .faqContainer {
+    width: 100%;
+  }
+
+  .faqContainer {
+    border: none;
+    padding: 0rem;
+  }
+}

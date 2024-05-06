@@ -1,0 +1,26 @@
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+@media only screen and (max-width: 1250px) {
+  .main {
+    max-width: 1140px;
+  }
+}
+@media only screen and (max-width: 1140px) {
+  .main {
+    max-width: 960px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .main {
+    max-width: 720px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .main {
+    max-width: 540px;
+  }
+}

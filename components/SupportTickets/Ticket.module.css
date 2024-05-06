@@ -1,0 +1,65 @@
+.container {
+  position: relative;
+
+  display: block;
+  width: 100%;
+  padding: 2rem 2rem 1rem;
+
+  box-shadow: 0 0.2rem 0.8rem rgba(28, 28, 28, 0.08);
+  border: 0.1rem solid #e8e8e8;
+  border-radius: 1rem;
+}
+
+.container > p {
+  color: #212121;
+
+  margin-bottom: 1rem;
+
+  font-size: 1.7rem;
+  font-weight: 400;
+  width: 50%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.container > diV {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.openBtn,
+.redBtn {
+  font-family: inherit;
+  font-size: 1.5rem;
+  font-weight: 500;
+  border: none;
+  padding: 0.3rem 1rem;
+  border-radius: 10rem;
+}
+
+.openBtn {
+  color: #4caf50;
+  background-color: #4caf4f1e;
+}
+
+.redBtn {
+  background-color: #ffe1e6;
+  color: #e94560;
+}
+
+.date {
+  color: #848484;
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.arrrow {
+  position: absolute;
+  top: 40%;
+  right: 3%;
+  transform: rotate(180deg);
+
+  opacity: 0.5;
+}

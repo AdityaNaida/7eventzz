@@ -7,12 +7,12 @@
 
 .container > div:first-child {
   height: fit-content;
-  width: 33%;
+  width: 25%;
 }
 
 .profileDetails {
   height: auto;
-  width: 65%;
+  width: 73%;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 0.5rem;
   padding: 2rem;
@@ -85,6 +85,11 @@
   .container > div:first-child,
   .profileDetails {
     width: 100%;
+  }
+
+  .profileDetails {
+    border: none;
+    padding: 0rem;
   }
 }
 
