@@ -56,8 +56,76 @@
 }
 
 .chats {
+  display: flex;
+  flex-direction: column;
   margin: 1rem 0rem;
   padding: 1rem;
+}
+
+.chatBtn {
+  font-family: inherit;
+  font-size: 1.7rem;
+  font-weight: 500;
+  align-self: flex-end;
+
+  cursor: pointer;
+  padding: 0.5rem 1.5rem;
+  margin-right: 1rem;
+
+  border: none;
+  color: var(--white);
+  background-color: var(--website);
+  border-radius: 1rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  padding: 1rem;
+}
+
+.form > textarea {
+  height: 25vh;
+
+  padding: 1rem;
+
+  color: #212121;
+  font-family: inherit;
+  font-size: 1.5rem;
+  font-weight: 400;
+
+  border: 0.1rem solid rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+  transition: all ease-in-out 0.5s;
+}
+
+.form > textarea:focus {
+  outline-color: #02b290;
+}
+
+.form > button {
+  align-self: flex-end;
+  width: 25%;
+  padding: 1.5rem;
+
+  font-family: inherit;
+  font-size: 1.7rem;
+  font-weight: 600;
+
+  cursor: pointer;
+  color: #fff;
+  background-color: #02b290;
+  border: none;
+
+  border-radius: 1rem;
+}
+
+@media only screen and (max-width: 992px) {
+  .form > button {
+    width: 40%;
+  }
 }
 
 @media only screen and (max-width: 768px) {

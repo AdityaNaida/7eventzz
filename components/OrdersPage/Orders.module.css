@@ -131,7 +131,7 @@
 }
 
 .detailsHeading {
-  padding: 2rem;
+  padding: 1rem;
 
   display: flex;
   align-items: center;
@@ -158,7 +158,7 @@
   height: auto;
   width: 100%;
 
-  padding: 2rem;
+  padding: 1rem;
   border-bottom: 0.1rem solid rgba(0, 0, 0, 0.2);
 }
 
@@ -236,9 +236,6 @@
   padding: 2rem;
 }
 
-.bill > h2 {
-  margin-bottom: 2rem;
-}
 .bill > p {
   font-weight: 400;
   font-size: 1.6em;
@@ -246,7 +243,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 0.5em 0em;
+  margin: 0.3rem 0rem;
 }
 
 .deliveryType {
@@ -363,7 +360,7 @@
     padding: 1rem 2rem;
   }
 
-  .bill > h2 {
-    margin-bottom: 0rem;
+  .bill > p {
+    margin: 0.5rem 0rem;
   }
 }

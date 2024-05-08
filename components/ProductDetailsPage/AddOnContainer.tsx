@@ -59,10 +59,8 @@ export default function AddOnContainer({
           </span>
         </div>
         <div className={style.categories}>
-          <AddonCategoryBtn value="All" isActive={true} />
-          <AddonCategoryBtn value="Flowers" isActive={false} />
-          <AddonCategoryBtn value="Cakes" isActive={false} />
-          <AddonCategoryBtn value="Plats" isActive={false} />
+          <AddonCategoryBtn value="Popular add-ons" isActive={true} />
+          <AddonCategoryBtn value="More add-ons" isActive={false} />
         </div>
         <div className={`${style.items} ${isDetails ? "" : style.fullwidth}`}>
           {addOnAPI.map((elem) => (
