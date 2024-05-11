@@ -10,7 +10,7 @@ const EmptyCart: React.FC = () => {
     <>
       <div className={styles.container}>
         <Image
-          src="/icons/empty-cart.webp"
+          src="/empty-cart.webp"
           alt="No Cart"
           height={50}
           width={50}
@@ -18,12 +18,12 @@ const EmptyCart: React.FC = () => {
           priority
         />
 
-        <h1>No Items in Cart</h1>
+        <h1>You don&apos;t have any items :&#40;</h1>
         <p>
           Add a few items to your cart and come back here for an express
           checkout process!
         </p>
-        <Link href="/category">Browse Category</Link>
+        <Link href="/">Back to Home</Link>
       </div>
     </>
   );
